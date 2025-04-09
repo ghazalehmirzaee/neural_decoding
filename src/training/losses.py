@@ -88,9 +88,23 @@ class MultitaskLoss(nn.Module):
         for task_name, output in outputs.items():
             if task_name in targets:
                 if task_name == 'neural_activity':
-                    # Regression task with L1 regularization
-                    target = targets[task_name].view(-1, 1)
-                    output = output.view(-1, 1)
+                    # FIX: Make sure dimensions match by keeping batch dimension
+                    # Ensure both tensors have same batch size but flattened otherwise
+                    batch_size = output.size(0)
+                    target = targets[task_name]
+
+                    # Ensure both have compatible shapes [batch_size, 1]
+                    if output.dim() > 2:
+                        output = output.view(batch_size, -1).mean(dim=1, keepdim=True)
+                    else:
+                        output = output.view(batch_size, -1)
+
+                    if target.dim() > 2:
+                        target = target.view(batch_size, -1).mean(dim=1, keepdim=True)
+                    else:
+                        target = target.view(batch_size, -1)
+
+                    # Apply MSE loss
                     losses[task_name] = self.mse_loss(output, target)
                 else:
                     # Classification task with focal loss
@@ -101,5 +115,4 @@ class MultitaskLoss(nn.Module):
                     total_loss += self.task_weights[task_name] * losses[task_name]
 
         return total_loss, losses
-
 

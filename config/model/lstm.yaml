@@ -11,5 +11,5 @@ dropout: 0.5
 # Task weights
 task_weights:
   multiclass: 1.0
-  contralateral: 0.5
-  ipsilateral: 0.5
+  contralateral: 0.6
+  ipsilateral: 0.6
