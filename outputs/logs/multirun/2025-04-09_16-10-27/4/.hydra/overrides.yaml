@@ -1,0 +1,4 @@
+- model=lstm
+- model.hidden_size=64
+- model.num_layers=1
+- training.learning_rate=0.001

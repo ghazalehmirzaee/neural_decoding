@@ -1,0 +1,240 @@
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Configure stats pid to 3613476
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/.config/wandb/settings
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/0/wandb/settings
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train.py', 'program_abspath': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py'}
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_init.py:_log_setup():528] Logging user logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/3/wandb/run-20250409_161031-mzznj8fv/logs/debug.log
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_init.py:_log_setup():529] Logging internal logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/3/wandb/run-20250409_161031-mzznj8fv/logs/debug-internal.log
+2025-04-09 16:10:31,710 INFO    MainThread:3613476 [wandb_init.py:init():568] calling init triggers
+2025-04-09 16:10:31,711 INFO    MainThread:3613476 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'model': {'type': 'lstm', 'input_size': 421, 'hidden_size': 32, 'num_layers': 2, 'num_classes': 3, 'dropout': 0.5, 'task_weights': {'multiclass': 1.0, 'contralateral': 0.5, 'ipsilateral': 0.5}}, 'dataset': {'name': 'neural_data', 'path': '${paths.data_dir}/aligned_data_009.csv', 'sequence_length': 32, 'apply_pca': True, 'n_components': 3, 'normalize': True, 'train_ratio': 0.7, 'val_ratio': 0.15, 'test_ratio': 0.15, 'batch_size': 32}, 'training': {'epochs': 100, 'learning_rate': 0.0001, 'weight_decay': 1e-05, 'early_stopping_patience': 7, 'gradient_clip_val': 1.0}, 'seed': 42, 'device': 'cuda', 'paths': {'data_dir': '${oc.env:PWD}/data', 'output_dir': '${oc.env:PWD}/outputs', 'checkpoints_dir': '${paths.output_dir}/checkpoints', 'logs_dir': '${paths.output_dir}/logs', 'visualizations_dir': '${paths.output_dir}/visualizations'}, 'wandb': {'project': 'neural-decoding', 'entity': '${oc.env:USER}', 'group': 'experiments', 'mode': 'online'}}
+2025-04-09 16:10:31,711 INFO    MainThread:3613476 [wandb_init.py:init():618] starting backend
+2025-04-09 16:10:31,711 INFO    MainThread:3613476 [wandb_init.py:init():622] setting up manager
+2025-04-09 16:10:31,713 INFO    MainThread:3613476 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-09 16:10:31,713 INFO    MainThread:3613476 [wandb_init.py:init():628] backend started and connected
+2025-04-09 16:10:31,718 INFO    MainThread:3613476 [wandb_init.py:init():720] updated telemetry
+2025-04-09 16:10:31,720 INFO    MainThread:3613476 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2025-04-09 16:10:31,836 ERROR   MainThread:3613476 [wandb_init.py:init():779] encountered error: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 403: Forbidden)
+2025-04-09 16:10:31,855 ERROR   MainThread:3613476 [wandb_init.py:init():1188] It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 403: Forbidden)
+Traceback (most recent call last):
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 403: Forbidden)
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Configure stats pid to 3613476
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/.config/wandb/settings
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/0/wandb/settings
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train.py', 'program_abspath': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py'}
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_init.py:_log_setup():528] Logging user logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/4/wandb/run-20250409_161032-65xw8huw/logs/debug.log
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_init.py:_log_setup():529] Logging internal logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/4/wandb/run-20250409_161032-65xw8huw/logs/debug-internal.log
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_init.py:init():568] calling init triggers
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'model': {'type': 'lstm', 'input_size': 421, 'hidden_size': 64, 'num_layers': 1, 'num_classes': 3, 'dropout': 0.5, 'task_weights': {'multiclass': 1.0, 'contralateral': 0.5, 'ipsilateral': 0.5}}, 'dataset': {'name': 'neural_data', 'path': '${paths.data_dir}/aligned_data_009.csv', 'sequence_length': 32, 'apply_pca': True, 'n_components': 3, 'normalize': True, 'train_ratio': 0.7, 'val_ratio': 0.15, 'test_ratio': 0.15, 'batch_size': 32}, 'training': {'epochs': 100, 'learning_rate': 0.001, 'weight_decay': 1e-05, 'early_stopping_patience': 7, 'gradient_clip_val': 1.0}, 'seed': 42, 'device': 'cuda', 'paths': {'data_dir': '${oc.env:PWD}/data', 'output_dir': '${oc.env:PWD}/outputs', 'checkpoints_dir': '${paths.output_dir}/checkpoints', 'logs_dir': '${paths.output_dir}/logs', 'visualizations_dir': '${paths.output_dir}/visualizations'}, 'wandb': {'project': 'neural-decoding', 'entity': '${oc.env:USER}', 'group': 'experiments', 'mode': 'online'}}
+2025-04-09 16:10:32,361 INFO    MainThread:3613476 [wandb_init.py:init():618] starting backend
+2025-04-09 16:10:32,362 INFO    MainThread:3613476 [wandb_init.py:init():622] setting up manager
+2025-04-09 16:10:32,364 INFO    MainThread:3613476 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-09 16:10:32,364 INFO    MainThread:3613476 [wandb_init.py:init():628] backend started and connected
+2025-04-09 16:10:32,369 INFO    MainThread:3613476 [wandb_init.py:init():720] updated telemetry
+2025-04-09 16:10:32,372 INFO    MainThread:3613476 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2025-04-09 16:12:02,389 ERROR   MainThread:3613476 [wandb_init.py:init():779] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2025-04-09 16:12:02,408 ERROR   MainThread:3613476 [wandb_init.py:init():1188] Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2025-04-09 16:12:02,696 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2025-04-09 16:12:02,696 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Configure stats pid to 3613476
+2025-04-09 16:12:02,696 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/.config/wandb/settings
+2025-04-09 16:12:02,696 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/0/wandb/settings
+2025-04-09 16:12:02,696 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-04-09 16:12:02,696 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-04-09 16:12:02,696 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train.py', 'program_abspath': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py'}
+2025-04-09 16:12:02,696 INFO    MainThread:3613476 [wandb_init.py:_log_setup():528] Logging user logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/5/wandb/run-20250409_161202-t3ftzaur/logs/debug.log
+2025-04-09 16:12:02,697 INFO    MainThread:3613476 [wandb_init.py:_log_setup():529] Logging internal logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/5/wandb/run-20250409_161202-t3ftzaur/logs/debug-internal.log
+2025-04-09 16:12:02,697 INFO    MainThread:3613476 [wandb_init.py:init():568] calling init triggers
+2025-04-09 16:12:02,697 INFO    MainThread:3613476 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'model': {'type': 'lstm', 'input_size': 421, 'hidden_size': 64, 'num_layers': 1, 'num_classes': 3, 'dropout': 0.5, 'task_weights': {'multiclass': 1.0, 'contralateral': 0.5, 'ipsilateral': 0.5}}, 'dataset': {'name': 'neural_data', 'path': '${paths.data_dir}/aligned_data_009.csv', 'sequence_length': 32, 'apply_pca': True, 'n_components': 3, 'normalize': True, 'train_ratio': 0.7, 'val_ratio': 0.15, 'test_ratio': 0.15, 'batch_size': 32}, 'training': {'epochs': 100, 'learning_rate': 0.0001, 'weight_decay': 1e-05, 'early_stopping_patience': 7, 'gradient_clip_val': 1.0}, 'seed': 42, 'device': 'cuda', 'paths': {'data_dir': '${oc.env:PWD}/data', 'output_dir': '${oc.env:PWD}/outputs', 'checkpoints_dir': '${paths.output_dir}/checkpoints', 'logs_dir': '${paths.output_dir}/logs', 'visualizations_dir': '${paths.output_dir}/visualizations'}, 'wandb': {'project': 'neural-decoding', 'entity': '${oc.env:USER}', 'group': 'experiments', 'mode': 'online'}}
+2025-04-09 16:12:02,697 INFO    MainThread:3613476 [wandb_init.py:init():618] starting backend
+2025-04-09 16:12:02,697 INFO    MainThread:3613476 [wandb_init.py:init():622] setting up manager
+2025-04-09 16:12:02,699 INFO    MainThread:3613476 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-09 16:12:02,699 INFO    MainThread:3613476 [wandb_init.py:init():628] backend started and connected
+2025-04-09 16:12:02,703 INFO    MainThread:3613476 [wandb_init.py:init():720] updated telemetry
+2025-04-09 16:12:02,706 INFO    MainThread:3613476 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2025-04-09 16:12:02,854 ERROR   MainThread:3613476 [wandb_init.py:init():779] encountered error: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 403: Forbidden)
+2025-04-09 16:12:02,873 ERROR   MainThread:3613476 [wandb_init.py:init():1188] It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 403: Forbidden)
+Traceback (most recent call last):
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 403: Forbidden)
+2025-04-09 16:12:03,137 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Configure stats pid to 3613476
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/.config/wandb/settings
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/0/wandb/settings
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train.py', 'program_abspath': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py'}
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_init.py:_log_setup():528] Logging user logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/6/wandb/run-20250409_161203-tmxuq5k9/logs/debug.log
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_init.py:_log_setup():529] Logging internal logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/6/wandb/run-20250409_161203-tmxuq5k9/logs/debug-internal.log
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_init.py:init():568] calling init triggers
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'model': {'type': 'lstm', 'input_size': 421, 'hidden_size': 64, 'num_layers': 2, 'num_classes': 3, 'dropout': 0.5, 'task_weights': {'multiclass': 1.0, 'contralateral': 0.5, 'ipsilateral': 0.5}}, 'dataset': {'name': 'neural_data', 'path': '${paths.data_dir}/aligned_data_009.csv', 'sequence_length': 32, 'apply_pca': True, 'n_components': 3, 'normalize': True, 'train_ratio': 0.7, 'val_ratio': 0.15, 'test_ratio': 0.15, 'batch_size': 32}, 'training': {'epochs': 100, 'learning_rate': 0.001, 'weight_decay': 1e-05, 'early_stopping_patience': 7, 'gradient_clip_val': 1.0}, 'seed': 42, 'device': 'cuda', 'paths': {'data_dir': '${oc.env:PWD}/data', 'output_dir': '${oc.env:PWD}/outputs', 'checkpoints_dir': '${paths.output_dir}/checkpoints', 'logs_dir': '${paths.output_dir}/logs', 'visualizations_dir': '${paths.output_dir}/visualizations'}, 'wandb': {'project': 'neural-decoding', 'entity': '${oc.env:USER}', 'group': 'experiments', 'mode': 'online'}}
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_init.py:init():618] starting backend
+2025-04-09 16:12:03,138 INFO    MainThread:3613476 [wandb_init.py:init():622] setting up manager
+2025-04-09 16:12:03,141 INFO    MainThread:3613476 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-09 16:12:03,141 INFO    MainThread:3613476 [wandb_init.py:init():628] backend started and connected
+2025-04-09 16:12:03,147 INFO    MainThread:3613476 [wandb_init.py:init():720] updated telemetry
+2025-04-09 16:12:03,149 INFO    MainThread:3613476 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2025-04-09 16:12:03,276 ERROR   MainThread:3613476 [wandb_init.py:init():779] encountered error: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 403: Forbidden)
+2025-04-09 16:12:03,295 ERROR   MainThread:3613476 [wandb_init.py:init():1188] It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 403: Forbidden)
+Traceback (most recent call last):
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: It appears that you do not have permission to access the requested resource. Please reach out to the project owner to grant you access. If you have the correct permissions, verify that there are no issues with your networking setup.(Error 403: Forbidden)
+2025-04-09 16:12:03,579 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2025-04-09 16:12:03,579 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Configure stats pid to 3613476
+2025-04-09 16:12:03,579 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/.config/wandb/settings
+2025-04-09 16:12:03,579 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/0/wandb/settings
+2025-04-09 16:12:03,580 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-04-09 16:12:03,580 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-04-09 16:12:03,580 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train.py', 'program_abspath': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py'}
+2025-04-09 16:12:03,580 INFO    MainThread:3613476 [wandb_init.py:_log_setup():528] Logging user logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/7/wandb/run-20250409_161203-v2qxwk9z/logs/debug.log
+2025-04-09 16:12:03,580 INFO    MainThread:3613476 [wandb_init.py:_log_setup():529] Logging internal logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/7/wandb/run-20250409_161203-v2qxwk9z/logs/debug-internal.log
+2025-04-09 16:12:03,580 INFO    MainThread:3613476 [wandb_init.py:init():568] calling init triggers
+2025-04-09 16:12:03,580 INFO    MainThread:3613476 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'model': {'type': 'lstm', 'input_size': 421, 'hidden_size': 64, 'num_layers': 2, 'num_classes': 3, 'dropout': 0.5, 'task_weights': {'multiclass': 1.0, 'contralateral': 0.5, 'ipsilateral': 0.5}}, 'dataset': {'name': 'neural_data', 'path': '${paths.data_dir}/aligned_data_009.csv', 'sequence_length': 32, 'apply_pca': True, 'n_components': 3, 'normalize': True, 'train_ratio': 0.7, 'val_ratio': 0.15, 'test_ratio': 0.15, 'batch_size': 32}, 'training': {'epochs': 100, 'learning_rate': 0.0001, 'weight_decay': 1e-05, 'early_stopping_patience': 7, 'gradient_clip_val': 1.0}, 'seed': 42, 'device': 'cuda', 'paths': {'data_dir': '${oc.env:PWD}/data', 'output_dir': '${oc.env:PWD}/outputs', 'checkpoints_dir': '${paths.output_dir}/checkpoints', 'logs_dir': '${paths.output_dir}/logs', 'visualizations_dir': '${paths.output_dir}/visualizations'}, 'wandb': {'project': 'neural-decoding', 'entity': '${oc.env:USER}', 'group': 'experiments', 'mode': 'online'}}
+2025-04-09 16:12:03,580 INFO    MainThread:3613476 [wandb_init.py:init():618] starting backend
+2025-04-09 16:12:03,580 INFO    MainThread:3613476 [wandb_init.py:init():622] setting up manager
+2025-04-09 16:12:03,583 INFO    MainThread:3613476 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-09 16:12:03,583 INFO    MainThread:3613476 [wandb_init.py:init():628] backend started and connected
+2025-04-09 16:12:03,587 INFO    MainThread:3613476 [wandb_init.py:init():720] updated telemetry
+2025-04-09 16:12:03,590 INFO    MainThread:3613476 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2025-04-09 16:13:33,607 ERROR   MainThread:3613476 [wandb_init.py:init():779] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2025-04-09 16:13:33,626 ERROR   MainThread:3613476 [wandb_init.py:init():1188] Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2025-04-09 16:13:33,914 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Configure stats pid to 3613476
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/.config/wandb/settings
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/0/wandb/settings
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train.py', 'program_abspath': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py'}
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_init.py:_log_setup():528] Logging user logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/8/wandb/run-20250409_161333-4ztapm1m/logs/debug.log
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_init.py:_log_setup():529] Logging internal logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/8/wandb/run-20250409_161333-4ztapm1m/logs/debug-internal.log
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_init.py:init():568] calling init triggers
+2025-04-09 16:13:33,915 INFO    MainThread:3613476 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'model': {'type': 'lstm', 'input_size': 421, 'hidden_size': 128, 'num_layers': 1, 'num_classes': 3, 'dropout': 0.5, 'task_weights': {'multiclass': 1.0, 'contralateral': 0.5, 'ipsilateral': 0.5}}, 'dataset': {'name': 'neural_data', 'path': '${paths.data_dir}/aligned_data_009.csv', 'sequence_length': 32, 'apply_pca': True, 'n_components': 3, 'normalize': True, 'train_ratio': 0.7, 'val_ratio': 0.15, 'test_ratio': 0.15, 'batch_size': 32}, 'training': {'epochs': 100, 'learning_rate': 0.001, 'weight_decay': 1e-05, 'early_stopping_patience': 7, 'gradient_clip_val': 1.0}, 'seed': 42, 'device': 'cuda', 'paths': {'data_dir': '${oc.env:PWD}/data', 'output_dir': '${oc.env:PWD}/outputs', 'checkpoints_dir': '${paths.output_dir}/checkpoints', 'logs_dir': '${paths.output_dir}/logs', 'visualizations_dir': '${paths.output_dir}/visualizations'}, 'wandb': {'project': 'neural-decoding', 'entity': '${oc.env:USER}', 'group': 'experiments', 'mode': 'online'}}
+2025-04-09 16:13:33,916 INFO    MainThread:3613476 [wandb_init.py:init():618] starting backend
+2025-04-09 16:13:33,916 INFO    MainThread:3613476 [wandb_init.py:init():622] setting up manager
+2025-04-09 16:13:33,918 INFO    MainThread:3613476 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-09 16:13:33,918 INFO    MainThread:3613476 [wandb_init.py:init():628] backend started and connected
+2025-04-09 16:13:33,922 INFO    MainThread:3613476 [wandb_init.py:init():720] updated telemetry
+2025-04-09 16:13:33,924 INFO    MainThread:3613476 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2025-04-09 16:15:03,941 ERROR   MainThread:3613476 [wandb_init.py:init():779] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2025-04-09 16:15:03,959 ERROR   MainThread:3613476 [wandb_init.py:init():1188] Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2025-04-09 16:15:04,386 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2025-04-09 16:15:04,387 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Configure stats pid to 3613476
+2025-04-09 16:15:04,387 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/.config/wandb/settings
+2025-04-09 16:15:04,387 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/0/wandb/settings
+2025-04-09 16:15:04,387 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-04-09 16:15:04,387 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-04-09 16:15:04,387 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train.py', 'program_abspath': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py'}
+2025-04-09 16:15:04,387 INFO    MainThread:3613476 [wandb_init.py:_log_setup():528] Logging user logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/9/wandb/run-20250409_161504-dewqkgi7/logs/debug.log
+2025-04-09 16:15:04,387 INFO    MainThread:3613476 [wandb_init.py:_log_setup():529] Logging internal logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/9/wandb/run-20250409_161504-dewqkgi7/logs/debug-internal.log
+2025-04-09 16:15:04,387 INFO    MainThread:3613476 [wandb_init.py:init():568] calling init triggers
+2025-04-09 16:15:04,388 INFO    MainThread:3613476 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'model': {'type': 'lstm', 'input_size': 421, 'hidden_size': 128, 'num_layers': 1, 'num_classes': 3, 'dropout': 0.5, 'task_weights': {'multiclass': 1.0, 'contralateral': 0.5, 'ipsilateral': 0.5}}, 'dataset': {'name': 'neural_data', 'path': '${paths.data_dir}/aligned_data_009.csv', 'sequence_length': 32, 'apply_pca': True, 'n_components': 3, 'normalize': True, 'train_ratio': 0.7, 'val_ratio': 0.15, 'test_ratio': 0.15, 'batch_size': 32}, 'training': {'epochs': 100, 'learning_rate': 0.0001, 'weight_decay': 1e-05, 'early_stopping_patience': 7, 'gradient_clip_val': 1.0}, 'seed': 42, 'device': 'cuda', 'paths': {'data_dir': '${oc.env:PWD}/data', 'output_dir': '${oc.env:PWD}/outputs', 'checkpoints_dir': '${paths.output_dir}/checkpoints', 'logs_dir': '${paths.output_dir}/logs', 'visualizations_dir': '${paths.output_dir}/visualizations'}, 'wandb': {'project': 'neural-decoding', 'entity': '${oc.env:USER}', 'group': 'experiments', 'mode': 'online'}}
+2025-04-09 16:15:04,388 INFO    MainThread:3613476 [wandb_init.py:init():618] starting backend
+2025-04-09 16:15:04,388 INFO    MainThread:3613476 [wandb_init.py:init():622] setting up manager
+2025-04-09 16:15:04,390 INFO    MainThread:3613476 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-09 16:15:04,391 INFO    MainThread:3613476 [wandb_init.py:init():628] backend started and connected
+2025-04-09 16:15:04,396 INFO    MainThread:3613476 [wandb_init.py:init():720] updated telemetry
+2025-04-09 16:15:04,399 INFO    MainThread:3613476 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2025-04-09 16:16:34,415 ERROR   MainThread:3613476 [wandb_init.py:init():779] encountered error: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2025-04-09 16:16:34,434 ERROR   MainThread:3613476 [wandb_init.py:init():1188] Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+Traceback (most recent call last):
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 785, in init
+    raise error
+wandb.errors.CommError: Run initialization has timed out after 90.0 sec. 
+Please refer to the documentation for additional information: https://docs.wandb.ai/guides/track/tracking-faq#initstarterror-error-communicating-with-wandb-process-
+2025-04-09 16:16:35,139 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Current SDK version is 0.15.12
+2025-04-09 16:16:35,139 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Configure stats pid to 3613476
+2025-04-09 16:16:35,139 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/.config/wandb/settings
+2025-04-09 16:16:35,140 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/0/wandb/settings
+2025-04-09 16:16:35,140 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Loading settings from environment variables: {}
+2025-04-09 16:16:35,140 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Applying setup settings: {'_disable_service': False}
+2025-04-09 16:16:35,140 INFO    MainThread:3613476 [wandb_setup.py:_flush():76] Inferring run settings from compute environment: {'program_relpath': 'scripts/train.py', 'program_abspath': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py'}
+2025-04-09 16:16:35,140 INFO    MainThread:3613476 [wandb_init.py:_log_setup():528] Logging user logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/10/wandb/run-20250409_161635-gdgzah9l/logs/debug.log
+2025-04-09 16:16:35,140 INFO    MainThread:3613476 [wandb_init.py:_log_setup():529] Logging internal logs to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/multirun/2025-04-09_16-10-27/10/wandb/run-20250409_161635-gdgzah9l/logs/debug-internal.log
+2025-04-09 16:16:35,140 INFO    MainThread:3613476 [wandb_init.py:init():568] calling init triggers
+2025-04-09 16:16:35,140 INFO    MainThread:3613476 [wandb_init.py:init():575] wandb.init called with sweep_config: {}
+config: {'model': {'type': 'lstm', 'input_size': 421, 'hidden_size': 128, 'num_layers': 2, 'num_classes': 3, 'dropout': 0.5, 'task_weights': {'multiclass': 1.0, 'contralateral': 0.5, 'ipsilateral': 0.5}}, 'dataset': {'name': 'neural_data', 'path': '${paths.data_dir}/aligned_data_009.csv', 'sequence_length': 32, 'apply_pca': True, 'n_components': 3, 'normalize': True, 'train_ratio': 0.7, 'val_ratio': 0.15, 'test_ratio': 0.15, 'batch_size': 32}, 'training': {'epochs': 100, 'learning_rate': 0.001, 'weight_decay': 1e-05, 'early_stopping_patience': 7, 'gradient_clip_val': 1.0}, 'seed': 42, 'device': 'cuda', 'paths': {'data_dir': '${oc.env:PWD}/data', 'output_dir': '${oc.env:PWD}/outputs', 'checkpoints_dir': '${paths.output_dir}/checkpoints', 'logs_dir': '${paths.output_dir}/logs', 'visualizations_dir': '${paths.output_dir}/visualizations'}, 'wandb': {'project': 'neural-decoding', 'entity': '${oc.env:USER}', 'group': 'experiments', 'mode': 'online'}}
+2025-04-09 16:16:35,141 INFO    MainThread:3613476 [wandb_init.py:init():618] starting backend
+2025-04-09 16:16:35,141 INFO    MainThread:3613476 [wandb_init.py:init():622] setting up manager
+2025-04-09 16:16:35,143 INFO    MainThread:3613476 [backend.py:_multiprocessing_setup():105] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2025-04-09 16:16:35,143 INFO    MainThread:3613476 [wandb_init.py:init():628] backend started and connected
+2025-04-09 16:16:35,148 INFO    MainThread:3613476 [wandb_init.py:init():720] updated telemetry
+2025-04-09 16:16:35,150 INFO    MainThread:3613476 [wandb_init.py:init():753] communicating run to backend with 90.0 second timeout
+2025-04-09 16:17:00,504 WARNING MainThread:3613476 [wandb_init.py:init():1192] interrupted
+Traceback (most recent call last):
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 1170, in init
+    run = wi.init()
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/wandb_init.py", line 756, in init
+    result = run_init_handle.wait(
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 283, in wait
+    found, abandoned = self._slot._get_and_clear(timeout=wait_timeout)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 130, in _get_and_clear
+    if self._wait(timeout=timeout):
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/wandb/sdk/lib/mailbox.py", line 126, in _wait
+    return self._event.wait(timeout=timeout)
+  File "/home/ghazal/anaconda3/lib/python3.10/threading.py", line 607, in wait
+    signaled = self._cond.wait(timeout)
+  File "/home/ghazal/anaconda3/lib/python3.10/threading.py", line 324, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
+2025-04-09 16:17:11,548 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,548 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,548 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,548 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,548 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,548 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,548 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,549 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,549 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,549 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed
+2025-04-09 16:17:11,549 WARNING MsgRouterThr:3613476 [router.py:message_loop():77] message_loop has been closed

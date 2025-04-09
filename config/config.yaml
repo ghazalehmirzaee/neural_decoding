@@ -20,7 +20,7 @@ paths:
 # W&B configuration
 wandb:
   project: neural-decoding
-  entity: ${oc.env:USER}
+  entity: mirzaeeghazal
   group: experiments
   mode: online  # online, offline, disabled
 
