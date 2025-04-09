@@ -215,3 +215,4 @@ Add new visualization functions in `src/utils/visualization.py` and call them in
 ## Acknowledgments
 
 # neural_decoding
+# neural_decoding
