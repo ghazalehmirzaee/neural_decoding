@@ -1,0 +1,16 @@
+# config/model/hybrid.yaml
+type: hybrid
+
+# Model parameters as specified in Table 2
+input_size: 421
+hidden_size: 128
+num_layers: 2
+num_classes: 3
+dropout: 0.5
+
+# Task weights
+task_weights:
+  multiclass: 1.0
+  contralateral: 0.5
+  ipsilateral: 0.5
+  neural_activity: 0.5

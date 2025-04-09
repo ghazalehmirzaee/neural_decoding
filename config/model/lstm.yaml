@@ -1,0 +1,15 @@
+# config/model/lstm.yaml
+type: lstm
+
+# Model parameters as specified in Table 1
+input_size: 421  # Number of neurons
+hidden_size: 64
+num_layers: 2
+num_classes: 3
+dropout: 0.5
+
+# Task weights
+task_weights:
+  multiclass: 1.0
+  contralateral: 0.5
+  ipsilateral: 0.5

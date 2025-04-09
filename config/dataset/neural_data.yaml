@@ -1,0 +1,14 @@
+# config/dataset/neural_data.yaml
+# Dataset configuration
+name: neural_data
+path: ${paths.data_dir}/aligned_data_009.csv
+sequence_length: 32  # As specified in Table 2
+apply_pca: true
+n_components: 3
+normalize: true
+
+# Data splitting as specified in the paper
+train_ratio: 0.7
+val_ratio: 0.15
+test_ratio: 0.15
+batch_size: 32

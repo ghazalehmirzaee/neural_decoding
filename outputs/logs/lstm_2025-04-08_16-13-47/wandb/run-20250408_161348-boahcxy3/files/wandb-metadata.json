@@ -1,0 +1,90 @@
+{
+    "os": "Linux-6.8.0-52-generic-x86_64-with-glibc2.35",
+    "python": "3.10.11",
+    "heartbeatAt": "2025-04-08T20:13:49.208990",
+    "startedAt": "2025-04-08T20:13:48.716292",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "model=lstm"
+    ],
+    "state": "running",
+    "program": "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py",
+    "codePathLocal": null,
+    "codePath": "Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py",
+    "git": {
+        "remote": "https://github.com/ghazalehmirzaee/Graph-Augmented-Vision-Transformers.git",
+        "commit": "2e52da5bffd74c45366e825bc063adf9806f89bf"
+    },
+    "email": "mirzaeeghazal@gmail.com",
+    "root": "/home/ghazal",
+    "host": "Ghazal",
+    "username": "ghazal",
+    "executable": "/home/ghazal/anaconda3/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 4.600125,
+        "min": 800.0,
+        "max": 4900.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4.607,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.599,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.599,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.6,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.602,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.6,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.599,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.599,
+            "min": 800.0,
+            "max": 4900.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 467.8895797729492,
+            "used": 400.95863342285156
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2070 SUPER",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 31.278179168701172
+    }
+}

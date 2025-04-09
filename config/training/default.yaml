@@ -1,0 +1,7 @@
+# config/training/default.yaml
+# Training configuration
+epochs: 100
+learning_rate: 0.0001  # As specified in Tables 1 and 2
+weight_decay: 0.00001  # 1e-5 as in Table 2
+early_stopping_patience: 7  # As mentioned in the paper
+gradient_clip_val: 1.0

@@ -1,0 +1,33 @@
+# config/config.yaml
+defaults:
+  - model: lstm  # default model
+  - dataset: neural_data
+  - training: default
+  - _self_
+
+# Global settings
+seed: 42
+device: cuda  # or cpu if GPU not available
+
+# Paths
+paths:
+  data_dir: ${oc.env:PWD}/data
+  output_dir: ${oc.env:PWD}/outputs
+  checkpoints_dir: ${paths.output_dir}/checkpoints
+  logs_dir: ${paths.output_dir}/logs
+  visualizations_dir: ${paths.output_dir}/visualizations
+
+# W&B configuration
+wandb:
+  project: neural-decoding
+  entity: ${oc.env:USER}
+  group: experiments
+  mode: online  # online, offline, disabled
+
+# Hydra configuration
+hydra:
+  run:
+    dir: ${paths.logs_dir}/${model.type}_${now:%Y-%m-%d_%H-%M-%S}
+  sweep:
+    dir: ${paths.logs_dir}/multirun/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.num}
