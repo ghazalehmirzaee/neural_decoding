@@ -66,6 +66,13 @@ class Trainer:
         else:
             self.class_weights = None
 
+        # Initialize loss function (ADDED THIS PART)
+        task_weights = getattr(config.model, 'task_weights', None)
+        self.criterion = MultitaskLoss(
+            task_weights=task_weights,
+            class_weights=self.class_weights
+        )
+
         if model_type == 'lstm':
             # Adam optimizer for LSTM as specified in Table 1
             self.optimizer = torch.optim.Adam(
@@ -540,7 +547,6 @@ class Trainer:
             'ipsilateral_probs': []
         }
 
-        # Add neural activity prediction for hybrid model - FIXED
         all_targets = {
             'multiclass': [],
             'contralateral': [],
@@ -669,9 +675,6 @@ class Trainer:
     def _mixup_batch(self, inputs, targets_dict):
         """
         Apply mixup data augmentation to batch.
-
-        Mixup creates convex combinations of pairs of examples and their labels,
-        which helps with regularization and generalization.
 
         Args:
             inputs: Input tensor of shape (batch_size, seq_len, input_size)

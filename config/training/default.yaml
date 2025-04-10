@@ -1,0 +1,3 @@
+# Import LSTM training configuration as default
+defaults:
+  - lstm

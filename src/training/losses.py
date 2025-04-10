@@ -80,6 +80,8 @@ class MultitaskLoss(nn.Module):
     def forward(self, outputs, targets):
         """
         Forward pass calculating the combined loss as in equation (19).
+
+        Supports mixup augmentation by handling mixed targets.
         """
         losses = {}
         total_loss = 0.0
@@ -106,12 +108,30 @@ class MultitaskLoss(nn.Module):
                     # Apply MSE loss for neural activity
                     losses[task_name] = self.mse_loss(output, target)
                 else:
-                    # Apply focal loss for classification tasks
-                    losses[task_name] = self.focal_loss(output, targets[task_name])
+                    # Check for mixup-related data
+                    mixup_lambda_key = f"{task_name}_mixup_lambda"
+                    mixup_index_key = f"{task_name}_mixup_index"
+
+                    # Handle mixup if present
+                    if mixup_lambda_key in targets and mixup_index_key in targets:
+                        # Get mixup parameters
+                        lam = targets[mixup_lambda_key]
+                        index = targets[mixup_index_key]
+
+                        # Apply regular loss with original targets
+                        loss1 = self.focal_loss(output, targets[task_name])
+
+                        # Apply regular loss with shuffled targets
+                        loss2 = self.focal_loss(output, targets[task_name][index])
+
+                        # Mix losses according to lambda
+                        losses[task_name] = lam * loss1 + (1 - lam) * loss2
+                    else:
+                        # Apply regular focal loss for classification tasks
+                        losses[task_name] = self.focal_loss(output, targets[task_name])
 
                 # Apply task weight
                 if task_name in self.task_weights:
                     total_loss += self.task_weights[task_name] * losses[task_name]
 
         return total_loss, losses
-
