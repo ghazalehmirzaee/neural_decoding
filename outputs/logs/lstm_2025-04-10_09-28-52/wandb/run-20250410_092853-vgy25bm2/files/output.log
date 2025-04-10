@@ -1,0 +1,27 @@
+WandB initialized successfully!
+Starting training for lstm model...
+Using device: cuda
+Model parameters: 71,111 total, 71,111 trainable
+Epoch 1 (Train):   0%|                                         | 0/65 [00:00<?, ?it/s]
+Error executing job with overrides: ['model=lstm', 'model.dropout=0.1', 'model.hidden_size=32', 'model.num_layers=2', 'training.learning_rate=0.0001']
+Traceback (most recent call last):
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py", line 112, in main
+    predictions, targets = trainer.train()
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/training/trainer.py", line 216, in train
+    train_loss, train_metrics = self._train_epoch(epoch)
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/training/trainer.py", line 389, in _train_epoch
+    loss, individual_losses = self.criterion(outputs_dict, targets_dict)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/training/losses.py", line 116, in forward
+    losses[task_name] = self.focal_loss(output, targets[task_name])
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/training/losses.py", line 35, in forward
+    weight_tensor = self.class_weights.to(inputs.device)[targets]
+AttributeError: 'int' object has no attribute 'to'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.

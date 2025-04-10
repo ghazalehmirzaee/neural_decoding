@@ -1,4 +1,0 @@
-- model=hybrid
-- model.hidden_size=128
-- model.num_layers=1
-- training.learning_rate=0.001

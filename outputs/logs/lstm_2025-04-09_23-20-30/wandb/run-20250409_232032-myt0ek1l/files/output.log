@@ -1,0 +1,76 @@
+WandB initialized successfully!
+Starting training for lstm model...
+Using device: cuda
+Model parameters: 71,111 total, 71,111 trainable
+Epoch 1 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 122.54it/s, loss=0.2150]
+Epoch 1 (Val): 100%|██████████████████████| 14/14 [00:00<00:00, 98.27it/s, loss=0.2168]
+Epoch 1/100 - Time: 1.4s - Train loss: 0.2150, Val loss: 0.2168, Learning rate: 0.000001
+  Multiclass: Train acc: 0.4304, Val acc: 0.4202, Val F1: 0.3916
+  Contralateral: Train acc: 0.3380, Val acc: 0.3101, Val F1: 0.2465
+  Ipsilateral: Train acc: 0.3346, Val acc: 0.3326, Val F1: 0.3433
+New best model saved (val_loss: 0.2168)
+Epoch 2 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 155.10it/s, loss=0.2149]
+Epoch 2 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 107.06it/s, loss=0.2168]
+Epoch 2/100 - Time: 0.9s - Train loss: 0.2149, Val loss: 0.2168, Learning rate: 0.000001
+  Multiclass: Train acc: 0.4405, Val acc: 0.4180, Val F1: 0.3900
+  Contralateral: Train acc: 0.3192, Val acc: 0.3079, Val F1: 0.2478
+  Ipsilateral: Train acc: 0.3447, Val acc: 0.3461, Val F1: 0.3615
+New best model saved (val_loss: 0.2168)
+Epoch 3 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 152.68it/s, loss=0.2149]
+Epoch 3 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 113.79it/s, loss=0.2167]
+Epoch 4 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 154.47it/s, loss=0.2149]
+Epoch 4 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 108.96it/s, loss=0.2167]
+Epoch 3/100 - Time: 0.9s - Train loss: 0.2149, Val loss: 0.2167, Learning rate: 0.000001
+  Multiclass: Train acc: 0.4564, Val acc: 0.4180, Val F1: 0.3900
+  Contralateral: Train acc: 0.3365, Val acc: 0.3169, Val F1: 0.2625
+  Ipsilateral: Train acc: 0.3529, Val acc: 0.3596, Val F1: 0.3792
+New best model saved (val_loss: 0.2167)
+Epoch 4/100 - Time: 0.9s - Train loss: 0.2149, Val loss: 0.2167, Learning rate: 0.000001
+  Multiclass: Train acc: 0.4420, Val acc: 0.4202, Val F1: 0.3918
+  Contralateral: Train acc: 0.3274, Val acc: 0.3191, Val F1: 0.2661
+  Ipsilateral: Train acc: 0.3664, Val acc: 0.3708, Val F1: 0.3965
+New best model saved (val_loss: 0.2167)
+Epoch 5 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 153.38it/s, loss=0.2149]
+Epoch 5 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 105.81it/s, loss=0.2167]
+Epoch 6 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 152.17it/s, loss=0.2150]
+Epoch 6 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 108.85it/s, loss=0.2167]
+Epoch 5/100 - Time: 0.9s - Train loss: 0.2149, Val loss: 0.2167, Learning rate: 0.000001
+  Multiclass: Train acc: 0.4449, Val acc: 0.4202, Val F1: 0.3918
+  Contralateral: Train acc: 0.3447, Val acc: 0.3236, Val F1: 0.2757
+  Ipsilateral: Train acc: 0.3524, Val acc: 0.3798, Val F1: 0.4078
+New best model saved (val_loss: 0.2167)
+Epoch 6/100 - Time: 0.9s - Train loss: 0.2150, Val loss: 0.2167, Learning rate: 0.000001
+  Multiclass: Train acc: 0.4343, Val acc: 0.4202, Val F1: 0.3918
+  Contralateral: Train acc: 0.3481, Val acc: 0.3236, Val F1: 0.2780
+  Ipsilateral: Train acc: 0.3645, Val acc: 0.3933, Val F1: 0.4244
+New best model saved (val_loss: 0.2167)
+Early stopping triggered after 6 epochs
+Best model was at epoch 6
+Training completed in 5.9s. Best validation loss: 0.2167
+Loaded model from checkpoint (epoch 6)
+Evaluating model on test set...
+Multiclass Metrics:
+  accuracy: 0.4664
+  precision: 0.4405
+  recall: 0.4664
+  f1: 0.4489
+Contralateral Metrics:
+  accuracy: 0.3430
+  precision: 0.6904
+  recall: 0.3430
+  f1: 0.3100
+Ipsilateral Metrics:
+  accuracy: 0.3296
+  precision: 0.6954
+  recall: 0.3296
+  f1: 0.3844
+Overall Accuracy: 0.3797
+Saved confusion matrix to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/multiclass_confusion_matrix.png
+Saved confusion matrix to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/contralateral_confusion_matrix.png
+Saved confusion matrix to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/ipsilateral_confusion_matrix.png
+Saved ROC curves to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/multiclass_roc_curves.png
+Saved ROC curves to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/contralateral_roc_curves.png
+Saved ROC curves to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/ipsilateral_roc_curves.png
+Saved combined metrics to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/combined_metrics.png
+Test results saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/test_results.json
+Evaluating: 100%|█████████████████████████████████████| 14/14 [00:00<00:00, 109.67it/s]

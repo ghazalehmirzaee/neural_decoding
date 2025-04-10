@@ -8,8 +8,11 @@ num_layers: 2
 num_classes: 3
 dropout: 0.5
 
+# Sequence length is 10 for LSTM as mentioned in the paper
+sequence_length: 10
+
 # Task weights
 task_weights:
   multiclass: 1.0
-  contralateral: 0.6
-  ipsilateral: 0.6
+  contralateral: 0.5
+  ipsilateral: 0.5

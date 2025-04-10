@@ -1,0 +1,23 @@
+Epoch 1 (Train):   0%|                                          | 0/65 [00:00<?, ?it/s]
+Error executing job with overrides: ['model=lstm', 'model.dropout=0.1', 'model.hidden_size=16', 'model.num_layers=2', 'training.learning_rate=0.0001']
+Traceback (most recent call last):
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py", line 112, in main
+    predictions, targets = trainer.train()
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/training/trainer.py", line 213, in train
+    train_loss, train_metrics = self._train_epoch(epoch)
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/training/trainer.py", line 383, in _train_epoch
+    outputs_dict = self.model(inputs)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/models/lstm_model.py", line 84, in forward
+    out = self.relu1(self.fc1(out))
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1695, in __getattr__
+    raise AttributeError(f"'{type(self).__name__}' object has no attribute '{name}'")
+AttributeError: 'LSTMModel' object has no attribute 'relu1'
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+WandB initialized successfully!
+Starting training for lstm model...
+Using device: cuda
+Model parameters: 33,671 total, 33,671 trainable

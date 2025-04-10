@@ -1,21 +1,24 @@
-# Hybrid CNN-BiLSTM model configuration
+# config/model/hybrid.yaml
 type: hybrid
 
-# Model architecture - higher complexity
+# Model architecture as specified in the paper
 input_size: 421
-hidden_size: 128  # Higher than LSTM
+hidden_size: 128
 num_layers: 2
 num_classes: 3
 dropout: 0.5
 
-# Advanced architecture features
-use_skip_connection: true  # Enable residual connections
-use_attention: true  # Enable self-attention mechanism
-num_attention_heads: 8  # Number of attention heads
+# Sequence length is 32 for hybrid model as mentioned in the paper
+sequence_length: 32
 
-# Task weights for multitask learning
+# Advanced architecture features
+use_skip_connection: true
+use_attention: true
+num_attention_heads: 8
+
+# Task weights as specified in Table 2
 task_weights:
   multiclass: 1.0
-  contralateral: 0.7
-  ipsilateral: 0.7
-  neural_activity: 0.5
+  contralateral: 0.5
+  ipsilateral: 0.5
+  neural_activity: 1.0

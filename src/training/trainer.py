@@ -66,33 +66,15 @@ class Trainer:
         else:
             self.class_weights = None
 
-        # Set up optimizer
         if model_type == 'lstm':
             # Adam optimizer for LSTM as specified in Table 1
             self.optimizer = torch.optim.Adam(
                 model.parameters(),
                 lr=config.training.learning_rate,
-                weight_decay=config.training.weight_decay  # L2 regularization
-            )
-        else:
-            # AdamW optimizer for hybrid model as specified in equation (21)
-            self.optimizer = torch.optim.AdamW(
-                model.parameters(),
-                lr=config.training.learning_rate,
                 weight_decay=config.training.weight_decay
             )
 
-        # Set up loss function with class weights and task weights
-        task_weights = {}
-        if hasattr(config.model, 'task_weights'):
-            for task, weight in config.model.task_weights.items():
-                task_weights[task] = weight
-
-        self.criterion = MultitaskLoss(task_weights=task_weights, class_weights=self.class_weights)
-
-        # Set up learning rate scheduler
-        if model_type == 'lstm':
-            # ReduceLROnPlateau scheduler for LSTM as in Table 1
+            # Scheduler for LSTM
             self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
                 self.optimizer,
                 mode='min',
@@ -101,18 +83,25 @@ class Trainer:
                 verbose=True
             )
         else:
+            # AdamW optimizer for hybrid model as in equation (21)
+            self.optimizer = torch.optim.AdamW(
+                model.parameters(),
+                lr=config.training.learning_rate,
+                weight_decay=config.training.weight_decay
+            )
+
             # One-cycle LR scheduler for hybrid model as in equation (22)
             self.scheduler = torch.optim.lr_scheduler.OneCycleLR(
                 self.optimizer,
                 max_lr=config.training.learning_rate,
                 epochs=config.training.epochs,
-                steps_per_epoch=len(train_loader),
+                steps_per_epoch=len(train_loader) if train_loader else 100,
                 pct_start=0.3  # Warmup period is 30% of total training
             )
 
-        # Set up early stopping
+        # Set early stopping patience to 7 as specified in the paper
         self.early_stopping = EarlyStopping(
-            patience=config.training.early_stopping_patience,
+            patience=7,
             min_delta=1e-4
         )
 
@@ -159,6 +148,7 @@ class Trainer:
                 flattened[f"model.{key}"] = value
 
         return flattened
+
 
     def _calculate_class_distribution(self, dataloader):
         """Calculate class distribution for the dataset."""
@@ -535,9 +525,6 @@ class Trainer:
     def evaluate(self):
         """
         Evaluate the model on the test set and collect predictions for visualization.
-
-        Returns:
-            tuple: (test_loss, test_metrics, test_predictions, test_targets)
         """
         print("\nEvaluating model on test set...")
         self.model.eval()
@@ -553,19 +540,22 @@ class Trainer:
             'ipsilateral_probs': []
         }
 
-        # Add neural activity prediction for hybrid model
-        if self.model_type == 'hybrid':
-            all_predictions['neural_activity'] = []
-
+        # Add neural activity prediction for hybrid model - FIXED
         all_targets = {
             'multiclass': [],
             'contralateral': [],
             'ipsilateral': []
         }
 
-        # Add neural activity target for hybrid model
-        if self.model_type == 'hybrid' and 'neural_activity' in self.train_loader.dataset.targets[0]:
-            all_targets['neural_activity'] = []
+        # Sample a batch to determine available tasks instead of accessing dataset directly
+        try:
+            sample_inputs, sample_targets = next(iter(self.test_loader))
+            if self.model_type == 'hybrid' and 'neural_activity' in sample_targets:
+                all_predictions['neural_activity'] = []
+                all_targets['neural_activity'] = []
+        except StopIteration:
+            # Handle empty test loader
+            print("Warning: Test loader is empty")
 
         # No gradient tracking needed for evaluation
         with torch.no_grad():

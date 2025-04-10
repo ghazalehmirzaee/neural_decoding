@@ -6,9 +6,7 @@ import torch.nn as nn
 
 class LSTMModel(nn.Module):
     """
-    LSTM model for neural decoding with fully connected layers.
-
-    Basic but effective architecture with reasonable regularization.
+    LSTM model for neural decoding with fully connected layers as specified in Table 1.
     """
 
     def __init__(
@@ -24,20 +22,20 @@ class LSTMModel(nn.Module):
         self.hidden_size = hidden_size
         self.num_layers = num_layers
 
-        # LSTM layer with dropout
+        # LSTM layer with dropout as specified in Table 1
         self.lstm = nn.LSTM(
             input_size,
             hidden_size,
             num_layers,
             batch_first=True,
             dropout=dropout if num_layers > 1 else 0,
-            bidirectional=False  # Keep simple compared to hybrid model
+            bidirectional=False
         )
 
-        # Batch normalization layer
+        # Batch normalization after LSTM
         self.batch_norm = nn.BatchNorm1d(hidden_size)
 
-        # Fully connected layers with moderate complexity
+        # Fully connected layers as specified in Table 1: hidden_size -> 64 -> 32
         self.fc1 = nn.Linear(hidden_size, 64)
         self.relu1 = nn.ReLU()
         self.dropout1 = nn.Dropout(dropout)
@@ -51,11 +49,11 @@ class LSTMModel(nn.Module):
         self.contralateral_head = nn.Linear(32, 2)
         self.ipsilateral_head = nn.Linear(32, 2)
 
-        # Initialize weights
+        # Initialize weights using methods specified in Table 1
         self._initialize_weights()
 
     def _initialize_weights(self):
-        """Initialize weights using Xavier/Orthogonal initialization as in Table 1."""
+        """Initialize weights using Xavier/Orthogonal as specified in Table 1."""
         for name, param in self.named_parameters():
             if 'weight' in name:
                 if 'lstm' in name and len(param.shape) >= 2:
@@ -74,15 +72,21 @@ class LSTMModel(nn.Module):
     def forward(self, x):
         """
         Forward pass through the LSTM model.
+
+        Args:
+            x: Input tensor [batch_size, seq_len, input_size]
+
+        Returns:
+            Dictionary of task outputs
         """
-        # Initialize hidden state with zeros
+        # Initialize hidden and cell states with zeros
         h0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
         c0 = torch.zeros(self.num_layers, x.size(0), self.hidden_size).to(x.device)
 
         # Forward propagate LSTM
         out, _ = self.lstm(x, (h0, c0))
 
-        # Decode the hidden state of the last time step
+        # Use only the last time step output
         out = out[:, -1, :]
 
         # Apply batch normalization
@@ -95,14 +99,9 @@ class LSTMModel(nn.Module):
         out = self.dropout2(out)
 
         # Apply task-specific heads
-        multiclass_output = self.multiclass_head(out)
-        contralateral_output = self.contralateral_head(out)
-        ipsilateral_output = self.ipsilateral_head(out)
-
-        # Return all outputs for the three tasks
         return {
-            'multiclass': multiclass_output,
-            'contralateral': contralateral_output,
-            'ipsilateral': ipsilateral_output
+            'multiclass': self.multiclass_head(out),
+            'contralateral': self.contralateral_head(out),
+            'ipsilateral': self.ipsilateral_head(out)
         }
 

@@ -346,3 +346,111 @@ def plot_combined_metrics(predictions, targets, class_names, model_type, save_pa
 
     plt.close()
 
+
+def plot_neural_activity_comparison(time_points, true_neural, pred_neural, true_behaviors, pred_behaviors,
+                                    behavior_names=['No-footstep', 'Contralateral', 'Ipsilateral'],
+                                    title='Neuronal Activity and Movement Prediction Comparison',
+                                    save_path=None):
+    """
+    Generate neural activity visualization matching the paper's format.
+    """
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    # Define colors for different states
+    state_colors = ['lightpink', 'pink', 'deeppink']
+
+    # Set up figure
+    fig = plt.figure(figsize=(10, 20))
+
+    # Create 4 windows of 100 frames each
+    window_size = 100
+    num_windows = min(4, len(time_points) // window_size)
+
+    for w in range(num_windows):
+        start_idx = w * window_size
+        end_idx = min(start_idx + window_size, len(time_points))
+
+        # Create neural activity subplot
+        ax1 = fig.add_subplot(2 * num_windows, 1, 2 * w + 1)
+
+        # Plot true and predicted neural activity
+        ax1.plot(true_neural[start_idx:end_idx], 'k-', linewidth=1)
+        ax1.plot(pred_neural[start_idx:end_idx], 'g--', linewidth=1)
+
+        # Shade background based on true behavior
+        for i in range(end_idx - start_idx):
+            idx = start_idx + i
+            if idx < len(true_behaviors):
+                behavior = true_behaviors[idx]
+                if behavior > 0:  # Skip no-footstep
+                    ax1.axvspan(i - 0.5, i + 0.5, color=state_colors[behavior], alpha=0.2)
+
+        # Set y-axis label for first window
+        if w == 0:
+            ax1.set_ylabel('Neural signal')
+
+        # Remove x-ticks
+        ax1.set_xticks([])
+
+        # Set window range as title
+        ax1.set_title(f'{start_idx}-{end_idx}')
+
+        # Create behavior state subplot
+        ax2 = fig.add_subplot(2 * num_windows, 1, 2 * w + 2)
+
+        # Initialize behavior state arrays
+        footstep_states = np.zeros((len(behavior_names), end_idx - start_idx))
+
+        # Fill in true behavior states
+        for i in range(end_idx - start_idx):
+            idx = start_idx + i
+            if idx < len(true_behaviors):
+                behavior = true_behaviors[idx]
+                footstep_states[behavior, i] = 1
+
+        # Plot behavior states as step functions
+        for i, name in enumerate(behavior_names):
+            # Plot true behavior (blue)
+            true_mask = footstep_states[i] > 0
+            if np.any(true_mask):
+                ax2.step(np.where(true_mask)[0], [i] * np.sum(true_mask), 'b-', where='post')
+
+            # Plot predicted behavior (red dashed)
+            pred_states = np.zeros(end_idx - start_idx)
+            for j in range(end_idx - start_idx):
+                idx = start_idx + j
+                if idx < len(pred_behaviors) and pred_behaviors[idx] == i:
+                    pred_states[j] = 1
+
+            pred_mask = pred_states > 0
+            if np.any(pred_mask):
+                ax2.step(np.where(pred_mask)[0], [i] * np.sum(pred_mask), 'r--', where='post')
+
+        # Set y-ticks and labels
+        ax2.set_yticks(range(len(behavior_names)))
+        ax2.set_yticklabels(behavior_names)
+
+        # Set y-axis limits
+        ax2.set_ylim(-0.5, len(behavior_names) - 0.5)
+
+        # Set window range as title
+        ax2.set_title(f'{start_idx}-{end_idx}')
+
+        # Set x-axis label for last window
+        if w == num_windows - 1:
+            ax2.set_xlabel('Frames (15 FPS)')
+        else:
+            ax2.set_xticks([])
+
+    # Adjust layout
+    plt.tight_layout()
+
+    # Save figure if path provided
+    if save_path:
+        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        print(f"Saved neural activity visualization to {save_path}")
+
+    plt.close(fig)
+
+

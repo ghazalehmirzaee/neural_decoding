@@ -1,0 +1,678 @@
+WandB initialized successfully!
+Starting training for lstm model...
+Using device: cuda
+Model parameters: 71,111 total, 71,111 trainable
+Epoch 1 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 122.03it/s, loss=0.2150]
+Epoch 1 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 102.36it/s, loss=0.2167]
+Epoch 1/100 - Time: 1.1s - Train loss: 0.2150, Val loss: 0.2167, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4362, Val acc: 0.4225, Val F1: 0.3963
+  Contralateral: Train acc: 0.3481, Val acc: 0.3371, Val F1: 0.3072
+  Ipsilateral: Train acc: 0.3707, Val acc: 0.4247, Val F1: 0.4674
+New best model saved (val_loss: 0.2167)
+Epoch 2 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 154.91it/s, loss=0.2148]
+Epoch 2 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 102.41it/s, loss=0.2166]
+Epoch 2/100 - Time: 0.9s - Train loss: 0.2148, Val loss: 0.2166, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4425, Val acc: 0.4270, Val F1: 0.3996
+  Contralateral: Train acc: 0.3630, Val acc: 0.3753, Val F1: 0.3716
+  Ipsilateral: Train acc: 0.4454, Val acc: 0.4921, Val F1: 0.5466
+New best model saved (val_loss: 0.2166)
+Epoch 3 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 149.50it/s, loss=0.2147]
+Epoch 3 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 105.69it/s, loss=0.2165]
+Epoch 3/100 - Time: 0.9s - Train loss: 0.2147, Val loss: 0.2165, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4627, Val acc: 0.4292, Val F1: 0.4016
+  Contralateral: Train acc: 0.3996, Val acc: 0.4247, Val F1: 0.4425
+  Ipsilateral: Train acc: 0.5373, Val acc: 0.5888, Val F1: 0.6300
+New best model saved (val_loss: 0.2165)
+Epoch 4 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 151.92it/s, loss=0.2146]
+Epoch 4 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 108.04it/s, loss=0.2164]
+Epoch 4/100 - Time: 0.9s - Train loss: 0.2146, Val loss: 0.2164, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4608, Val acc: 0.4315, Val F1: 0.4085
+  Contralateral: Train acc: 0.4444, Val acc: 0.4899, Val F1: 0.5208
+  Ipsilateral: Train acc: 0.6086, Val acc: 0.6674, Val F1: 0.6880
+New best model saved (val_loss: 0.2164)
+Epoch 5 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 153.69it/s, loss=0.2146]
+Epoch 5 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 111.71it/s, loss=0.2164]
+Epoch 5/100 - Time: 0.8s - Train loss: 0.2146, Val loss: 0.2164, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4598, Val acc: 0.4315, Val F1: 0.4122
+  Contralateral: Train acc: 0.4887, Val acc: 0.5438, Val F1: 0.5757
+  Ipsilateral: Train acc: 0.6601, Val acc: 0.7348, Val F1: 0.7310
+New best model saved (val_loss: 0.2164)
+Epoch 6 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 150.61it/s, loss=0.2145]
+Epoch 6 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 105.03it/s, loss=0.2163]
+Epoch 6/100 - Time: 0.9s - Train loss: 0.2145, Val loss: 0.2163, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4588, Val acc: 0.4472, Val F1: 0.4259
+  Contralateral: Train acc: 0.5214, Val acc: 0.5843, Val F1: 0.6098
+  Ipsilateral: Train acc: 0.7068, Val acc: 0.7640, Val F1: 0.7323
+New best model saved (val_loss: 0.2163)
+Epoch 7 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 148.53it/s, loss=0.2144]
+Epoch 7 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 105.84it/s, loss=0.2162]
+Epoch 7/100 - Time: 0.9s - Train loss: 0.2144, Val loss: 0.2162, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4603, Val acc: 0.4539, Val F1: 0.4344
+  Contralateral: Train acc: 0.5753, Val acc: 0.6157, Val F1: 0.6337
+  Ipsilateral: Train acc: 0.7468, Val acc: 0.7753, Val F1: 0.7272
+New best model saved (val_loss: 0.2162)
+Epoch 8 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 148.59it/s, loss=0.2143]
+Epoch 8 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 111.96it/s, loss=0.2161]
+Epoch 8/100 - Time: 0.9s - Train loss: 0.2143, Val loss: 0.2161, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4670, Val acc: 0.4517, Val F1: 0.4357
+  Contralateral: Train acc: 0.5922, Val acc: 0.6674, Val F1: 0.6704
+  Ipsilateral: Train acc: 0.7790, Val acc: 0.7820, Val F1: 0.7254
+New best model saved (val_loss: 0.2161)
+Epoch 9 (Train): 100%|███████████████████| 65/65 [00:00<00:00, 147.35it/s, loss=0.2142]
+Epoch 9 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 101.97it/s, loss=0.2160]
+Epoch 9/100 - Time: 0.9s - Train loss: 0.2142, Val loss: 0.2160, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4733, Val acc: 0.4449, Val F1: 0.4298
+  Contralateral: Train acc: 0.6192, Val acc: 0.6742, Val F1: 0.6617
+  Ipsilateral: Train acc: 0.7862, Val acc: 0.7775, Val F1: 0.7097
+New best model saved (val_loss: 0.2160)
+Epoch 10 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 154.68it/s, loss=0.2142]
+Epoch 10 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 108.10it/s, loss=0.2160]
+Epoch 10/100 - Time: 0.8s - Train loss: 0.2142, Val loss: 0.2160, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4776, Val acc: 0.4360, Val F1: 0.4191
+  Contralateral: Train acc: 0.6538, Val acc: 0.6876, Val F1: 0.6604
+  Ipsilateral: Train acc: 0.8031, Val acc: 0.7820, Val F1: 0.7120
+New best model saved (val_loss: 0.2160)
+Epoch 11 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.74it/s, loss=0.2141]
+Epoch 11 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 103.96it/s, loss=0.2159]
+Epoch 11/100 - Time: 0.9s - Train loss: 0.2141, Val loss: 0.2159, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4742, Val acc: 0.4315, Val F1: 0.4149
+  Contralateral: Train acc: 0.6577, Val acc: 0.7101, Val F1: 0.6722
+  Ipsilateral: Train acc: 0.8079, Val acc: 0.7865, Val F1: 0.7143
+New best model saved (val_loss: 0.2159)
+Epoch 12 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.53it/s, loss=0.2140]
+Epoch 12 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 105.02it/s, loss=0.2158]
+Epoch 12/100 - Time: 0.9s - Train loss: 0.2140, Val loss: 0.2158, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4733, Val acc: 0.4360, Val F1: 0.4189
+  Contralateral: Train acc: 0.6846, Val acc: 0.7124, Val F1: 0.6604
+  Ipsilateral: Train acc: 0.8132, Val acc: 0.7933, Val F1: 0.7177
+New best model saved (val_loss: 0.2158)
+Epoch 13 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.39it/s, loss=0.2139]
+Epoch 13 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.42it/s, loss=0.2157]
+Epoch 13/100 - Time: 0.9s - Train loss: 0.2139, Val loss: 0.2157, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4824, Val acc: 0.4382, Val F1: 0.4223
+  Contralateral: Train acc: 0.7049, Val acc: 0.7236, Val F1: 0.6623
+  Ipsilateral: Train acc: 0.8166, Val acc: 0.8000, Val F1: 0.7211
+New best model saved (val_loss: 0.2157)
+Epoch 14 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.73it/s, loss=0.2138]
+Epoch 14 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 100.13it/s, loss=0.2157]
+Epoch 14/100 - Time: 0.9s - Train loss: 0.2138, Val loss: 0.2157, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4714, Val acc: 0.4337, Val F1: 0.4215
+  Contralateral: Train acc: 0.7169, Val acc: 0.7348, Val F1: 0.6665
+  Ipsilateral: Train acc: 0.8175, Val acc: 0.8045, Val F1: 0.7233
+New best model saved (val_loss: 0.2157)
+Epoch 15 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.59it/s, loss=0.2138]
+Epoch 15 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.12it/s, loss=0.2156]
+Epoch 15/100 - Time: 0.9s - Train loss: 0.2138, Val loss: 0.2156, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4675, Val acc: 0.4360, Val F1: 0.4245
+  Contralateral: Train acc: 0.7222, Val acc: 0.7461, Val F1: 0.6702
+  Ipsilateral: Train acc: 0.8185, Val acc: 0.8090, Val F1: 0.7256
+New best model saved (val_loss: 0.2156)
+Epoch 16 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.79it/s, loss=0.2137]
+Epoch 16 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 108.71it/s, loss=0.2155]
+Epoch 16/100 - Time: 0.9s - Train loss: 0.2137, Val loss: 0.2155, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4771, Val acc: 0.4315, Val F1: 0.4222
+  Contralateral: Train acc: 0.7260, Val acc: 0.7483, Val F1: 0.6650
+  Ipsilateral: Train acc: 0.8199, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2155)
+Epoch 17 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.56it/s, loss=0.2136]
+Epoch 17 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 109.19it/s, loss=0.2154]
+Epoch 17/100 - Time: 1.0s - Train loss: 0.2136, Val loss: 0.2154, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4661, Val acc: 0.4315, Val F1: 0.4214
+  Contralateral: Train acc: 0.7304, Val acc: 0.7483, Val F1: 0.6580
+  Ipsilateral: Train acc: 0.8223, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2154)
+Epoch 18 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.67it/s, loss=0.2135]
+Epoch 18 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 105.09it/s, loss=0.2154]
+Epoch 18/100 - Time: 0.9s - Train loss: 0.2135, Val loss: 0.2154, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4680, Val acc: 0.4292, Val F1: 0.4201
+  Contralateral: Train acc: 0.7338, Val acc: 0.7483, Val F1: 0.6464
+  Ipsilateral: Train acc: 0.8219, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2154)
+Epoch 19 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.09it/s, loss=0.2134]
+Epoch 19 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 105.19it/s, loss=0.2153]
+Epoch 19/100 - Time: 0.9s - Train loss: 0.2134, Val loss: 0.2153, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4670, Val acc: 0.4292, Val F1: 0.4210
+  Contralateral: Train acc: 0.7357, Val acc: 0.7528, Val F1: 0.6486
+  Ipsilateral: Train acc: 0.8228, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2153)
+Epoch 20 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 153.29it/s, loss=0.2133]
+Epoch 20 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 108.72it/s, loss=0.2152]
+Epoch 20/100 - Time: 0.9s - Train loss: 0.2133, Val loss: 0.2152, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4511, Val acc: 0.4270, Val F1: 0.4163
+  Contralateral: Train acc: 0.7357, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8228, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2152)
+Epoch 21 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.71it/s, loss=0.2132]
+Epoch 21 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 101.49it/s, loss=0.2151]
+Epoch 22 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 153.02it/s, loss=0.2133]
+Epoch 22 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 105.07it/s, loss=0.2150]
+Epoch 21/100 - Time: 0.9s - Train loss: 0.2132, Val loss: 0.2151, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4714, Val acc: 0.4247, Val F1: 0.4149
+  Contralateral: Train acc: 0.7400, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8223, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2151)
+Epoch 22/100 - Time: 0.9s - Train loss: 0.2133, Val loss: 0.2150, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4377, Val acc: 0.4247, Val F1: 0.4146
+  Contralateral: Train acc: 0.7458, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2150)
+Epoch 23 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 148.60it/s, loss=0.2131]
+Epoch 23 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 106.73it/s, loss=0.2150]
+Epoch 24 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.76it/s, loss=0.2130]
+Epoch 24 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.26it/s, loss=0.2149]
+Epoch 23/100 - Time: 0.9s - Train loss: 0.2131, Val loss: 0.2150, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4593, Val acc: 0.4292, Val F1: 0.4193
+  Contralateral: Train acc: 0.7405, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2150)
+Epoch 24/100 - Time: 0.9s - Train loss: 0.2130, Val loss: 0.2149, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4492, Val acc: 0.4247, Val F1: 0.4155
+  Contralateral: Train acc: 0.7429, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2149)
+Epoch 25 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 148.15it/s, loss=0.2129]
+Epoch 25 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.86it/s, loss=0.2148]
+Epoch 25/100 - Time: 0.9s - Train loss: 0.2129, Val loss: 0.2148, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4511, Val acc: 0.4292, Val F1: 0.4192
+  Contralateral: Train acc: 0.7419, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2148)
+Epoch 26 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.48it/s, loss=0.2128]
+Epoch 26 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 106.35it/s, loss=0.2147]
+Epoch 27 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 138.22it/s, loss=0.2127]
+Epoch 27 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 108.12it/s, loss=0.2146]
+Epoch 26/100 - Time: 0.9s - Train loss: 0.2128, Val loss: 0.2147, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4478, Val acc: 0.4270, Val F1: 0.4151
+  Contralateral: Train acc: 0.7400, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2147)
+Epoch 27/100 - Time: 0.9s - Train loss: 0.2127, Val loss: 0.2146, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4579, Val acc: 0.4202, Val F1: 0.4113
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2146)
+Epoch 28 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 147.50it/s, loss=0.2126]
+Epoch 28 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 100.21it/s, loss=0.2145]
+Epoch 28/100 - Time: 0.9s - Train loss: 0.2126, Val loss: 0.2145, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4540, Val acc: 0.4270, Val F1: 0.4171
+  Contralateral: Train acc: 0.7419, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2145)
+Epoch 29/100 - Time: 0.9s - Train loss: 0.2126, Val loss: 0.2144, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4526, Val acc: 0.4292, Val F1: 0.4185
+  Contralateral: Train acc: 0.7419, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2144)
+Epoch 29 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 142.37it/s, loss=0.2126]
+Epoch 29 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 102.79it/s, loss=0.2144]
+Epoch 30 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 144.07it/s, loss=0.2124]
+Epoch 30 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 99.32it/s, loss=0.2144]
+Epoch 30/100 - Time: 0.9s - Train loss: 0.2124, Val loss: 0.2144, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4550, Val acc: 0.4247, Val F1: 0.4142
+  Contralateral: Train acc: 0.7419, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2144)
+Epoch 31/100 - Time: 0.8s - Train loss: 0.2123, Val loss: 0.2143, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4670, Val acc: 0.4225, Val F1: 0.4125
+  Contralateral: Train acc: 0.7429, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2143)
+Epoch 31 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.27it/s, loss=0.2123]
+Epoch 31 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 113.89it/s, loss=0.2143]
+Epoch 32 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.48it/s, loss=0.2122]
+Epoch 32 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 102.60it/s, loss=0.2142]
+Epoch 32/100 - Time: 0.9s - Train loss: 0.2122, Val loss: 0.2142, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4622, Val acc: 0.4135, Val F1: 0.4043
+  Contralateral: Train acc: 0.7410, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2142)
+Epoch 33 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 148.80it/s, loss=0.2120]
+Epoch 33 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 101.79it/s, loss=0.2141]
+Epoch 34 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.00it/s, loss=0.2119]
+Epoch 34 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.10it/s, loss=0.2140]
+Epoch 33/100 - Time: 0.9s - Train loss: 0.2120, Val loss: 0.2141, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4656, Val acc: 0.4135, Val F1: 0.4043
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2141)
+Epoch 35 (Train):  58%|██████████▌       | 38/65 [00:00<00:00, 141.64it/s, loss=0.2141]
+Epoch 34/100 - Time: 0.9s - Train loss: 0.2119, Val loss: 0.2140, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4574, Val acc: 0.4157, Val F1: 0.4055
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2140)
+Epoch 35/100 - Time: 1.0s - Train loss: 0.2119, Val loss: 0.2138, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4444, Val acc: 0.4157, Val F1: 0.4055
+  Contralateral: Train acc: 0.7429, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+Epoch 35 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 135.30it/s, loss=0.2119]
+Epoch 35 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 87.61it/s, loss=0.2138]
+Epoch 36 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.20it/s, loss=0.2117]
+Epoch 36 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 103.75it/s, loss=0.2137]
+Epoch 37 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 134.69it/s, loss=0.2116]
+Epoch 37 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 89.09it/s, loss=0.2136]
+Epoch 36/100 - Time: 0.9s - Train loss: 0.2117, Val loss: 0.2137, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4665, Val acc: 0.4225, Val F1: 0.4147
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2137)
+Epoch 37/100 - Time: 1.0s - Train loss: 0.2116, Val loss: 0.2136, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4617, Val acc: 0.4247, Val F1: 0.4160
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2136)
+Epoch 38 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 138.13it/s, loss=0.2115]
+Epoch 38 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 102.53it/s, loss=0.2135]
+Epoch 38/100 - Time: 0.9s - Train loss: 0.2115, Val loss: 0.2135, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4661, Val acc: 0.4382, Val F1: 0.4284
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2135)
+Epoch 39/100 - Time: 0.9s - Train loss: 0.2112, Val loss: 0.2134, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4766, Val acc: 0.4427, Val F1: 0.4341
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2134)
+Epoch 39 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.63it/s, loss=0.2112]
+Epoch 39 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.01it/s, loss=0.2134]
+Epoch 40 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 145.13it/s, loss=0.2111]
+Epoch 40 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 105.22it/s, loss=0.2133]
+Epoch 40/100 - Time: 0.9s - Train loss: 0.2111, Val loss: 0.2133, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4694, Val acc: 0.4472, Val F1: 0.4382
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2133)
+Epoch 41/100 - Time: 0.9s - Train loss: 0.2110, Val loss: 0.2131, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4699, Val acc: 0.4517, Val F1: 0.4425
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2131)
+Epoch 41 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 137.58it/s, loss=0.2110]
+Epoch 41 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 99.84it/s, loss=0.2131]
+Epoch 42 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.04it/s, loss=0.2110]
+Epoch 42 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 106.60it/s, loss=0.2130]
+Epoch 42/100 - Time: 0.9s - Train loss: 0.2110, Val loss: 0.2130, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4766, Val acc: 0.4472, Val F1: 0.4386
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2130)
+Epoch 43 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.00it/s, loss=0.2107]
+Epoch 43 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 96.65it/s, loss=0.2128]
+Epoch 44 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.77it/s, loss=0.2106]
+Epoch 44 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 103.02it/s, loss=0.2127]
+Epoch 43/100 - Time: 0.9s - Train loss: 0.2107, Val loss: 0.2128, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4853, Val acc: 0.4472, Val F1: 0.4403
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2128)
+Epoch 44/100 - Time: 0.9s - Train loss: 0.2106, Val loss: 0.2127, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4675, Val acc: 0.4472, Val F1: 0.4400
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2127)
+Epoch 45 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.20it/s, loss=0.2104]
+Epoch 45 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 99.94it/s, loss=0.2125]
+Epoch 45/100 - Time: 0.9s - Train loss: 0.2104, Val loss: 0.2125, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4978, Val acc: 0.4494, Val F1: 0.4420
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2125)
+Epoch 46/100 - Time: 0.9s - Train loss: 0.2101, Val loss: 0.2124, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5017, Val acc: 0.4494, Val F1: 0.4420
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2124)
+Epoch 46 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.71it/s, loss=0.2101]
+Epoch 46 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 91.48it/s, loss=0.2124]
+Epoch 47 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 145.22it/s, loss=0.2100]
+Epoch 47 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 102.73it/s, loss=0.2122]
+Epoch 48 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 143.10it/s, loss=0.2097]
+Epoch 48 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.99it/s, loss=0.2120]
+Epoch 47/100 - Time: 0.9s - Train loss: 0.2100, Val loss: 0.2122, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4848, Val acc: 0.4494, Val F1: 0.4424
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2122)
+Epoch 48/100 - Time: 0.9s - Train loss: 0.2097, Val loss: 0.2120, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5046, Val acc: 0.4494, Val F1: 0.4416
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2120)
+Epoch 49 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 146.63it/s, loss=0.2096]
+Epoch 49 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 99.23it/s, loss=0.2118]
+Epoch 49/100 - Time: 0.9s - Train loss: 0.2096, Val loss: 0.2118, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5022, Val acc: 0.4472, Val F1: 0.4391
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2118)
+Epoch 50/100 - Time: 0.9s - Train loss: 0.2093, Val loss: 0.2116, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4983, Val acc: 0.4449, Val F1: 0.4386
+  Contralateral: Train acc: 0.7429, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2116)
+Epoch 50 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 144.97it/s, loss=0.2093]
+Epoch 50 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 102.11it/s, loss=0.2116]
+Epoch 51 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.96it/s, loss=0.2091]
+Epoch 51 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.00it/s, loss=0.2114]
+Epoch 51/100 - Time: 0.9s - Train loss: 0.2091, Val loss: 0.2114, Learning rate: 0.000010
+  Multiclass: Train acc: 0.4998, Val acc: 0.4315, Val F1: 0.4268
+  Contralateral: Train acc: 0.7429, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2114)
+Epoch 52 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 152.76it/s, loss=0.2088]
+Epoch 52 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 103.93it/s, loss=0.2112]
+Epoch 53 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 143.67it/s, loss=0.2084]
+Epoch 53 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 103.37it/s, loss=0.2110]
+Epoch 52/100 - Time: 0.9s - Train loss: 0.2088, Val loss: 0.2112, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5156, Val acc: 0.4382, Val F1: 0.4338
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2112)
+Epoch 53/100 - Time: 0.9s - Train loss: 0.2084, Val loss: 0.2110, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5253, Val acc: 0.4382, Val F1: 0.4335
+  Contralateral: Train acc: 0.7429, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2110)
+Epoch 54 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 148.61it/s, loss=0.2083]
+Epoch 54 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.73it/s, loss=0.2107]
+Epoch 54/100 - Time: 0.9s - Train loss: 0.2083, Val loss: 0.2107, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5123, Val acc: 0.4494, Val F1: 0.4432
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2107)
+Epoch 55/100 - Time: 0.9s - Train loss: 0.2078, Val loss: 0.2105, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5205, Val acc: 0.4517, Val F1: 0.4443
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2105)
+Epoch 55 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.41it/s, loss=0.2078]
+Epoch 55 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 102.08it/s, loss=0.2105]
+Epoch 56 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.68it/s, loss=0.2076]
+Epoch 56 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.13it/s, loss=0.2102]
+Epoch 56/100 - Time: 1.0s - Train loss: 0.2076, Val loss: 0.2102, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5272, Val acc: 0.4584, Val F1: 0.4526
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2102)
+Epoch 57/100 - Time: 0.9s - Train loss: 0.2073, Val loss: 0.2099, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5176, Val acc: 0.4607, Val F1: 0.4546
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2099)
+Epoch 57 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.76it/s, loss=0.2073]
+Epoch 57 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 103.99it/s, loss=0.2099]
+Epoch 58 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.89it/s, loss=0.2069]
+Epoch 58 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 101.04it/s, loss=0.2096]
+Epoch 58/100 - Time: 0.9s - Train loss: 0.2069, Val loss: 0.2096, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5224, Val acc: 0.4697, Val F1: 0.4637
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2096)
+Epoch 59 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.91it/s, loss=0.2066]
+Epoch 59 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.90it/s, loss=0.2093]
+Epoch 60 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.16it/s, loss=0.2063]
+Epoch 60 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 99.75it/s, loss=0.2089]
+Epoch 59/100 - Time: 0.9s - Train loss: 0.2066, Val loss: 0.2093, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5364, Val acc: 0.4742, Val F1: 0.4675
+  Contralateral: Train acc: 0.7429, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2093)
+Epoch 60/100 - Time: 0.9s - Train loss: 0.2063, Val loss: 0.2089, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5224, Val acc: 0.4764, Val F1: 0.4703
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2089)
+Epoch 61 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.21it/s, loss=0.2057]
+Epoch 61 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.18it/s, loss=0.2086]
+Epoch 61/100 - Time: 0.9s - Train loss: 0.2057, Val loss: 0.2086, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5243, Val acc: 0.4809, Val F1: 0.4755
+  Contralateral: Train acc: 0.7439, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2086)
+Epoch 62/100 - Time: 0.9s - Train loss: 0.2053, Val loss: 0.2082, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5311, Val acc: 0.4854, Val F1: 0.4798
+  Contralateral: Train acc: 0.7424, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2082)
+Epoch 62 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.75it/s, loss=0.2053]
+Epoch 62 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.13it/s, loss=0.2082]
+Epoch 63 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 147.22it/s, loss=0.2050]
+Epoch 63 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.80it/s, loss=0.2078]
+Epoch 63/100 - Time: 0.9s - Train loss: 0.2050, Val loss: 0.2078, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5306, Val acc: 0.4876, Val F1: 0.4823
+  Contralateral: Train acc: 0.7443, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2078)
+Epoch 64/100 - Time: 1.0s - Train loss: 0.2044, Val loss: 0.2074, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5296, Val acc: 0.4854, Val F1: 0.4823
+  Contralateral: Train acc: 0.7434, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2074)
+Epoch 64 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.77it/s, loss=0.2044]
+Epoch 64 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 105.68it/s, loss=0.2074]
+Epoch 65 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.04it/s, loss=0.2040]
+Epoch 65 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 106.57it/s, loss=0.2069]
+Epoch 65/100 - Time: 0.9s - Train loss: 0.2040, Val loss: 0.2069, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5373, Val acc: 0.4899, Val F1: 0.4861
+  Contralateral: Train acc: 0.7448, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2069)
+Epoch 66 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 152.63it/s, loss=0.2033]
+Epoch 66 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 102.17it/s, loss=0.2065]
+Epoch 67 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 152.47it/s, loss=0.2026]
+Epoch 67 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 106.40it/s, loss=0.2060]
+Epoch 66/100 - Time: 0.9s - Train loss: 0.2033, Val loss: 0.2065, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5373, Val acc: 0.4921, Val F1: 0.4892
+  Contralateral: Train acc: 0.7434, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8238, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2065)
+Epoch 67/100 - Time: 0.9s - Train loss: 0.2026, Val loss: 0.2060, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5402, Val acc: 0.4944, Val F1: 0.4910
+  Contralateral: Train acc: 0.7443, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2060)
+Epoch 68 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 152.03it/s, loss=0.2019]
+Epoch 68 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 105.02it/s, loss=0.2055]
+Epoch 68/100 - Time: 0.9s - Train loss: 0.2019, Val loss: 0.2055, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5522, Val acc: 0.4876, Val F1: 0.4872
+  Contralateral: Train acc: 0.7458, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8228, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2055)
+Epoch 69/100 - Time: 0.9s - Train loss: 0.2015, Val loss: 0.2049, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5364, Val acc: 0.4876, Val F1: 0.4888
+  Contralateral: Train acc: 0.7458, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2049)
+Epoch 69 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.37it/s, loss=0.2015]
+Epoch 69 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 110.93it/s, loss=0.2049]
+Epoch 70 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.82it/s, loss=0.2005]
+Epoch 70 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.11it/s, loss=0.2043]
+Epoch 70/100 - Time: 0.9s - Train loss: 0.2005, Val loss: 0.2043, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5498, Val acc: 0.4921, Val F1: 0.4939
+  Contralateral: Train acc: 0.7458, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2043)
+Epoch 71 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.49it/s, loss=0.2001]
+Epoch 71 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.79it/s, loss=0.2038]
+Epoch 71/100 - Time: 0.9s - Train loss: 0.2001, Val loss: 0.2038, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5349, Val acc: 0.4989, Val F1: 0.5016
+  Contralateral: Train acc: 0.7463, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2038)
+Epoch 72/100 - Time: 0.9s - Train loss: 0.1994, Val loss: 0.2031, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5388, Val acc: 0.4989, Val F1: 0.5013
+  Contralateral: Train acc: 0.7453, Val acc: 0.7551, Val F1: 0.6497
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2031)
+Epoch 72 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 152.07it/s, loss=0.1994]
+Epoch 72 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.24it/s, loss=0.2031]
+Epoch 73 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 152.97it/s, loss=0.1988]
+Epoch 73 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.42it/s, loss=0.2025]
+Epoch 73/100 - Time: 0.9s - Train loss: 0.1988, Val loss: 0.2025, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5416, Val acc: 0.4966, Val F1: 0.5003
+  Contralateral: Train acc: 0.7501, Val acc: 0.7573, Val F1: 0.6550
+  Ipsilateral: Train acc: 0.8228, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2025)
+Epoch 74 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 153.64it/s, loss=0.1976]
+Epoch 74 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 106.67it/s, loss=0.2018]
+Epoch 74/100 - Time: 0.9s - Train loss: 0.1976, Val loss: 0.2018, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5561, Val acc: 0.4989, Val F1: 0.5028
+  Contralateral: Train acc: 0.7492, Val acc: 0.7573, Val F1: 0.6550
+  Ipsilateral: Train acc: 0.8228, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2018)
+Epoch 75/100 - Time: 0.9s - Train loss: 0.1969, Val loss: 0.2011, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5595, Val acc: 0.5011, Val F1: 0.5056
+  Contralateral: Train acc: 0.7492, Val acc: 0.7573, Val F1: 0.6550
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2011)
+Epoch 75 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 153.57it/s, loss=0.1969]
+Epoch 75 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 103.97it/s, loss=0.2011]
+Epoch 76 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.19it/s, loss=0.1957]
+Epoch 76 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 106.46it/s, loss=0.2004]
+Epoch 76/100 - Time: 0.9s - Train loss: 0.1957, Val loss: 0.2004, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5571, Val acc: 0.4989, Val F1: 0.5034
+  Contralateral: Train acc: 0.7501, Val acc: 0.7596, Val F1: 0.6602
+  Ipsilateral: Train acc: 0.8243, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.2004)
+Epoch 77 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.67it/s, loss=0.1949]
+Epoch 77 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 101.78it/s, loss=0.1996]
+Epoch 77/100 - Time: 0.9s - Train loss: 0.1949, Val loss: 0.1996, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5436, Val acc: 0.4944, Val F1: 0.4989
+  Contralateral: Train acc: 0.7501, Val acc: 0.7618, Val F1: 0.6653
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.1996)
+Epoch 78 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.48it/s, loss=0.1942]
+Epoch 78 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 99.75it/s, loss=0.1988]
+Epoch 78/100 - Time: 0.9s - Train loss: 0.1942, Val loss: 0.1988, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5469, Val acc: 0.5034, Val F1: 0.5082
+  Contralateral: Train acc: 0.7593, Val acc: 0.7640, Val F1: 0.6704
+  Ipsilateral: Train acc: 0.8243, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.1988)
+Epoch 79 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 152.73it/s, loss=0.1933]
+Epoch 79 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 106.13it/s, loss=0.1980]
+Epoch 79/100 - Time: 0.9s - Train loss: 0.1933, Val loss: 0.1980, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5373, Val acc: 0.5056, Val F1: 0.5111
+  Contralateral: Train acc: 0.7492, Val acc: 0.7663, Val F1: 0.6789
+  Ipsilateral: Train acc: 0.8247, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.1980)
+Epoch 80 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 153.48it/s, loss=0.1921]
+Epoch 80 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 112.79it/s, loss=0.1971]
+Epoch 80/100 - Time: 0.9s - Train loss: 0.1921, Val loss: 0.1971, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5465, Val acc: 0.5011, Val F1: 0.5056
+  Contralateral: Train acc: 0.7564, Val acc: 0.7753, Val F1: 0.7009
+  Ipsilateral: Train acc: 0.8267, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.1971)
+Epoch 81 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.59it/s, loss=0.1912]
+Epoch 81 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 106.74it/s, loss=0.1963]
+Epoch 81/100 - Time: 0.9s - Train loss: 0.1912, Val loss: 0.1963, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5431, Val acc: 0.5056, Val F1: 0.5102
+  Contralateral: Train acc: 0.7564, Val acc: 0.7730, Val F1: 0.7024
+  Ipsilateral: Train acc: 0.8243, Val acc: 0.8112, Val F1: 0.7267
+New best model saved (val_loss: 0.1963)
+Epoch 82 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.83it/s, loss=0.1897]
+Epoch 82 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 101.73it/s, loss=0.1954]
+Epoch 82/100 - Time: 0.9s - Train loss: 0.1897, Val loss: 0.1954, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5551, Val acc: 0.5011, Val F1: 0.5051
+  Contralateral: Train acc: 0.7622, Val acc: 0.7708, Val F1: 0.7117
+  Ipsilateral: Train acc: 0.8243, Val acc: 0.8135, Val F1: 0.7320
+New best model saved (val_loss: 0.1954)
+Epoch 83 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 134.32it/s, loss=0.1887]
+Epoch 83 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 110.00it/s, loss=0.1944]
+Epoch 83/100 - Time: 1.0s - Train loss: 0.1887, Val loss: 0.1944, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5503, Val acc: 0.4966, Val F1: 0.5000
+  Contralateral: Train acc: 0.7602, Val acc: 0.7640, Val F1: 0.7140
+  Ipsilateral: Train acc: 0.8233, Val acc: 0.8135, Val F1: 0.7320
+New best model saved (val_loss: 0.1944)
+Epoch 84 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 139.83it/s, loss=0.1876]
+Epoch 84 (Val): 100%|█████████████████████| 14/14 [00:00<00:00, 94.14it/s, loss=0.1934]
+Epoch 84/100 - Time: 1.0s - Train loss: 0.1876, Val loss: 0.1934, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5542, Val acc: 0.5011, Val F1: 0.5046
+  Contralateral: Train acc: 0.7583, Val acc: 0.7663, Val F1: 0.7200
+  Ipsilateral: Train acc: 0.8219, Val acc: 0.8135, Val F1: 0.7361
+New best model saved (val_loss: 0.1934)
+Epoch 85 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 152.47it/s, loss=0.1866]
+Epoch 85 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 103.64it/s, loss=0.1924]
+Epoch 86 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.04it/s, loss=0.1851]
+Epoch 86 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 108.86it/s, loss=0.1913]
+Epoch 85/100 - Time: 0.9s - Train loss: 0.1866, Val loss: 0.1924, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5537, Val acc: 0.5146, Val F1: 0.5178
+  Contralateral: Train acc: 0.7622, Val acc: 0.7663, Val F1: 0.7260
+  Ipsilateral: Train acc: 0.8247, Val acc: 0.8112, Val F1: 0.7348
+New best model saved (val_loss: 0.1924)
+Epoch 86/100 - Time: 0.9s - Train loss: 0.1851, Val loss: 0.1913, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5431, Val acc: 0.5101, Val F1: 0.5119
+  Contralateral: Train acc: 0.7636, Val acc: 0.7640, Val F1: 0.7363
+  Ipsilateral: Train acc: 0.8214, Val acc: 0.8112, Val F1: 0.7348
+New best model saved (val_loss: 0.1913)
+Epoch 87 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.32it/s, loss=0.1839]
+Epoch 87 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 111.44it/s, loss=0.1903]
+Epoch 87/100 - Time: 0.9s - Train loss: 0.1839, Val loss: 0.1903, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5465, Val acc: 0.5056, Val F1: 0.5067
+  Contralateral: Train acc: 0.7559, Val acc: 0.7596, Val F1: 0.7358
+  Ipsilateral: Train acc: 0.8223, Val acc: 0.8112, Val F1: 0.7348
+New best model saved (val_loss: 0.1903)
+Epoch 88 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.54it/s, loss=0.1823]
+Epoch 88 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 105.05it/s, loss=0.1891]
+Epoch 88/100 - Time: 0.9s - Train loss: 0.1823, Val loss: 0.1891, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5546, Val acc: 0.5056, Val F1: 0.5066
+  Contralateral: Train acc: 0.7636, Val acc: 0.7506, Val F1: 0.7302
+  Ipsilateral: Train acc: 0.8257, Val acc: 0.8112, Val F1: 0.7348
+New best model saved (val_loss: 0.1891)
+Epoch 89 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.17it/s, loss=0.1812]
+Epoch 89 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.63it/s, loss=0.1880]
+Epoch 89/100 - Time: 0.9s - Train loss: 0.1812, Val loss: 0.1880, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5469, Val acc: 0.5101, Val F1: 0.5097
+  Contralateral: Train acc: 0.7569, Val acc: 0.7461, Val F1: 0.7281
+  Ipsilateral: Train acc: 0.8276, Val acc: 0.8135, Val F1: 0.7399
+New best model saved (val_loss: 0.1880)
+Epoch 90 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 140.34it/s, loss=0.1795]
+Epoch 90 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 109.03it/s, loss=0.1869]
+Epoch 90/100 - Time: 0.9s - Train loss: 0.1795, Val loss: 0.1869, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5412, Val acc: 0.5056, Val F1: 0.5037
+  Contralateral: Train acc: 0.7593, Val acc: 0.7483, Val F1: 0.7348
+  Ipsilateral: Train acc: 0.8247, Val acc: 0.8135, Val F1: 0.7436
+New best model saved (val_loss: 0.1869)
+Epoch 91 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.44it/s, loss=0.1782]
+Epoch 91 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.58it/s, loss=0.1856]
+Epoch 91/100 - Time: 0.9s - Train loss: 0.1782, Val loss: 0.1856, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5474, Val acc: 0.5011, Val F1: 0.4981
+  Contralateral: Train acc: 0.7612, Val acc: 0.7393, Val F1: 0.7320
+  Ipsilateral: Train acc: 0.8243, Val acc: 0.8112, Val F1: 0.7423
+New best model saved (val_loss: 0.1856)
+Epoch 92 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.91it/s, loss=0.1767]
+Epoch 92 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 104.74it/s, loss=0.1845]
+Epoch 93 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.99it/s, loss=0.1754]
+Epoch 93 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 103.80it/s, loss=0.1833]
+Epoch 92/100 - Time: 0.9s - Train loss: 0.1767, Val loss: 0.1845, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5450, Val acc: 0.4966, Val F1: 0.4933
+  Contralateral: Train acc: 0.7564, Val acc: 0.7461, Val F1: 0.7432
+  Ipsilateral: Train acc: 0.8247, Val acc: 0.8067, Val F1: 0.7397
+New best model saved (val_loss: 0.1845)
+Epoch 93/100 - Time: 0.9s - Train loss: 0.1754, Val loss: 0.1833, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5412, Val acc: 0.4989, Val F1: 0.4959
+  Contralateral: Train acc: 0.7443, Val acc: 0.7461, Val F1: 0.7465
+  Ipsilateral: Train acc: 0.8257, Val acc: 0.8067, Val F1: 0.7430
+New best model saved (val_loss: 0.1833)
+Epoch 94 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 148.10it/s, loss=0.1735]
+Epoch 94 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 105.33it/s, loss=0.1820]
+Epoch 94/100 - Time: 0.9s - Train loss: 0.1735, Val loss: 0.1820, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5441, Val acc: 0.4921, Val F1: 0.4873
+  Contralateral: Train acc: 0.7545, Val acc: 0.7371, Val F1: 0.7390
+  Ipsilateral: Train acc: 0.8238, Val acc: 0.8067, Val F1: 0.7463
+New best model saved (val_loss: 0.1820)
+Epoch 95 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 150.62it/s, loss=0.1721]
+Epoch 95 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 102.83it/s, loss=0.1808]
+Epoch 95/100 - Time: 0.9s - Train loss: 0.1721, Val loss: 0.1808, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5546, Val acc: 0.4989, Val F1: 0.4938
+  Contralateral: Train acc: 0.7583, Val acc: 0.7348, Val F1: 0.7407
+  Ipsilateral: Train acc: 0.8276, Val acc: 0.8112, Val F1: 0.7608
+New best model saved (val_loss: 0.1808)
+Epoch 96 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 151.29it/s, loss=0.1702]
+Epoch 96 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.51it/s, loss=0.1795]
+Epoch 96/100 - Time: 0.9s - Train loss: 0.1702, Val loss: 0.1795, Learning rate: 0.000010
+  Multiclass: Train acc: 0.5556, Val acc: 0.4989, Val F1: 0.4936
+  Contralateral: Train acc: 0.7492, Val acc: 0.7326, Val F1: 0.7394
+  Ipsilateral: Train acc: 0.8373, Val acc: 0.8135, Val F1: 0.7676
+New best model saved (val_loss: 0.1795)
+Epoch 97 (Train): 100%|██████████████████| 65/65 [00:00<00:00, 149.30it/s, loss=0.1690]
+Epoch 97 (Val): 100%|████████████████████| 14/14 [00:00<00:00, 107.95it/s, loss=0.1782]

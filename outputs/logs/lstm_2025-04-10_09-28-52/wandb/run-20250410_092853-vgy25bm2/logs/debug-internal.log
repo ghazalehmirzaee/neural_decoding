@@ -1,0 +1,188 @@
+2025-04-10 09:28:53,844 INFO    StreamThr :3886799 [internal.py:wandb_internal():86] W&B internal server running at pid: 3886799, started at: 2025-04-10 09:28:53.844476
+2025-04-10 09:28:53,845 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: status
+2025-04-10 09:28:53,848 INFO    WriterThread:3886799 [datastore.py:open_for_write():85] open: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/run-vgy25bm2.wandb
+2025-04-10 09:28:53,848 DEBUG   SenderThread:3886799 [sender.py:send():380] send: header
+2025-04-10 09:28:53,851 DEBUG   SenderThread:3886799 [sender.py:send():380] send: run
+2025-04-10 09:28:54,119 INFO    SenderThread:3886799 [dir_watcher.py:__init__():211] watching files in: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files
+2025-04-10 09:28:54,119 INFO    SenderThread:3886799 [sender.py:_start_run_threads():1122] run started: vgy25bm2 with start time 1744291733.844379
+2025-04-10 09:28:54,125 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: check_version
+2025-04-10 09:28:54,125 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: check_version
+2025-04-10 09:28:54,191 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: run_start
+2025-04-10 09:28:54,196 DEBUG   HandlerThread:3886799 [system_info.py:__init__():32] System info init
+2025-04-10 09:28:54,196 DEBUG   HandlerThread:3886799 [system_info.py:__init__():47] System info init done
+2025-04-10 09:28:54,196 INFO    HandlerThread:3886799 [system_monitor.py:start():194] Starting system monitor
+2025-04-10 09:28:54,197 INFO    SystemMonitor:3886799 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-04-10 09:28:54,197 INFO    HandlerThread:3886799 [system_monitor.py:probe():214] Collecting system info
+2025-04-10 09:28:54,197 INFO    SystemMonitor:3886799 [interfaces.py:start():190] Started cpu monitoring
+2025-04-10 09:28:54,198 INFO    SystemMonitor:3886799 [interfaces.py:start():190] Started disk monitoring
+2025-04-10 09:28:54,198 INFO    SystemMonitor:3886799 [interfaces.py:start():190] Started gpu monitoring
+2025-04-10 09:28:54,199 INFO    SystemMonitor:3886799 [interfaces.py:start():190] Started memory monitoring
+2025-04-10 09:28:54,200 INFO    SystemMonitor:3886799 [interfaces.py:start():190] Started network monitoring
+2025-04-10 09:28:54,209 DEBUG   HandlerThread:3886799 [system_info.py:probe():196] Probing system
+2025-04-10 09:28:54,210 DEBUG   HandlerThread:3886799 [system_info.py:_probe_git():181] Probing git
+2025-04-10 09:28:54,213 DEBUG   HandlerThread:3886799 [system_info.py:_probe_git():189] Probing git done
+2025-04-10 09:28:54,213 DEBUG   HandlerThread:3886799 [system_info.py:probe():244] Probing system done
+2025-04-10 09:28:54,213 DEBUG   HandlerThread:3886799 [system_monitor.py:probe():223] {'os': 'Linux-6.8.0-52-generic-x86_64-with-glibc2.35', 'python': '3.10.11', 'heartbeatAt': '2025-04-10T13:28:54.209092', 'startedAt': '2025-04-10T13:28:53.840613', 'docker': None, 'cuda': None, 'args': ('model=lstm', 'model.dropout=0.1', 'model.hidden_size=32', 'model.num_layers=2', 'training.learning_rate=0.0001'), 'state': 'running', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'codePathLocal': None, 'codePath': 'scripts/train.py', 'git': {'remote': 'git@github.com:ghazalehmirzaee/neural_decoding.git', 'commit': '787b8f67e8cdf830e99708d9bb44836f9aedac4c'}, 'email': 'mirzaeeghazal@gmail.com', 'root': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding', 'host': 'Ghazal', 'username': 'ghazal', 'executable': '/home/ghazal/anaconda3/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'cpu_freq': {'current': 4.599875000000001, 'min': 800.0, 'max': 4900.0}, 'cpu_freq_per_core': [{'current': 4.596, 'min': 800.0, 'max': 4900.0}, {'current': 4.6, 'min': 800.0, 'max': 4900.0}, {'current': 4.596, 'min': 800.0, 'max': 4900.0}, {'current': 4.599, 'min': 800.0, 'max': 4900.0}, {'current': 4.599, 'min': 800.0, 'max': 4900.0}, {'current': 4.597, 'min': 800.0, 'max': 4900.0}, {'current': 4.598, 'min': 800.0, 'max': 4900.0}, {'current': 4.601, 'min': 800.0, 'max': 4900.0}], 'disk': {'/': {'total': 467.8895797729492, 'used': 407.1986198425293}}, 'gpu': 'NVIDIA GeForce RTX 2070 SUPER', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2070 SUPER', 'memory_total': 8589934592}], 'memory': {'total': 31.278179168701172}}
+2025-04-10 09:28:54,213 INFO    HandlerThread:3886799 [system_monitor.py:probe():224] Finished collecting system info
+2025-04-10 09:28:54,213 INFO    HandlerThread:3886799 [system_monitor.py:probe():227] Publishing system info
+2025-04-10 09:28:54,213 DEBUG   HandlerThread:3886799 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2025-04-10 09:28:54,213 DEBUG   HandlerThread:3886799 [system_info.py:_save_pip():68] Saving pip packages done
+2025-04-10 09:28:54,213 DEBUG   HandlerThread:3886799 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2025-04-10 09:28:55,120 INFO    Thread-12 :3886799 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/requirements.txt
+2025-04-10 09:28:55,120 INFO    Thread-12 :3886799 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/conda-environment.yaml
+2025-04-10 09:29:04,509 DEBUG   HandlerThread:3886799 [system_info.py:_save_conda():87] Saving conda packages done
+2025-04-10 09:29:04,510 INFO    HandlerThread:3886799 [system_monitor.py:probe():229] Finished publishing system info
+2025-04-10 09:29:04,512 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: status_report
+2025-04-10 09:29:04,512 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: keepalive
+2025-04-10 09:29:04,512 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: status_report
+2025-04-10 09:29:04,513 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: keepalive
+2025-04-10 09:29:04,513 DEBUG   SenderThread:3886799 [sender.py:send():380] send: files
+2025-04-10 09:29:04,513 INFO    SenderThread:3886799 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2025-04-10 09:29:04,517 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: stop_status
+2025-04-10 09:29:04,517 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: internal_messages
+2025-04-10 09:29:04,517 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: stop_status
+2025-04-10 09:29:04,734 DEBUG   SenderThread:3886799 [sender.py:send():380] send: telemetry
+2025-04-10 09:29:04,800 INFO    wandb-upload_0:3886799 [upload_job.py:push():131] Uploaded file /tmp/tmp0k8_ovdswandb/89xxt0fr-wandb-metadata.json
+2025-04-10 09:29:04,895 DEBUG   SenderThread:3886799 [sender.py:send():380] send: exit
+2025-04-10 09:29:04,895 INFO    SenderThread:3886799 [sender.py:send_exit():585] handling exit code: 1
+2025-04-10 09:29:04,896 INFO    SenderThread:3886799 [sender.py:send_exit():587] handling runtime: 10
+2025-04-10 09:29:04,896 INFO    SenderThread:3886799 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-10 09:29:04,896 INFO    SenderThread:3886799 [sender.py:send_exit():593] send defer
+2025-04-10 09:29:04,897 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:04,897 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 0
+2025-04-10 09:29:04,897 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:04,897 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 0
+2025-04-10 09:29:04,897 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 1
+2025-04-10 09:29:04,897 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:04,897 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 1
+2025-04-10 09:29:04,897 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:04,897 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 1
+2025-04-10 09:29:04,897 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 2
+2025-04-10 09:29:04,897 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:04,897 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 2
+2025-04-10 09:29:04,897 INFO    HandlerThread:3886799 [system_monitor.py:finish():203] Stopping system monitor
+2025-04-10 09:29:04,897 DEBUG   SystemMonitor:3886799 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-04-10 09:29:04,898 DEBUG   SystemMonitor:3886799 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-04-10 09:29:04,898 INFO    HandlerThread:3886799 [interfaces.py:finish():202] Joined cpu monitor
+2025-04-10 09:29:04,898 DEBUG   SystemMonitor:3886799 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-04-10 09:29:04,898 INFO    HandlerThread:3886799 [interfaces.py:finish():202] Joined disk monitor
+2025-04-10 09:29:04,934 INFO    HandlerThread:3886799 [interfaces.py:finish():202] Joined gpu monitor
+2025-04-10 09:29:04,934 INFO    HandlerThread:3886799 [interfaces.py:finish():202] Joined memory monitor
+2025-04-10 09:29:04,934 INFO    HandlerThread:3886799 [interfaces.py:finish():202] Joined network monitor
+2025-04-10 09:29:04,934 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:04,934 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 2
+2025-04-10 09:29:04,934 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 3
+2025-04-10 09:29:04,934 DEBUG   SenderThread:3886799 [sender.py:send():380] send: stats
+2025-04-10 09:29:04,934 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:04,934 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 3
+2025-04-10 09:29:04,935 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:04,935 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 3
+2025-04-10 09:29:04,935 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 4
+2025-04-10 09:29:04,935 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:04,935 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 4
+2025-04-10 09:29:04,935 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:04,935 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 4
+2025-04-10 09:29:04,935 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 5
+2025-04-10 09:29:04,935 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:04,935 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 5
+2025-04-10 09:29:04,935 DEBUG   SenderThread:3886799 [sender.py:send():380] send: summary
+2025-04-10 09:29:04,935 INFO    SenderThread:3886799 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-10 09:29:04,936 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:04,936 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 5
+2025-04-10 09:29:04,936 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 6
+2025-04-10 09:29:04,936 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:04,936 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 6
+2025-04-10 09:29:04,936 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:04,936 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 6
+2025-04-10 09:29:04,938 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: status_report
+2025-04-10 09:29:05,029 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 7
+2025-04-10 09:29:05,029 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:05,029 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 7
+2025-04-10 09:29:05,030 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:05,030 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 7
+2025-04-10 09:29:05,121 INFO    Thread-12 :3886799 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/conda-environment.yaml
+2025-04-10 09:29:05,121 INFO    Thread-12 :3886799 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/config.yaml
+2025-04-10 09:29:05,121 INFO    Thread-12 :3886799 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/wandb-metadata.json
+2025-04-10 09:29:05,121 INFO    Thread-12 :3886799 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/wandb-summary.json
+2025-04-10 09:29:05,121 INFO    Thread-12 :3886799 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/output.log
+2025-04-10 09:29:05,895 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: poll_exit
+2025-04-10 09:29:07,122 INFO    Thread-12 :3886799 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/output.log
+2025-04-10 09:29:08,740 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 8
+2025-04-10 09:29:08,740 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: poll_exit
+2025-04-10 09:29:08,741 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:08,741 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 8
+2025-04-10 09:29:08,741 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:08,741 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 8
+2025-04-10 09:29:08,741 INFO    SenderThread:3886799 [job_builder.py:build():281] Attempting to build job artifact
+2025-04-10 09:29:08,741 INFO    SenderThread:3886799 [job_builder.py:_get_source_type():393] is repo sourced job
+2025-04-10 09:29:08,742 INFO    SenderThread:3886799 [job_builder.py:build():369] adding wandb-job metadata file
+2025-04-10 09:29:08,753 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 9
+2025-04-10 09:29:08,753 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:08,753 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 9
+2025-04-10 09:29:08,753 DEBUG   SenderThread:3886799 [sender.py:send():380] send: artifact
+2025-04-10 09:29:09,041 INFO    SenderThread:3886799 [sender.py:send_artifact():1456] sent artifact job-git_github.com_ghazalehmirzaee_neural_decoding.git_scripts_train.py - {'id': 'QXJ0aWZhY3Q6MTY0MzMxMTg4Ng==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjYwODQ3Mzc5OA==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTY0MzMxMTg4Ng==', 'versionIndex': 2}}}
+2025-04-10 09:29:09,041 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:09,041 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 9
+2025-04-10 09:29:09,041 INFO    SenderThread:3886799 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-04-10 09:29:09,122 INFO    SenderThread:3886799 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/output.log
+2025-04-10 09:29:09,123 INFO    SenderThread:3886799 [dir_watcher.py:finish():388] scan: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files
+2025-04-10 09:29:09,123 INFO    SenderThread:3886799 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/wandb-summary.json wandb-summary.json
+2025-04-10 09:29:09,123 INFO    SenderThread:3886799 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/wandb-metadata.json wandb-metadata.json
+2025-04-10 09:29:09,123 INFO    SenderThread:3886799 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/config.yaml config.yaml
+2025-04-10 09:29:09,123 INFO    SenderThread:3886799 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/requirements.txt requirements.txt
+2025-04-10 09:29:09,125 INFO    SenderThread:3886799 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/conda-environment.yaml conda-environment.yaml
+2025-04-10 09:29:09,126 INFO    SenderThread:3886799 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/output.log output.log
+2025-04-10 09:29:09,126 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 10
+2025-04-10 09:29:09,128 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:09,128 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 10
+2025-04-10 09:29:09,129 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:09,129 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 10
+2025-04-10 09:29:09,129 INFO    SenderThread:3886799 [file_pusher.py:finish():175] shutting down file pusher
+2025-04-10 09:29:09,316 INFO    wandb-upload_0:3886799 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/config.yaml
+2025-04-10 09:29:09,341 INFO    wandb-upload_1:3886799 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/wandb-summary.json
+2025-04-10 09:29:09,395 INFO    wandb-upload_2:3886799 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/requirements.txt
+2025-04-10 09:29:09,398 INFO    wandb-upload_3:3886799 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/conda-environment.yaml
+2025-04-10 09:29:09,402 INFO    wandb-upload_4:3886799 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/files/output.log
+2025-04-10 09:29:09,603 INFO    Thread-11 (_thread_body):3886799 [sender.py:transition_state():613] send defer: 11
+2025-04-10 09:29:09,603 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:09,603 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 11
+2025-04-10 09:29:09,603 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:09,603 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 11
+2025-04-10 09:29:09,603 INFO    SenderThread:3886799 [file_pusher.py:join():181] waiting for file pusher
+2025-04-10 09:29:09,603 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 12
+2025-04-10 09:29:09,603 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:09,603 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 12
+2025-04-10 09:29:09,604 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:09,604 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 12
+2025-04-10 09:29:09,604 INFO    SenderThread:3886799 [file_stream.py:finish():595] file stream finish called
+2025-04-10 09:29:09,666 INFO    SenderThread:3886799 [file_stream.py:finish():599] file stream finish is done
+2025-04-10 09:29:09,666 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 13
+2025-04-10 09:29:09,666 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:09,666 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 13
+2025-04-10 09:29:09,666 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:09,666 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 13
+2025-04-10 09:29:09,666 INFO    SenderThread:3886799 [sender.py:transition_state():613] send defer: 14
+2025-04-10 09:29:09,666 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: defer
+2025-04-10 09:29:09,666 INFO    HandlerThread:3886799 [handler.py:handle_request_defer():172] handle defer: 14
+2025-04-10 09:29:09,667 DEBUG   SenderThread:3886799 [sender.py:send():380] send: final
+2025-04-10 09:29:09,667 DEBUG   SenderThread:3886799 [sender.py:send():380] send: footer
+2025-04-10 09:29:09,667 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: defer
+2025-04-10 09:29:09,667 INFO    SenderThread:3886799 [sender.py:send_request_defer():609] handle sender defer: 14
+2025-04-10 09:29:09,667 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: poll_exit
+2025-04-10 09:29:09,667 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: server_info
+2025-04-10 09:29:09,667 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: get_summary
+2025-04-10 09:29:09,668 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: sampled_history
+2025-04-10 09:29:09,668 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: internal_messages
+2025-04-10 09:29:09,668 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: poll_exit
+2025-04-10 09:29:09,668 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: server_info
+2025-04-10 09:29:09,669 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: job_info
+2025-04-10 09:29:09,718 DEBUG   SenderThread:3886799 [sender.py:send_request():407] send_request: job_info
+2025-04-10 09:29:09,718 INFO    MainThread:3886799 [wandb_run.py:_footer_history_summary_info():3599] rendering history
+2025-04-10 09:29:09,718 INFO    MainThread:3886799 [wandb_run.py:_footer_history_summary_info():3631] rendering summary
+2025-04-10 09:29:09,718 INFO    MainThread:3886799 [wandb_run.py:_footer_sync_info():3558] logging synced files
+2025-04-10 09:29:09,718 DEBUG   HandlerThread:3886799 [handler.py:handle_request():146] handle_request: shutdown
+2025-04-10 09:29:09,718 INFO    HandlerThread:3886799 [handler.py:finish():866] shutting down handler
+2025-04-10 09:29:10,669 INFO    WriterThread:3886799 [datastore.py:close():294] close: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-10_09-28-52/wandb/run-20250410_092853-vgy25bm2/run-vgy25bm2.wandb
+2025-04-10 09:29:10,718 INFO    SenderThread:3886799 [sender.py:finish():1534] shutting down sender
+2025-04-10 09:29:10,718 INFO    SenderThread:3886799 [file_pusher.py:finish():175] shutting down file pusher
+2025-04-10 09:29:10,718 INFO    SenderThread:3886799 [file_pusher.py:join():181] waiting for file pusher

@@ -3,130 +3,104 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import math
 
 
-class EnhancedAttention(nn.Module):
+class MultiHeadAttention(nn.Module):
     """
-    Multi-head self-attention mechanism with improved scaling and dropout.
+    Multi-head attention mechanism as described in equations (16)-(18) of the paper.
     """
 
-    def __init__(self, embed_dim, num_heads=8, dropout=0.15):
-        super(EnhancedAttention, self).__init__()
+    def __init__(self, embed_dim, num_heads=8):
+        super(MultiHeadAttention, self).__init__()
         self.num_heads = num_heads
         self.head_dim = embed_dim // num_heads
-        assert self.head_dim * num_heads == embed_dim, "embed_dim must be divisible by num_heads"
 
-        # Query, Key, Value projections with improved initialization
-        self.q_proj = nn.Linear(embed_dim, embed_dim)
-        self.k_proj = nn.Linear(embed_dim, embed_dim)
-        self.v_proj = nn.Linear(embed_dim, embed_dim)
+        # Linear projections for Q, K, V as in equation (16)
+        self.W_q = nn.Linear(embed_dim, embed_dim)
+        self.W_k = nn.Linear(embed_dim, embed_dim)
+        self.W_v = nn.Linear(embed_dim, embed_dim)
 
-        # Improved scaling factor for stable gradients
-        self.scaling = float(self.head_dim) ** -0.5
+        # Output projection W_O from equation (18)
+        self.W_o = nn.Linear(embed_dim, embed_dim)
 
-        # Increased dropout for stronger regularization
-        self.dropout = nn.Dropout(dropout)
-        self.out_proj = nn.Linear(embed_dim, embed_dim)
+        # Scaling factor as in equation (17)
+        self.scaling = self.head_dim ** -0.5
 
-        # Initialize weights properly
         self._init_weights()
 
     def _init_weights(self):
-        # Improved initialization for attention mechanisms
-        nn.init.xavier_uniform_(self.q_proj.weight, gain=1.0)
-        nn.init.xavier_uniform_(self.k_proj.weight, gain=1.0)
-        nn.init.xavier_uniform_(self.v_proj.weight, gain=1.0)
-        nn.init.xavier_uniform_(self.out_proj.weight, gain=1.0)
-        nn.init.zeros_(self.q_proj.bias)
-        nn.init.zeros_(self.k_proj.bias)
-        nn.init.zeros_(self.v_proj.bias)
-        nn.init.zeros_(self.out_proj.bias)
+        nn.init.xavier_uniform_(self.W_q.weight)
+        nn.init.xavier_uniform_(self.W_k.weight)
+        nn.init.xavier_uniform_(self.W_v.weight)
+        nn.init.xavier_uniform_(self.W_o.weight)
+        nn.init.zeros_(self.W_q.bias)
+        nn.init.zeros_(self.W_k.bias)
+        nn.init.zeros_(self.W_v.bias)
+        nn.init.zeros_(self.W_o.bias)
 
     def forward(self, x):
-        """
-        Forward pass implementing equations (16)-(18) from the paper with
-        improved numerical stability.
-        """
         batch_size, seq_len, embed_dim = x.shape
 
-        # Project inputs to queries, keys, and values
-        q = self.q_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim)
-        k = self.k_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim)
-        v = self.v_proj(x).view(batch_size, seq_len, self.num_heads, self.head_dim)
+        # Linear projections
+        q = self.W_q(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)
+        k = self.W_k(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)
+        v = self.W_v(x).view(batch_size, seq_len, self.num_heads, self.head_dim).transpose(1, 2)
 
-        # Transpose for attention calculation
-        q = q.transpose(1, 2)  # (batch_size, num_heads, seq_len, head_dim)
-        k = k.transpose(1, 2)
-        v = v.transpose(1, 2)
+        # Scaled dot-product attention as in equation (17)
+        attn_scores = torch.matmul(q, k.transpose(-2, -1)) * self.scaling
+        attn_weights = F.softmax(attn_scores, dim=-1)
 
-        # Calculate attention scores with scaling
-        attn_weights = torch.matmul(q, k.transpose(-1, -2)) * self.scaling
+        # Apply attention weights to values
+        attn_output = torch.matmul(attn_weights, v)
 
-        # Apply softmax with improved numerical stability
-        attn_weights = F.softmax(attn_weights, dim=-1)
+        # Concat heads and apply output projection as in equation (18)
+        attn_output = attn_output.transpose(1, 2).contiguous().view(batch_size, seq_len, embed_dim)
+        output = self.W_o(attn_output)
 
-        # Apply dropout for regularization
-        attn_weights = self.dropout(attn_weights)
-
-        # Apply attention to values
-        attn_output = torch.matmul(attn_weights, v)  # (batch, num_heads, seq_len, head_dim)
-
-        # Reshape and project back to embed_dim
-        attn_output = attn_output.transpose(1, 2).contiguous().view(
-            batch_size, seq_len, embed_dim
-        )
-        attn_output = self.out_proj(attn_output)
-
-        return attn_output
+        return output
 
 
 class DynamicNormalization(nn.Module):
     """
-    Enhanced hierarchical normalization strategy combining batch, layer, and group norms.
+    Hierarchical normalization strategy as described in equations (3)-(5).
     """
 
     def __init__(self, num_features, groups=8):
         super(DynamicNormalization, self).__init__()
         self.batch_norm = nn.BatchNorm1d(num_features)
         self.group_norm = nn.GroupNorm(groups, num_features)
-        self.layer_norm = nn.LayerNorm(num_features)  # Added layer norm for better stability
+        self.layer_norm = nn.LayerNorm(num_features)
 
     def forward(self, x):
-        """
-        Forward pass implementing enhanced normalization with better stability.
-        """
+        # Handle different input formats
         if len(x.shape) == 3 and x.shape[1] != self.batch_norm.num_features:
-            # Input is (batch, seq_len, channels) - for BiLSTM
+            # Input is (batch, seq_len, channels)
             x_t = x.transpose(1, 2)
             x_bn = self.batch_norm(x_t).transpose(1, 2)
 
-            # For GroupNorm, reshape then apply
             batch_size, seq_len, channels = x.shape
             x_reshaped = x.reshape(-1, channels)
             x_gn = self.group_norm(x_reshaped.unsqueeze(2)).squeeze(2)
             x_gn = x_gn.reshape(batch_size, seq_len, channels)
 
-            # Apply layer norm directly
             x_ln = self.layer_norm(x)
 
-            # Combine all normalizations with weighted average
             return (x_bn + x_gn + x_ln) / 3
         else:
-            # Input is (batch, channels, seq_len) - for CNN
+            # Input is (batch, channels, seq_len)
             x_bn = self.batch_norm(x)
             x_gn = self.group_norm(x)
 
-            # Apply layer norm with reshape
-            x_t = x.transpose(1, 2)  # (batch, seq_len, channels)
-            x_ln = self.layer_norm(x_t).transpose(1, 2)  # back to (batch, channels, seq_len)
+            x_t = x.transpose(1, 2)
+            x_ln = self.layer_norm(x_t).transpose(1, 2)
 
-            # Combine all normalizations with weighted average
             return (x_bn + x_gn + x_ln) / 3
 
 
 class HybridCNNBiLSTM(nn.Module):
     """
-    Enhanced Hybrid CNN-BiLSTM model with optimized attention mechanisms and regularization.
+    Hybrid CNN-BiLSTM model as described in the paper with attention mechanism.
     """
 
     def __init__(
@@ -139,7 +113,7 @@ class HybridCNNBiLSTM(nn.Module):
     ):
         super(HybridCNNBiLSTM, self).__init__()
 
-        # Enhanced CNN feature extractor
+        # CNN layers for spatial feature extraction as in equation (6)
         self.cnn_layers = nn.ModuleList([
             # First CNN layer: input_size -> 64
             nn.Sequential(
@@ -163,17 +137,13 @@ class HybridCNNBiLSTM(nn.Module):
             )
         ])
 
-        # Improved skip connection with gating mechanism
+        # Skip connection using 1×1 convolution as in equation (7)
         self.skip_connection = nn.Conv1d(input_size, 256, kernel_size=1)
-        self.skip_gate = nn.Sequential(
-            nn.Conv1d(input_size, 256, kernel_size=1),
-            nn.Sigmoid()
-        )
 
-        # Enhanced group normalization
+        # Group normalization for skip connection outputs as in equation (8)
         self.group_norm = nn.GroupNorm(8, 256)
 
-        # Bidirectional LSTM with improved dropout
+        # BiLSTM for temporal processing as in equation (9)
         self.bilstm = nn.LSTM(
             input_size=256,
             hidden_size=hidden_size,
@@ -183,14 +153,13 @@ class HybridCNNBiLSTM(nn.Module):
             dropout=dropout if num_layers > 1 else 0
         )
 
-        # Enhanced attention mechanism
-        self.attention = EnhancedAttention(
+        # Multi-head attention as in equations (16)-(18)
+        self.attention = MultiHeadAttention(
             embed_dim=hidden_size * 2,  # *2 for bidirectional
-            num_heads=8,
-            dropout=dropout / 2
+            num_heads=8
         )
 
-        # Task-specific heads with layer normalization
+        # Task-specific heads with layer normalization (5)
         # 1. Multiclass classification head
         self.multiclass_head = nn.Sequential(
             nn.Linear(hidden_size * 2, hidden_size),
@@ -218,7 +187,7 @@ class HybridCNNBiLSTM(nn.Module):
             nn.Linear(hidden_size, 2)
         )
 
-        # 4. Neural activity prediction head (for regularization)
+        # 4. Neural activity prediction head for regularization
         self.neural_head = nn.Sequential(
             nn.Linear(hidden_size * 2, hidden_size),
             nn.LayerNorm(hidden_size),
@@ -227,11 +196,10 @@ class HybridCNNBiLSTM(nn.Module):
             nn.Linear(hidden_size, 1)
         )
 
-        # Initialize weights properly
         self._initialize_weights()
 
     def _initialize_weights(self):
-        """Enhanced weight initialization for better convergence."""
+        """Initialize weights properly as described in the paper."""
         for m in self.modules():
             if isinstance(m, nn.Conv1d):
                 nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
@@ -253,37 +221,39 @@ class HybridCNNBiLSTM(nn.Module):
 
     def forward(self, x):
         """
-        Forward pass through the enhanced hybrid model with improved feature extraction.
-        """
-        # Input shape: (batch, seq_len, input_size)
-        batch_size, seq_len, input_size = x.shape
+        Forward pass through the hybrid model.
 
-        # Transform for CNN layers: (batch, input_size, seq_len)
+        Args:
+            x: Input tensor [batch_size, seq_len, input_size]
+
+        Returns:
+            Dictionary of task outputs
+        """
+        # Reshape for CNN: [batch, seq_len, input_size] -> [batch, input_size, seq_len]
+        batch_size, seq_len, input_size = x.shape
         x_cnn = x.transpose(1, 2)
 
-        # CNN feature extraction with residual connections
+        # CNN feature extraction with hierarchy as in equation (6)
         h1 = self.cnn_layers[0](x_cnn)
         h2 = self.cnn_layers[1](h1)
         h3 = self.cnn_layers[2](h2)
 
-        # Enhanced skip connection with gating
+        # Skip connection as in equation (7)
         h_skip = self.skip_connection(x_cnn)
-        skip_gate = self.skip_gate(x_cnn)
-        h_skip = h_skip * skip_gate  # Apply gate
 
-        # Combine with group normalization
+        # Combine with group normalization as in equation (8)
         h_combined = self.group_norm(h3 + h_skip)
 
-        # Prepare for BiLSTM: (batch, seq_len, channels)
+        # Reshape for BiLSTM: [batch, channels, seq_len] -> [batch, seq_len, channels]
         lstm_in = h_combined.transpose(1, 2)
 
-        # Apply BiLSTM with both hidden states and cell states
-        lstm_out, (hidden, cell) = self.bilstm(lstm_in)
+        # Apply BiLSTM as in equation (9)
+        lstm_out, _ = self.bilstm(lstm_in)
 
-        # Apply enhanced attention
+        # Apply multi-head attention
         attn_out = self.attention(lstm_out)
 
-        # Global average pooling with residual connection
+        # Global average pooling
         pooled = torch.mean(attn_out, dim=1)
 
         # Apply task-specific heads

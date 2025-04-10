@@ -1,0 +1,1 @@
+{"columns": ["Actual", "Predicted", "nPredictions"], "data": [["Class 0", "Class 0", 51.0], ["Class 0", "Class 1", 148.0], ["Class 0", "Class 2", 53.0], ["Class 1", "Class 0", 22.0], ["Class 1", "Class 1", 65.0], ["Class 1", "Class 2", 22.0], ["Class 2", "Class 0", 22.0], ["Class 2", "Class 1", 43.0], ["Class 2", "Class 2", 19.0]]}
