@@ -80,7 +80,7 @@ def main(config: DictConfig):
 
     # Load pretrained weights
     checkpoint_path = os.path.join(
-        config.paths.checkpoints_dir,
+        config.paths.output_dir,
         config.model.type,
         'best_model.pth'
     )
