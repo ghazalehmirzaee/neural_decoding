@@ -1,3 +1,4 @@
+# config/training/hybrid.yaml
 # Training parameters for hybrid model as specified in Table 2
 epochs: 500
 batch_size: 32
@@ -7,11 +8,10 @@ gradient_clip_val: 1.0
 early_stopping_patience: 7
 
 # Sequence parameters
-sequence_length: 32
-overlap: 16
+sequence_length: 16  # As in paper
+overlap: 8
 
 # Regularization
 use_class_weights: true
-use_mixup: true  # Enable mixup data augmentation
-
-
+use_mixup: true      # Enable mixup data augmentation with alpha=0.2
+mixup_alpha: 0.2
