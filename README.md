@@ -40,8 +40,8 @@ The hybrid model showed significant performance improvements by incorporating bo
 ## Installation
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/neurodecode-m1.git
-cd neurodecode-m1
+git clone https://github.com/ghazalehmirzaee/neural_decoding.git
+cd neural_decoding
 
 # Create and activate a new virtual environment
 python -m venv venv
