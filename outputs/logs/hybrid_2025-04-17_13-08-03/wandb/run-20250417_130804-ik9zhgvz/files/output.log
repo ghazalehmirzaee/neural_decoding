@@ -1,0 +1,30 @@
+Epoch 1 (Train):   0%|                                   | 0/64 [00:00<?, ?it/s]
+Error executing job with overrides: ['model=hybrid']
+Traceback (most recent call last):
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py", line 118, in main
+    predictions, targets = trainer.train()
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/training/trainer.py", line 242, in train
+    train_loss, train_metrics = self._train_epoch(epoch)
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/training/trainer.py", line 414, in _train_epoch
+    outputs_dict = self.model(inputs)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/src/models/hybrid_model.py", line 293, in forward
+    h1 = self.conv1(x_cnn)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 310, in forward
+    return self._conv_forward(input, self.weight, self.bias)
+  File "/home/ghazal/anaconda3/lib/python3.10/site-packages/torch/nn/modules/conv.py", line 306, in _conv_forward
+    return F.conv1d(input, weight, bias, self.stride,
+RuntimeError: Given groups=1, weight of size [64, 421, 3], expected input[32, 431, 32] to have 421 channels, but got 431 channels instead
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+WandB initialized successfully!
+Starting training...
+Starting training for hybrid model...
+Using device: cuda
+Model parameters: 4,525,073 total, 4,525,073 trainable

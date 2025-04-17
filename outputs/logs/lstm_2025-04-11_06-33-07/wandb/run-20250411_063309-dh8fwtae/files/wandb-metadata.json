@@ -1,0 +1,90 @@
+{
+    "os": "Linux-6.8.0-52-generic-x86_64-with-glibc2.35",
+    "python": "3.10.11",
+    "heartbeatAt": "2025-04-11T10:33:09.423019",
+    "startedAt": "2025-04-11T10:33:09.128942",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "model=lstm"
+    ],
+    "state": "running",
+    "program": "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py",
+    "codePathLocal": null,
+    "codePath": "scripts/train.py",
+    "git": {
+        "remote": "git@github.com:ghazalehmirzaee/neural_decoding.git",
+        "commit": "108b3460b384e5fcb05224dc488b5b39a8762519"
+    },
+    "email": "mirzaeeghazal@gmail.com",
+    "root": "/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding",
+    "host": "Ghazal",
+    "username": "ghazal",
+    "executable": "/home/ghazal/anaconda3/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 4.599875000000001,
+        "min": 800.0,
+        "max": 4900.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 4.603,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.6,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.598,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.601,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.597,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.601,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.6,
+            "min": 800.0,
+            "max": 4900.0
+        },
+        {
+            "current": 4.599,
+            "min": 800.0,
+            "max": 4900.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 467.8895797729492,
+            "used": 379.30371475219727
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 2070 SUPER",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 2070 SUPER",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 31.278179168701172
+    }
+}

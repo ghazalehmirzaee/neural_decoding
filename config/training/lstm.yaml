@@ -1,14 +1,14 @@
 # Training parameters for LSTM as specified in Table 1
 epochs: 100
-batch_size: 16
-learning_rate: 0.000001
-weight_decay: 0.00001  # L2 regularization (1e-5)
+batch_size: 32
+learning_rate: 0.0001
+weight_decay: 0.000001  # L2 regularization (1e-5)
 gradient_clip_val: 1.0
 early_stopping_patience: 7
 
 # Sequence parameters
-sequence_length: 10
-overlap: 5
+sequence_length: 16
+overlap: 8
 
 # Regularization
 use_class_weights: true

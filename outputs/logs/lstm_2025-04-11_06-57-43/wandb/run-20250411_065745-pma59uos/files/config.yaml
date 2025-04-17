@@ -1,0 +1,85 @@
+wandb_version: 1
+
+training.epochs:
+  desc: null
+  value: 18
+training.batch_size:
+  desc: null
+  value: 32
+training.learning_rate:
+  desc: null
+  value: 0.0001
+training.weight_decay:
+  desc: null
+  value: 1.0e-06
+training.gradient_clip_val:
+  desc: null
+  value: 1.0
+training.early_stopping_patience:
+  desc: null
+  value: 7
+training.sequence_length:
+  desc: null
+  value: 16
+training.overlap:
+  desc: null
+  value: 8
+training.use_class_weights:
+  desc: null
+  value: true
+model.type:
+  desc: null
+  value: lstm
+model.input_size:
+  desc: null
+  value: 593
+model.hidden_size:
+  desc: null
+  value: 64
+model.num_layers:
+  desc: null
+  value: 2
+model.num_classes:
+  desc: null
+  value: 3
+model.dropout:
+  desc: null
+  value: 0.3
+model.sequence_length:
+  desc: null
+  value: 16
+model.task_weights:
+  desc: null
+  value: '{''multiclass'': 1.0, ''contralateral'': 1.0, ''ipsilateral'': 1.0}'
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.11
+    cli_version: 0.15.12
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1744369065.341744
+    t:
+      1:
+      - 1
+      - 5
+      - 50
+      - 53
+      - 55
+      2:
+      - 1
+      - 5
+      - 50
+      - 53
+      - 55
+      3:
+      - 2
+      - 13
+      - 16
+      - 23
+      4: 3.10.11
+      5: 0.15.12
+      8:
+      - 5
+      13: linux-x86_64

@@ -1,0 +1,212 @@
+WandB initialized successfully!
+Starting training...
+Starting training for lstm model...
+Using device: cuda
+Model parameters: 164,551 total, 164,551 trainable
+Epoch 1/20 - Time: 1.2s - Train loss: 0.2523, Val loss: 0.2457, Learning rate: 0.000100
+  Multiclass: Train acc: 0.4224, Val acc: 0.3624, Val F1: 0.3830
+  Contralateral: Train acc: 0.6875, Val acc: 0.6197, Val F1: 0.2130
+  Ipsilateral: Train acc: 0.3384, Val acc: 0.6823, Val F1: 0.2198
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2457)
+Epoch 1 (Train): 100%|█████████████| 32/32 [00:00<00:00, 81.14it/s, loss=0.2523]
+Epoch 1 (Val): 100%|█████████████████| 7/7 [00:00<00:00, 61.86it/s, loss=0.2457]
+Epoch 2 (Train): 100%|████████████| 32/32 [00:00<00:00, 116.95it/s, loss=0.2484]
+Epoch 2 (Val):   0%|                         | 0/7 [00:00<?, ?it/s, loss=0.2439]
+Epoch 2/20 - Time: 0.8s - Train loss: 0.2484, Val loss: 0.2439, Learning rate: 0.000100
+  Multiclass: Train acc: 0.3711, Val acc: 0.4139, Val F1: 0.4290
+  Contralateral: Train acc: 0.6714, Val acc: 0.6689, Val F1: 0.2128
+  Ipsilateral: Train acc: 0.4497, Val acc: 0.5884, Val F1: 0.2333
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2439)
+Validation score improved from 0.2457 to 0.2439
+Epoch 3/20 - Time: 0.7s - Train loss: 0.2448, Val loss: 0.2415, Learning rate: 0.000100
+  Multiclass: Train acc: 0.3813, Val acc: 0.4072, Val F1: 0.4299
+  Contralateral: Train acc: 0.6479, Val acc: 0.6667, Val F1: 0.2359
+  Ipsilateral: Train acc: 0.5498, Val acc: 0.6957, Val F1: 0.1807
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2415)
+Validation score improved from 0.2439 to 0.2415
+Epoch 4/20 - Time: 0.8s - Train loss: 0.2416, Val loss: 0.2396, Learning rate: 0.000100
+  Multiclass: Train acc: 0.3779, Val acc: 0.3937, Val F1: 0.4131
+  Contralateral: Train acc: 0.6567, Val acc: 0.7002, Val F1: 0.3021
+  Ipsilateral: Train acc: 0.6348, Val acc: 0.7539, Val F1: 0.1538
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2396)
+Epoch 2 (Val): 100%|█████████████████| 7/7 [00:00<00:00, 62.58it/s, loss=0.2439]
+Epoch 3 (Train): 100%|████████████| 32/32 [00:00<00:00, 117.48it/s, loss=0.2448]
+Epoch 3 (Val): 100%|█████████████████| 7/7 [00:00<00:00, 62.10it/s, loss=0.2415]
+Epoch 4 (Train): 100%|████████████| 32/32 [00:00<00:00, 117.21it/s, loss=0.2416]
+Epoch 4 (Val): 100%|█████████████████| 7/7 [00:00<00:00, 60.66it/s, loss=0.2396]
+Epoch 5 (Train):  12%|█▊            | 4/32 [00:00<00:00, 38.59it/s, loss=0.2460]
+Epoch 5/20 - Time: 0.8s - Train loss: 0.2399, Val loss: 0.2377, Learning rate: 0.000100
+  Multiclass: Train acc: 0.3799, Val acc: 0.3960, Val F1: 0.4127
+  Contralateral: Train acc: 0.6494, Val acc: 0.6935, Val F1: 0.3382
+  Ipsilateral: Train acc: 0.6733, Val acc: 0.7830, Val F1: 0.1101
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2377)
+Validation score improved from 0.2396 to 0.2377
+Epoch 6/20 - Time: 0.9s - Train loss: 0.2361, Val loss: 0.2356, Learning rate: 0.000100
+  Multiclass: Train acc: 0.4121, Val acc: 0.3960, Val F1: 0.4100
+  Contralateral: Train acc: 0.6670, Val acc: 0.7069, Val F1: 0.3350
+  Ipsilateral: Train acc: 0.7104, Val acc: 0.7830, Val F1: 0.0202
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2356)
+Epoch 5 (Train): 100%|████████████| 32/32 [00:00<00:00, 118.17it/s, loss=0.2399]
+Epoch 5 (Val): 100%|█████████████████| 7/7 [00:00<00:00, 61.37it/s, loss=0.2377]
+Epoch 6 (Train): 100%|████████████| 32/32 [00:00<00:00, 116.46it/s, loss=0.2361]
+Epoch 6 (Val): 100%|█████████████████| 7/7 [00:00<00:00, 59.76it/s, loss=0.2356]
+Epoch 7 (Train): 100%|████████████| 32/32 [00:00<00:00, 115.24it/s, loss=0.2340]
+Epoch 7 (Val): 100%|█████████████████| 7/7 [00:00<00:00, 59.96it/s, loss=0.2332]
+Epoch 7/20 - Time: 0.8s - Train loss: 0.2340, Val loss: 0.2332, Learning rate: 0.000100
+  Multiclass: Train acc: 0.4136, Val acc: 0.4206, Val F1: 0.4346
+  Contralateral: Train acc: 0.6670, Val acc: 0.7204, Val F1: 0.3655
+  Ipsilateral: Train acc: 0.7285, Val acc: 0.8076, Val F1: 0.0227
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2332)
+Validation score improved from 0.2356 to 0.2332
+Epoch 8/20 - Time: 0.8s - Train loss: 0.2306, Val loss: 0.2307, Learning rate: 0.000100
+  Multiclass: Train acc: 0.4146, Val acc: 0.4273, Val F1: 0.4380
+  Contralateral: Train acc: 0.7095, Val acc: 0.7383, Val F1: 0.4236
+  Ipsilateral: Train acc: 0.7617, Val acc: 0.8233, Val F1: 0.0247
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2307)
+Validation score improved from 0.2332 to 0.2307
+Epoch 9/20 - Time: 0.8s - Train loss: 0.2271, Val loss: 0.2275, Learning rate: 0.000100
+  Multiclass: Train acc: 0.4585, Val acc: 0.4474, Val F1: 0.4571
+  Contralateral: Train acc: 0.7012, Val acc: 0.7584, Val F1: 0.4490
+  Ipsilateral: Train acc: 0.7744, Val acc: 0.8210, Val F1: 0.0244
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2275)
+Validation score improved from 0.2307 to 0.2275
+Epoch 8 (Train): 100%|████████████| 32/32 [00:00<00:00, 115.66it/s, loss=0.2306]
+Epoch 8 (Val): 100%|█████████████████| 7/7 [00:00<00:00, 60.70it/s, loss=0.2307]
+Epoch 9 (Train): 100%|████████████| 32/32 [00:00<00:00, 114.89it/s, loss=0.2271]
+Epoch 9 (Val): 100%|█████████████████| 7/7 [00:00<00:00, 60.35it/s, loss=0.2275]
+Epoch 10 (Train): 100%|███████████| 32/32 [00:00<00:00, 110.20it/s, loss=0.2248]
+Epoch 10 (Val): 100%|████████████████| 7/7 [00:00<00:00, 55.20it/s, loss=0.2238]
+Epoch 11 (Train): 100%|███████████| 32/32 [00:00<00:00, 115.74it/s, loss=0.2187]
+Epoch 11 (Val): 100%|████████████████| 7/7 [00:00<00:00, 50.88it/s, loss=0.2195]
+Epoch 12 (Train): 100%|███████████| 32/32 [00:00<00:00, 117.06it/s, loss=0.2137]
+Epoch 12 (Val): 100%|████████████████| 7/7 [00:00<00:00, 59.89it/s, loss=0.2144]
+Epoch 10/20 - Time: 0.8s - Train loss: 0.2248, Val loss: 0.2238, Learning rate: 0.000100
+  Multiclass: Train acc: 0.4702, Val acc: 0.4564, Val F1: 0.4650
+  Contralateral: Train acc: 0.7173, Val acc: 0.7629, Val F1: 0.4646
+  Ipsilateral: Train acc: 0.7744, Val acc: 0.8210, Val F1: 0.0244
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2238)
+Validation score improved from 0.2275 to 0.2238
+Epoch 11/20 - Time: 0.8s - Train loss: 0.2187, Val loss: 0.2195, Learning rate: 0.000100
+  Multiclass: Train acc: 0.4785, Val acc: 0.4698, Val F1: 0.4756
+  Contralateral: Train acc: 0.7285, Val acc: 0.7785, Val F1: 0.5123
+  Ipsilateral: Train acc: 0.7822, Val acc: 0.8188, Val F1: 0.0000
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2195)
+Validation score improved from 0.2238 to 0.2195
+Epoch 12/20 - Time: 0.9s - Train loss: 0.2137, Val loss: 0.2144, Learning rate: 0.000100
+  Multiclass: Train acc: 0.5186, Val acc: 0.4966, Val F1: 0.4990
+  Contralateral: Train acc: 0.7456, Val acc: 0.7830, Val F1: 0.5359
+  Ipsilateral: Train acc: 0.7852, Val acc: 0.8188, Val F1: 0.0000
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2144)
+Validation score improved from 0.2195 to 0.2144
+Epoch 13/20 - Time: 0.8s - Train loss: 0.2068, Val loss: 0.2086, Learning rate: 0.000100
+  Multiclass: Train acc: 0.5327, Val acc: 0.4989, Val F1: 0.5023
+  Contralateral: Train acc: 0.7534, Val acc: 0.7942, Val F1: 0.5660
+  Ipsilateral: Train acc: 0.7837, Val acc: 0.8166, Val F1: 0.0000
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2086)
+Validation score improved from 0.2144 to 0.2086
+Epoch 14/20 - Time: 0.8s - Train loss: 0.1990, Val loss: 0.2011, Learning rate: 0.000100
+  Multiclass: Train acc: 0.5630, Val acc: 0.5190, Val F1: 0.5215
+  Contralateral: Train acc: 0.7832, Val acc: 0.8054, Val F1: 0.6266
+  Ipsilateral: Train acc: 0.7861, Val acc: 0.8121, Val F1: 0.0233
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.2011)
+Validation score improved from 0.2086 to 0.2011
+Epoch 13 (Train): 100%|███████████| 32/32 [00:00<00:00, 114.03it/s, loss=0.2068]
+Epoch 13 (Val): 100%|████████████████| 7/7 [00:00<00:00, 54.66it/s, loss=0.2086]
+Epoch 14 (Train): 100%|███████████| 32/32 [00:00<00:00, 115.34it/s, loss=0.1990]
+Epoch 14 (Val): 100%|████████████████| 7/7 [00:00<00:00, 59.37it/s, loss=0.2011]
+Epoch 15 (Train): 100%|███████████| 32/32 [00:00<00:00, 103.74it/s, loss=0.1907]
+Epoch 15 (Val): 100%|████████████████| 7/7 [00:00<00:00, 59.11it/s, loss=0.1926]
+Epoch 16 (Train): 100%|███████████| 32/32 [00:00<00:00, 100.06it/s, loss=0.1776]
+Epoch 16 (Val): 100%|████████████████| 7/7 [00:00<00:00, 58.72it/s, loss=0.1834]
+Epoch 17 (Train): 100%|███████████| 32/32 [00:00<00:00, 114.42it/s, loss=0.1726]
+Epoch 17 (Val): 100%|████████████████| 7/7 [00:00<00:00, 59.58it/s, loss=0.1743]
+Epoch 15/20 - Time: 0.8s - Train loss: 0.1907, Val loss: 0.1926, Learning rate: 0.000100
+  Multiclass: Train acc: 0.5786, Val acc: 0.5638, Val F1: 0.5656
+  Contralateral: Train acc: 0.7988, Val acc: 0.8166, Val F1: 0.6612
+  Ipsilateral: Train acc: 0.7871, Val acc: 0.8054, Val F1: 0.1031
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.1926)
+Validation score improved from 0.2011 to 0.1926
+Epoch 16/20 - Time: 0.8s - Train loss: 0.1776, Val loss: 0.1834, Learning rate: 0.000100
+  Multiclass: Train acc: 0.6113, Val acc: 0.5682, Val F1: 0.5652
+  Contralateral: Train acc: 0.8228, Val acc: 0.8031, Val F1: 0.6562
+  Ipsilateral: Train acc: 0.7905, Val acc: 0.8054, Val F1: 0.2018
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.1834)
+Validation score improved from 0.1926 to 0.1834
+Epoch 17/20 - Time: 0.8s - Train loss: 0.1726, Val loss: 0.1743, Learning rate: 0.000100
+  Multiclass: Train acc: 0.6084, Val acc: 0.5839, Val F1: 0.5808
+  Contralateral: Train acc: 0.8252, Val acc: 0.8076, Val F1: 0.6692
+  Ipsilateral: Train acc: 0.7837, Val acc: 0.7919, Val F1: 0.2439
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.1743)
+Validation score improved from 0.1834 to 0.1743
+Epoch 18/20 - Time: 0.9s - Train loss: 0.1579, Val loss: 0.1646, Learning rate: 0.000100
+  Multiclass: Train acc: 0.6494, Val acc: 0.5928, Val F1: 0.5888
+  Contralateral: Train acc: 0.8408, Val acc: 0.8054, Val F1: 0.6692
+  Ipsilateral: Train acc: 0.7886, Val acc: 0.7919, Val F1: 0.3673
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.1646)
+Validation score improved from 0.1743 to 0.1646
+Epoch 18 (Train): 100%|███████████| 32/32 [00:00<00:00, 112.15it/s, loss=0.1579]
+Epoch 18 (Val): 100%|████████████████| 7/7 [00:00<00:00, 59.95it/s, loss=0.1646]
+Epoch 19 (Train): 100%|███████████| 32/32 [00:00<00:00, 113.13it/s, loss=0.1493]
+Epoch 19 (Val): 100%|████████████████| 7/7 [00:00<00:00, 58.93it/s, loss=0.1564]
+Epoch 20 (Train): 100%|███████████| 32/32 [00:00<00:00, 113.49it/s, loss=0.1372]
+Epoch 20 (Val): 100%|████████████████| 7/7 [00:00<00:00, 59.00it/s, loss=0.1479]
+Evaluating: 100%|████████████████████| 8/8 [00:00<00:00, 64.32it/s, loss=0.1693]
+Epoch 19/20 - Time: 0.8s - Train loss: 0.1493, Val loss: 0.1564, Learning rate: 0.000100
+  Multiclass: Train acc: 0.6782, Val acc: 0.5996, Val F1: 0.5947
+  Contralateral: Train acc: 0.8604, Val acc: 0.8054, Val F1: 0.6766
+  Ipsilateral: Train acc: 0.7915, Val acc: 0.7875, Val F1: 0.4444
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.1564)
+Validation score improved from 0.1646 to 0.1564
+Epoch 20/20 - Time: 0.8s - Train loss: 0.1372, Val loss: 0.1479, Learning rate: 0.000100
+  Multiclass: Train acc: 0.6968, Val acc: 0.6286, Val F1: 0.6272
+  Contralateral: Train acc: 0.8652, Val acc: 0.8233, Val F1: 0.6902
+  Ipsilateral: Train acc: 0.7993, Val acc: 0.8009, Val F1: 0.5083
+Checkpoint saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/checkpoints/lstm/best_model.pth
+New best model saved (val_loss: 0.1479)
+Validation score improved from 0.1564 to 0.1479
+Training completed in 16.4s. Best validation loss: 0.1479
+Loaded model from checkpoint (epoch 20)
+Evaluating model on test set...
+Multiclass Test Metrics:
+  accuracy: 0.6630
+  precision: 0.7498
+  recall: 0.6630
+  f1: 0.6646
+Contralateral Test Metrics:
+  accuracy: 0.8337
+  precision: 0.6471
+  recall: 0.7652
+  f1: 0.7012
+Ipsilateral Test Metrics:
+  accuracy: 0.8293
+  precision: 0.5161
+  recall: 0.6000
+  f1: 0.5549
+Overall Test Accuracy: 0.7753
+Generating visualizations...
+Saved confusion matrix to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/multiclass_confusion_matrix.png
+Saved confusion matrix to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/contralateral_confusion_matrix.png
+Saved confusion matrix to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/ipsilateral_confusion_matrix.png
+Saved ROC curves to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/multiclass_roc_curves.png
+Saved ROC curves to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/contralateral_roc_curves.png
+Saved ROC curves to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/visualizations/ipsilateral_roc_curves.png
+Test results saved to /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/lstm/test_results.json

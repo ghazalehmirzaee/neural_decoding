@@ -1,0 +1,865 @@
+2025-04-11 06:55:52,829 INFO    StreamThr :4160129 [internal.py:wandb_internal():86] W&B internal server running at pid: 4160129, started at: 2025-04-11 06:55:52.829037
+2025-04-11 06:55:52,830 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: status
+2025-04-11 06:55:52,833 INFO    WriterThread:4160129 [datastore.py:open_for_write():85] open: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/run-shragvze.wandb
+2025-04-11 06:55:52,833 DEBUG   SenderThread:4160129 [sender.py:send():380] send: header
+2025-04-11 06:55:52,836 DEBUG   SenderThread:4160129 [sender.py:send():380] send: run
+2025-04-11 06:55:53,077 INFO    SenderThread:4160129 [dir_watcher.py:__init__():211] watching files in: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files
+2025-04-11 06:55:53,077 INFO    SenderThread:4160129 [sender.py:_start_run_threads():1122] run started: shragvze with start time 1744368952.828944
+2025-04-11 06:55:53,083 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: check_version
+2025-04-11 06:55:53,083 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: check_version
+2025-04-11 06:55:53,148 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: run_start
+2025-04-11 06:55:53,153 DEBUG   HandlerThread:4160129 [system_info.py:__init__():32] System info init
+2025-04-11 06:55:53,154 DEBUG   HandlerThread:4160129 [system_info.py:__init__():47] System info init done
+2025-04-11 06:55:53,154 INFO    HandlerThread:4160129 [system_monitor.py:start():194] Starting system monitor
+2025-04-11 06:55:53,154 INFO    SystemMonitor:4160129 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-04-11 06:55:53,154 INFO    HandlerThread:4160129 [system_monitor.py:probe():214] Collecting system info
+2025-04-11 06:55:53,154 INFO    SystemMonitor:4160129 [interfaces.py:start():190] Started cpu monitoring
+2025-04-11 06:55:53,155 INFO    SystemMonitor:4160129 [interfaces.py:start():190] Started disk monitoring
+2025-04-11 06:55:53,156 INFO    SystemMonitor:4160129 [interfaces.py:start():190] Started gpu monitoring
+2025-04-11 06:55:53,156 INFO    SystemMonitor:4160129 [interfaces.py:start():190] Started memory monitoring
+2025-04-11 06:55:53,156 INFO    SystemMonitor:4160129 [interfaces.py:start():190] Started network monitoring
+2025-04-11 06:55:53,166 DEBUG   HandlerThread:4160129 [system_info.py:probe():196] Probing system
+2025-04-11 06:55:53,167 DEBUG   HandlerThread:4160129 [system_info.py:_probe_git():181] Probing git
+2025-04-11 06:55:53,171 DEBUG   HandlerThread:4160129 [system_info.py:_probe_git():189] Probing git done
+2025-04-11 06:55:53,171 DEBUG   HandlerThread:4160129 [system_info.py:probe():244] Probing system done
+2025-04-11 06:55:53,171 DEBUG   HandlerThread:4160129 [system_monitor.py:probe():223] {'os': 'Linux-6.8.0-52-generic-x86_64-with-glibc2.35', 'python': '3.10.11', 'heartbeatAt': '2025-04-11T10:55:53.166812', 'startedAt': '2025-04-11T10:55:52.824982', 'docker': None, 'cuda': None, 'args': ('model=lstm',), 'state': 'running', 'program': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/scripts/train.py', 'codePathLocal': None, 'codePath': 'scripts/train.py', 'git': {'remote': 'git@github.com:ghazalehmirzaee/neural_decoding.git', 'commit': '108b3460b384e5fcb05224dc488b5b39a8762519'}, 'email': 'mirzaeeghazal@gmail.com', 'root': '/home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding', 'host': 'Ghazal', 'username': 'ghazal', 'executable': '/home/ghazal/anaconda3/bin/python', 'cpu_count': 8, 'cpu_count_logical': 8, 'cpu_freq': {'current': 4.5995, 'min': 800.0, 'max': 4900.0}, 'cpu_freq_per_core': [{'current': 4.6, 'min': 800.0, 'max': 4900.0}, {'current': 4.6, 'min': 800.0, 'max': 4900.0}, {'current': 4.599, 'min': 800.0, 'max': 4900.0}, {'current': 4.601, 'min': 800.0, 'max': 4900.0}, {'current': 4.599, 'min': 800.0, 'max': 4900.0}, {'current': 4.599, 'min': 800.0, 'max': 4900.0}, {'current': 4.599, 'min': 800.0, 'max': 4900.0}, {'current': 4.6, 'min': 800.0, 'max': 4900.0}], 'disk': {'/': {'total': 467.8895797729492, 'used': 379.3119659423828}}, 'gpu': 'NVIDIA GeForce RTX 2070 SUPER', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 2070 SUPER', 'memory_total': 8589934592}], 'memory': {'total': 31.278179168701172}}
+2025-04-11 06:55:53,171 INFO    HandlerThread:4160129 [system_monitor.py:probe():224] Finished collecting system info
+2025-04-11 06:55:53,171 INFO    HandlerThread:4160129 [system_monitor.py:probe():227] Publishing system info
+2025-04-11 06:55:53,171 DEBUG   HandlerThread:4160129 [system_info.py:_save_pip():52] Saving list of pip packages installed into the current environment
+2025-04-11 06:55:53,171 DEBUG   HandlerThread:4160129 [system_info.py:_save_pip():68] Saving pip packages done
+2025-04-11 06:55:53,171 DEBUG   HandlerThread:4160129 [system_info.py:_save_conda():75] Saving list of conda packages installed into the current environment
+2025-04-11 06:55:54,078 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/requirements.txt
+2025-04-11 06:55:54,078 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/conda-environment.yaml
+2025-04-11 06:56:03,469 DEBUG   HandlerThread:4160129 [system_info.py:_save_conda():87] Saving conda packages done
+2025-04-11 06:56:03,469 INFO    HandlerThread:4160129 [system_monitor.py:probe():229] Finished publishing system info
+2025-04-11 06:56:03,472 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: status_report
+2025-04-11 06:56:03,472 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: keepalive
+2025-04-11 06:56:03,472 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: status_report
+2025-04-11 06:56:03,472 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: keepalive
+2025-04-11 06:56:03,472 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:03,473 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-metadata.json with policy now
+2025-04-11 06:56:03,475 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: stop_status
+2025-04-11 06:56:03,475 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: stop_status
+2025-04-11 06:56:03,476 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: internal_messages
+2025-04-11 06:56:03,653 DEBUG   SenderThread:4160129 [sender.py:send():380] send: telemetry
+2025-04-11 06:56:03,730 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/wcr2yndt-wandb-metadata.json
+2025-04-11 06:56:04,079 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/conda-environment.yaml
+2025-04-11 06:56:04,079 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:04,079 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-metadata.json
+2025-04-11 06:56:04,416 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:04,416 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:04,417 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_0_5ba479dd231d9e298334.png with policy now
+2025-04-11 06:56:04,417 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:04,417 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:04,418 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:04,537 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:04,537 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_1_2465a87129244fd0905a.png with policy now
+2025-04-11 06:56:04,537 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:04,537 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:04,537 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:04,538 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:04,609 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/v0212suy-media/images/val/multiclass_confusion_matrix_0_5ba479dd231d9e298334.png
+2025-04-11 06:56:04,654 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:04,654 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_2_42d2f2722ff58618c920.png with policy now
+2025-04-11 06:56:04,654 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:04,655 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:04,655 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:04,657 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:04,657 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:04,657 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:04,658 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:04,664 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:04,756 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/1yglntly-media/images/val/contralateral_confusion_matrix_1_2465a87129244fd0905a.png
+2025-04-11 06:56:04,841 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/l8fkmxm3-media/images/val/ipsilateral_confusion_matrix_2_42d2f2722ff58618c920.png
+2025-04-11 06:56:05,079 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_1_2465a87129244fd0905a.png
+2025-04-11 06:56:05,079 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:05,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_2_42d2f2722ff58618c920.png
+2025-04-11 06:56:05,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_0_5ba479dd231d9e298334.png
+2025-04-11 06:56:05,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images
+2025-04-11 06:56:05,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:05,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media
+2025-04-11 06:56:05,161 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:05,161 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:05,168 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_4_0777fefa39e6e2409bb0.png with policy now
+2025-04-11 06:56:05,171 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:05,171 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:05,171 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:05,283 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:05,283 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_5_e4a6070cb22fc36b3588.png with policy now
+2025-04-11 06:56:05,283 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:05,283 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:05,284 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:05,284 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:05,318 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/z6redldy-media/images/val/contralateral_confusion_matrix_1_2465a87129244fd0905a.png
+2025-04-11 06:56:05,323 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/6szvz6gp-media/images/val/ipsilateral_confusion_matrix_2_42d2f2722ff58618c920.png
+2025-04-11 06:56:05,381 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/i3or661g-media/images/val/multiclass_confusion_matrix_0_5ba479dd231d9e298334.png
+2025-04-11 06:56:05,400 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:05,401 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:05,401 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_6_abbca226484742b7a449.png with policy now
+2025-04-11 06:56:05,401 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:05,401 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:05,402 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:05,402 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:05,403 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:05,403 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:05,407 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/z2c4jn68-media/images/val/multiclass_confusion_matrix_4_0777fefa39e6e2409bb0.png
+2025-04-11 06:56:05,409 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:05,480 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/qmi1pzuc-media/images/val/contralateral_confusion_matrix_5_e4a6070cb22fc36b3588.png
+2025-04-11 06:56:05,589 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/k6ezps8w-media/images/val/ipsilateral_confusion_matrix_6_abbca226484742b7a449.png
+2025-04-11 06:56:05,911 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:05,911 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_8_e8219565ec61612939ed.png with policy now
+2025-04-11 06:56:05,911 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:05,912 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:05,912 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:05,912 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:06,033 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:06,033 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:06,033 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_9_11e3f617f05d12a52cae.png with policy now
+2025-04-11 06:56:06,034 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:06,034 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:06,034 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:06,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:06,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:06,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_9_11e3f617f05d12a52cae.png
+2025-04-11 06:56:06,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_5_e4a6070cb22fc36b3588.png
+2025-04-11 06:56:06,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_6_abbca226484742b7a449.png
+2025-04-11 06:56:06,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_8_e8219565ec61612939ed.png
+2025-04-11 06:56:06,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_4_0777fefa39e6e2409bb0.png
+2025-04-11 06:56:06,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:06,108 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/nmah2352-media/images/val/multiclass_confusion_matrix_8_e8219565ec61612939ed.png
+2025-04-11 06:56:06,150 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:06,150 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:06,150 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_10_2e74dbad33b2e3723e32.png with policy now
+2025-04-11 06:56:06,151 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:06,152 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:06,152 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:06,152 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:06,153 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:06,153 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:06,160 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:06,226 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/sz2vty59-media/images/val/contralateral_confusion_matrix_9_11e3f617f05d12a52cae.png
+2025-04-11 06:56:06,311 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/6hcp53h0-media/images/val/ipsilateral_confusion_matrix_6_abbca226484742b7a449.png
+2025-04-11 06:56:06,313 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/rm58qi1m-media/images/val/contralateral_confusion_matrix_5_e4a6070cb22fc36b3588.png
+2025-04-11 06:56:06,324 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/suvw3hax-media/images/val/multiclass_confusion_matrix_4_0777fefa39e6e2409bb0.png
+2025-04-11 06:56:06,379 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/w43wpdrh-media/images/val/ipsilateral_confusion_matrix_10_2e74dbad33b2e3723e32.png
+2025-04-11 06:56:06,455 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/nc5hrovi-media/images/val/multiclass_confusion_matrix_8_e8219565ec61612939ed.png
+2025-04-11 06:56:06,589 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/dcs10iha-media/images/val/contralateral_confusion_matrix_9_11e3f617f05d12a52cae.png
+2025-04-11 06:56:06,672 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:06,672 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:06,672 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_12_151a836c185600fd447b.png with policy now
+2025-04-11 06:56:06,672 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:06,672 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:06,673 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:06,790 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:06,790 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:06,790 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_13_50b989c14fb53ac2c08e.png with policy now
+2025-04-11 06:56:06,790 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:06,790 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:06,791 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:06,857 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/qguxugxo-media/images/val/multiclass_confusion_matrix_12_151a836c185600fd447b.png
+2025-04-11 06:56:06,907 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:06,907 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:06,907 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_14_5cac87b0ce679a56ded7.png with policy now
+2025-04-11 06:56:06,908 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:06,908 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:06,908 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:06,908 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:06,910 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:06,910 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:06,916 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:06,974 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/0xnzculi-media/images/val/contralateral_confusion_matrix_13_50b989c14fb53ac2c08e.png
+2025-04-11 06:56:07,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:07,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_10_2e74dbad33b2e3723e32.png
+2025-04-11 06:56:07,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_13_50b989c14fb53ac2c08e.png
+2025-04-11 06:56:07,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_14_5cac87b0ce679a56ded7.png
+2025-04-11 06:56:07,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_12_151a836c185600fd447b.png
+2025-04-11 06:56:07,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:07,107 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/4oxmafzn-media/images/val/ipsilateral_confusion_matrix_14_5cac87b0ce679a56ded7.png
+2025-04-11 06:56:07,318 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/rjhjsy2q-media/images/val/ipsilateral_confusion_matrix_10_2e74dbad33b2e3723e32.png
+2025-04-11 06:56:07,356 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/v7c9qqfh-media/images/val/multiclass_confusion_matrix_12_151a836c185600fd447b.png
+2025-04-11 06:56:07,357 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/i5mhhc4x-media/images/val/contralateral_confusion_matrix_13_50b989c14fb53ac2c08e.png
+2025-04-11 06:56:07,372 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/ujcspza4-media/images/val/ipsilateral_confusion_matrix_14_5cac87b0ce679a56ded7.png
+2025-04-11 06:56:07,426 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:07,426 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_16_d96230cf5e9f89f71bbf.png with policy now
+2025-04-11 06:56:07,426 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:07,427 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:07,427 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:07,427 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:07,547 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:07,547 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:07,547 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_17_05543ccc23561f510405.png with policy now
+2025-04-11 06:56:07,548 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:07,548 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:07,548 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:07,614 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/g3ks6aov-media/images/val/multiclass_confusion_matrix_16_d96230cf5e9f89f71bbf.png
+2025-04-11 06:56:07,665 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:07,665 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_18_3c6617ccbe64323e56d2.png with policy now
+2025-04-11 06:56:07,665 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:07,666 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:07,667 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:07,667 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:07,667 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:07,668 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:07,668 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:07,668 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:07,738 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/zss7uxlv-media/images/val/contralateral_confusion_matrix_17_05543ccc23561f510405.png
+2025-04-11 06:56:07,843 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/7sj7v45q-media/images/val/ipsilateral_confusion_matrix_18_3c6617ccbe64323e56d2.png
+2025-04-11 06:56:08,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:08,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:08,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_17_05543ccc23561f510405.png
+2025-04-11 06:56:08,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_18_3c6617ccbe64323e56d2.png
+2025-04-11 06:56:08,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_16_d96230cf5e9f89f71bbf.png
+2025-04-11 06:56:08,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:08,185 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:08,185 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_20_32416ccb2c19ff1f4161.png with policy now
+2025-04-11 06:56:08,186 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: status_report
+2025-04-11 06:56:08,186 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:08,186 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:08,186 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:08,187 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:08,303 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:08,304 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_21_42e182ee381144563daa.png with policy now
+2025-04-11 06:56:08,304 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:08,304 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:08,304 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:08,304 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:08,306 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/lrt33v08-media/images/val/contralateral_confusion_matrix_17_05543ccc23561f510405.png
+2025-04-11 06:56:08,319 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/2j1w8r2g-media/images/val/ipsilateral_confusion_matrix_18_3c6617ccbe64323e56d2.png
+2025-04-11 06:56:08,355 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/f8qxo7ee-media/images/val/multiclass_confusion_matrix_16_d96230cf5e9f89f71bbf.png
+2025-04-11 06:56:08,384 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/w3bnv8ge-media/images/val/multiclass_confusion_matrix_20_32416ccb2c19ff1f4161.png
+2025-04-11 06:56:08,505 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/z0o0vop0-media/images/val/contralateral_confusion_matrix_21_42e182ee381144563daa.png
+2025-04-11 06:56:08,538 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:08,538 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_22_a3a8c7642b2f62d58270.png with policy now
+2025-04-11 06:56:08,538 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:08,539 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:08,539 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:08,540 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:08,540 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:08,540 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:08,540 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:08,547 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:08,727 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/apbpjbl8-media/images/val/ipsilateral_confusion_matrix_22_a3a8c7642b2f62d58270.png
+2025-04-11 06:56:09,071 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:09,071 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_24_1071e40d37c6e2cd271c.png with policy now
+2025-04-11 06:56:09,071 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:09,071 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:09,072 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:09,072 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:09,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:09,080 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_21_42e182ee381144563daa.png
+2025-04-11 06:56:09,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_20_32416ccb2c19ff1f4161.png
+2025-04-11 06:56:09,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_22_a3a8c7642b2f62d58270.png
+2025-04-11 06:56:09,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_24_1071e40d37c6e2cd271c.png
+2025-04-11 06:56:09,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:09,189 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:09,190 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_25_59af1c209a1f8d58a74f.png with policy now
+2025-04-11 06:56:09,190 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:09,190 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:09,190 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:09,190 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:09,264 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/4fjhaf7n-media/images/val/multiclass_confusion_matrix_24_1071e40d37c6e2cd271c.png
+2025-04-11 06:56:09,308 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:09,308 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_26_23aeed36b983f9fd1a83.png with policy now
+2025-04-11 06:56:09,308 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:09,309 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:09,309 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:09,309 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:09,310 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:09,311 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:09,311 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:09,315 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/zojeul0n-media/images/val/multiclass_confusion_matrix_20_32416ccb2c19ff1f4161.png
+2025-04-11 06:56:09,318 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:09,328 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/m2h8a7t7-media/images/val/contralateral_confusion_matrix_21_42e182ee381144563daa.png
+2025-04-11 06:56:09,341 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/b5y3r7ra-media/images/val/ipsilateral_confusion_matrix_22_a3a8c7642b2f62d58270.png
+2025-04-11 06:56:09,395 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/syvagm5j-media/images/val/contralateral_confusion_matrix_25_59af1c209a1f8d58a74f.png
+2025-04-11 06:56:09,514 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/ctibgu8s-media/images/val/multiclass_confusion_matrix_24_1071e40d37c6e2cd271c.png
+2025-04-11 06:56:09,520 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/x9q1xnm5-media/images/val/ipsilateral_confusion_matrix_26_23aeed36b983f9fd1a83.png
+2025-04-11 06:56:09,850 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:09,851 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:09,851 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_28_00b3e54f547dd9a24ab8.png with policy now
+2025-04-11 06:56:09,851 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:09,851 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:09,851 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:09,969 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:09,969 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:09,969 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_29_0e1bc2bdcd8fcdec94c4.png with policy now
+2025-04-11 06:56:09,970 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:09,970 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:09,970 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:10,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:10,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:10,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_29_0e1bc2bdcd8fcdec94c4.png
+2025-04-11 06:56:10,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_25_59af1c209a1f8d58a74f.png
+2025-04-11 06:56:10,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_26_23aeed36b983f9fd1a83.png
+2025-04-11 06:56:10,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_28_00b3e54f547dd9a24ab8.png
+2025-04-11 06:56:10,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:10,085 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/rxudv66u-media/images/val/multiclass_confusion_matrix_28_00b3e54f547dd9a24ab8.png
+2025-04-11 06:56:10,087 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:10,087 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:10,087 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_30_24860405254c8181bbdf.png with policy now
+2025-04-11 06:56:10,088 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:10,088 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:10,089 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:10,089 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:10,102 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:10,103 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:10,103 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:10,196 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/lsm10bk6-media/images/val/contralateral_confusion_matrix_29_0e1bc2bdcd8fcdec94c4.png
+2025-04-11 06:56:10,316 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/b86vw608-media/images/val/ipsilateral_confusion_matrix_30_24860405254c8181bbdf.png
+2025-04-11 06:56:10,322 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/33kw1a5q-media/images/val/ipsilateral_confusion_matrix_26_23aeed36b983f9fd1a83.png
+2025-04-11 06:56:10,327 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/jvok15xb-media/images/val/contralateral_confusion_matrix_25_59af1c209a1f8d58a74f.png
+2025-04-11 06:56:10,328 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/ay3cvgpj-media/images/val/multiclass_confusion_matrix_28_00b3e54f547dd9a24ab8.png
+2025-04-11 06:56:10,482 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/vh05yfke-media/images/val/contralateral_confusion_matrix_29_0e1bc2bdcd8fcdec94c4.png
+2025-04-11 06:56:10,608 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:10,609 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_32_6de6505e2938f7d7849a.png with policy now
+2025-04-11 06:56:10,609 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:10,609 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:10,609 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:10,610 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:10,727 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:10,727 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:10,727 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_33_a37870c0827891651720.png with policy now
+2025-04-11 06:56:10,728 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:10,728 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:10,728 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:10,796 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/8i95mifc-media/images/val/multiclass_confusion_matrix_32_6de6505e2938f7d7849a.png
+2025-04-11 06:56:10,844 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:10,844 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:10,844 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_34_3b12b92b1e0b13bb132b.png with policy now
+2025-04-11 06:56:10,845 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:10,845 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:10,845 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:10,846 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:10,847 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:10,847 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:10,853 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:10,953 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/e8l29t5y-media/images/val/contralateral_confusion_matrix_33_a37870c0827891651720.png
+2025-04-11 06:56:11,046 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/xbwmwkpq-media/images/val/ipsilateral_confusion_matrix_34_3b12b92b1e0b13bb132b.png
+2025-04-11 06:56:11,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:11,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_33_a37870c0827891651720.png
+2025-04-11 06:56:11,081 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_32_6de6505e2938f7d7849a.png
+2025-04-11 06:56:11,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_34_3b12b92b1e0b13bb132b.png
+2025-04-11 06:56:11,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_30_24860405254c8181bbdf.png
+2025-04-11 06:56:11,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:11,323 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/y4g234ag-media/images/val/ipsilateral_confusion_matrix_30_24860405254c8181bbdf.png
+2025-04-11 06:56:11,325 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/bliflnng-media/images/val/multiclass_confusion_matrix_32_6de6505e2938f7d7849a.png
+2025-04-11 06:56:11,336 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/84hxkkdg-media/images/val/ipsilateral_confusion_matrix_34_3b12b92b1e0b13bb132b.png
+2025-04-11 06:56:11,341 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/u56dem7d-media/images/val/contralateral_confusion_matrix_33_a37870c0827891651720.png
+2025-04-11 06:56:11,376 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:11,376 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_36_5aba3586d0972876f4d7.png with policy now
+2025-04-11 06:56:11,377 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:11,377 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:11,377 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:11,377 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:11,489 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:11,490 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_37_387797f6a4f1e0aa1bfc.png with policy now
+2025-04-11 06:56:11,490 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:11,490 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:11,490 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:11,491 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:11,562 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/syi48eal-media/images/val/multiclass_confusion_matrix_36_5aba3586d0972876f4d7.png
+2025-04-11 06:56:11,606 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:11,606 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_38_4c1c9609b717aa19f4bb.png with policy now
+2025-04-11 06:56:11,606 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:11,607 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:11,608 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:11,608 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:11,608 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:11,609 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:11,609 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:11,616 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:11,682 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/0ag6zkki-media/images/val/contralateral_confusion_matrix_37_387797f6a4f1e0aa1bfc.png
+2025-04-11 06:56:11,823 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/x8ktcqds-media/images/val/ipsilateral_confusion_matrix_38_4c1c9609b717aa19f4bb.png
+2025-04-11 06:56:12,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:12,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:12,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_38_4c1c9609b717aa19f4bb.png
+2025-04-11 06:56:12,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_36_5aba3586d0972876f4d7.png
+2025-04-11 06:56:12,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_37_387797f6a4f1e0aa1bfc.png
+2025-04-11 06:56:12,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:12,116 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:12,116 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_40_c7a6c7995bea1b5025c9.png with policy now
+2025-04-11 06:56:12,117 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:12,117 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:12,117 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:12,118 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:12,235 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:12,236 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:12,236 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_41_617881589bc3d0c8df86.png with policy now
+2025-04-11 06:56:12,236 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:12,236 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:12,237 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:12,294 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/jdzorbkb-media/images/val/multiclass_confusion_matrix_40_c7a6c7995bea1b5025c9.png
+2025-04-11 06:56:12,323 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/6v0etpm2-media/images/val/multiclass_confusion_matrix_36_5aba3586d0972876f4d7.png
+2025-04-11 06:56:12,325 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/qrpq3gif-media/images/val/contralateral_confusion_matrix_37_387797f6a4f1e0aa1bfc.png
+2025-04-11 06:56:12,328 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/qcz8cvjk-media/images/val/ipsilateral_confusion_matrix_38_4c1c9609b717aa19f4bb.png
+2025-04-11 06:56:12,351 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:12,352 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:12,352 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_42_b66ab737cd4d59b82c2f.png with policy now
+2025-04-11 06:56:12,352 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:12,352 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:12,353 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:12,353 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:12,354 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:12,355 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:12,360 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:12,432 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/i81pfgmc-media/images/val/contralateral_confusion_matrix_41_617881589bc3d0c8df86.png
+2025-04-11 06:56:12,552 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/n60ewluq-media/images/val/ipsilateral_confusion_matrix_42_b66ab737cd4d59b82c2f.png
+2025-04-11 06:56:12,871 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:12,871 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:12,871 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_44_7e4987293c5031f1aff6.png with policy now
+2025-04-11 06:56:12,872 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:12,872 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:12,873 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:12,995 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:12,995 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_45_74952658a7b54cc7f7ac.png with policy now
+2025-04-11 06:56:12,996 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:12,996 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:12,996 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:12,996 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:13,071 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/5umpzj8i-media/images/val/multiclass_confusion_matrix_44_7e4987293c5031f1aff6.png
+2025-04-11 06:56:13,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:13,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_42_b66ab737cd4d59b82c2f.png
+2025-04-11 06:56:13,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_40_c7a6c7995bea1b5025c9.png
+2025-04-11 06:56:13,082 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_41_617881589bc3d0c8df86.png
+2025-04-11 06:56:13,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_45_74952658a7b54cc7f7ac.png
+2025-04-11 06:56:13,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_44_7e4987293c5031f1aff6.png
+2025-04-11 06:56:13,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:13,111 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:13,111 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_46_92372545c07670bc79dc.png with policy now
+2025-04-11 06:56:13,112 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:13,112 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:13,113 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:13,113 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:13,114 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:13,114 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:13,114 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:13,115 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:13,194 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/qc22hnp2-media/images/val/contralateral_confusion_matrix_45_74952658a7b54cc7f7ac.png
+2025-04-11 06:56:13,202 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: status_report
+2025-04-11 06:56:13,310 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/kywosmj9-media/images/val/ipsilateral_confusion_matrix_42_b66ab737cd4d59b82c2f.png
+2025-04-11 06:56:13,321 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/ayqw6hhv-media/images/val/contralateral_confusion_matrix_41_617881589bc3d0c8df86.png
+2025-04-11 06:56:13,325 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/prkkwwtg-media/images/val/multiclass_confusion_matrix_44_7e4987293c5031f1aff6.png
+2025-04-11 06:56:13,333 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/tt1xs3gj-media/images/val/multiclass_confusion_matrix_40_c7a6c7995bea1b5025c9.png
+2025-04-11 06:56:13,355 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/2kjbkx6q-media/images/val/ipsilateral_confusion_matrix_46_92372545c07670bc79dc.png
+2025-04-11 06:56:13,427 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/skf6tamo-media/images/val/contralateral_confusion_matrix_45_74952658a7b54cc7f7ac.png
+2025-04-11 06:56:13,754 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:13,754 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_48_951341c2ba9cee389a3c.png with policy now
+2025-04-11 06:56:13,755 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:13,755 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:13,755 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:13,755 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:13,878 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:13,878 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_49_cb518d64a5581de74342.png with policy now
+2025-04-11 06:56:13,878 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:13,879 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:13,879 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:13,879 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:13,952 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/9baumhys-media/images/val/multiclass_confusion_matrix_48_951341c2ba9cee389a3c.png
+2025-04-11 06:56:13,992 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:13,992 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_50_f02342f5ea81fcbbd5f8.png with policy now
+2025-04-11 06:56:13,993 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:13,993 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:13,994 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:13,994 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:13,995 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:13,995 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:13,995 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:14,002 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:14,068 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/8kx1htf4-media/images/val/contralateral_confusion_matrix_49_cb518d64a5581de74342.png
+2025-04-11 06:56:14,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:14,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:14,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_49_cb518d64a5581de74342.png
+2025-04-11 06:56:14,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_50_f02342f5ea81fcbbd5f8.png
+2025-04-11 06:56:14,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_46_92372545c07670bc79dc.png
+2025-04-11 06:56:14,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_48_951341c2ba9cee389a3c.png
+2025-04-11 06:56:14,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:14,201 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/j282kqww-media/images/val/ipsilateral_confusion_matrix_50_f02342f5ea81fcbbd5f8.png
+2025-04-11 06:56:14,324 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/d3fobsu3-media/images/val/ipsilateral_confusion_matrix_46_92372545c07670bc79dc.png
+2025-04-11 06:56:14,326 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/eoo2iyt9-media/images/val/contralateral_confusion_matrix_49_cb518d64a5581de74342.png
+2025-04-11 06:56:14,328 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/oll59szf-media/images/val/multiclass_confusion_matrix_48_951341c2ba9cee389a3c.png
+2025-04-11 06:56:14,439 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/9imcsdxa-media/images/val/ipsilateral_confusion_matrix_50_f02342f5ea81fcbbd5f8.png
+2025-04-11 06:56:14,520 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:14,520 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_52_202fad4a254250a49432.png with policy now
+2025-04-11 06:56:14,521 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:14,521 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:14,521 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:14,521 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:14,650 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:14,651 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:14,651 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_53_d8ac09868a8ea781bb5d.png with policy now
+2025-04-11 06:56:14,651 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:14,651 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:14,651 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:14,731 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/74exyh0d-media/images/val/multiclass_confusion_matrix_52_202fad4a254250a49432.png
+2025-04-11 06:56:14,767 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:14,767 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_54_beb84dc52be054d2b7cf.png with policy now
+2025-04-11 06:56:14,767 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:14,768 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:14,768 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:14,768 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:14,769 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:14,770 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:14,770 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:14,770 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:14,840 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/hrjolx9z-media/images/val/contralateral_confusion_matrix_53_d8ac09868a8ea781bb5d.png
+2025-04-11 06:56:14,992 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/8g7981gm-media/images/val/ipsilateral_confusion_matrix_54_beb84dc52be054d2b7cf.png
+2025-04-11 06:56:15,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:15,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_52_202fad4a254250a49432.png
+2025-04-11 06:56:15,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_53_d8ac09868a8ea781bb5d.png
+2025-04-11 06:56:15,083 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_54_beb84dc52be054d2b7cf.png
+2025-04-11 06:56:15,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:15,296 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:15,296 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_56_a365924107bf6d2b2e58.png with policy now
+2025-04-11 06:56:15,296 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:15,297 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:15,297 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:15,298 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:15,316 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/dst5e1gg-media/images/val/multiclass_confusion_matrix_52_202fad4a254250a49432.png
+2025-04-11 06:56:15,323 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/0czuec0r-media/images/val/ipsilateral_confusion_matrix_54_beb84dc52be054d2b7cf.png
+2025-04-11 06:56:15,333 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/ktqzxz0a-media/images/val/contralateral_confusion_matrix_53_d8ac09868a8ea781bb5d.png
+2025-04-11 06:56:15,422 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:15,422 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:15,422 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_57_a6b7f468ac1cb697feb8.png with policy now
+2025-04-11 06:56:15,423 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:15,423 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:15,423 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:15,483 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/ck1t6uhg-media/images/val/multiclass_confusion_matrix_56_a365924107bf6d2b2e58.png
+2025-04-11 06:56:15,537 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:15,537 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:15,538 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_58_7fa378f2e37ed5875a52.png with policy now
+2025-04-11 06:56:15,538 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:15,539 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:15,539 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:15,540 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:15,540 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:15,540 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:15,547 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:15,609 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/imuymctp-media/images/val/contralateral_confusion_matrix_57_a6b7f468ac1cb697feb8.png
+2025-04-11 06:56:15,718 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/q11dkfy4-media/images/val/ipsilateral_confusion_matrix_58_7fa378f2e37ed5875a52.png
+2025-04-11 06:56:16,062 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:16,062 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_60_0eb03bfadb59a3f10ddd.png with policy now
+2025-04-11 06:56:16,063 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:16,063 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:16,063 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:16,063 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:16,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:16,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:16,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_60_0eb03bfadb59a3f10ddd.png
+2025-04-11 06:56:16,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_57_a6b7f468ac1cb697feb8.png
+2025-04-11 06:56:16,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_58_7fa378f2e37ed5875a52.png
+2025-04-11 06:56:16,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_56_a365924107bf6d2b2e58.png
+2025-04-11 06:56:16,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:16,189 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:16,189 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:16,189 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_61_4c64834f2383b6542612.png with policy now
+2025-04-11 06:56:16,190 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:16,190 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:16,190 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:16,259 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/r8rxb30g-media/images/val/multiclass_confusion_matrix_60_0eb03bfadb59a3f10ddd.png
+2025-04-11 06:56:16,305 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:16,305 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_62_3ec1506334139b1188d5.png with policy now
+2025-04-11 06:56:16,305 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:16,306 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:16,307 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:16,307 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:16,307 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:16,321 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/x3dn8cii-media/images/val/contralateral_confusion_matrix_57_a6b7f468ac1cb697feb8.png
+2025-04-11 06:56:16,324 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:16,324 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:16,324 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:16,325 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/8e2cw7fn-media/images/val/ipsilateral_confusion_matrix_58_7fa378f2e37ed5875a52.png
+2025-04-11 06:56:16,331 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/ba1q1fzz-media/images/val/multiclass_confusion_matrix_56_a365924107bf6d2b2e58.png
+2025-04-11 06:56:16,375 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/26738nms-media/images/val/contralateral_confusion_matrix_61_4c64834f2383b6542612.png
+2025-04-11 06:56:16,497 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/e2jq558d-media/images/val/ipsilateral_confusion_matrix_62_3ec1506334139b1188d5.png
+2025-04-11 06:56:16,502 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/lvashymg-media/images/val/multiclass_confusion_matrix_60_0eb03bfadb59a3f10ddd.png
+2025-04-11 06:56:16,823 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:16,823 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_64_3f9b7b1926f02b663f93.png with policy now
+2025-04-11 06:56:16,824 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:16,824 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:16,824 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:16,824 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:16,950 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:16,950 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_65_1cb745c9d843331f4327.png with policy now
+2025-04-11 06:56:16,950 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:16,951 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:16,951 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:16,951 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:17,027 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/09tvda40-media/images/val/multiclass_confusion_matrix_64_3f9b7b1926f02b663f93.png
+2025-04-11 06:56:17,066 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:17,066 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_66_83a0fb4c6fa4d7a05750.png with policy now
+2025-04-11 06:56:17,067 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:17,068 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:17,068 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:17,068 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:17,069 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:17,069 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:17,069 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:17,076 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:17,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:17,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_64_3f9b7b1926f02b663f93.png
+2025-04-11 06:56:17,084 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_61_4c64834f2383b6542612.png
+2025-04-11 06:56:17,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_62_3ec1506334139b1188d5.png
+2025-04-11 06:56:17,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_66_83a0fb4c6fa4d7a05750.png
+2025-04-11 06:56:17,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_65_1cb745c9d843331f4327.png
+2025-04-11 06:56:17,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:17,153 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/pyfwl70s-media/images/val/contralateral_confusion_matrix_65_1cb745c9d843331f4327.png
+2025-04-11 06:56:17,298 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/jomsvs2p-media/images/val/ipsilateral_confusion_matrix_66_83a0fb4c6fa4d7a05750.png
+2025-04-11 06:56:17,330 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/54emf09q-media/images/val/contralateral_confusion_matrix_61_4c64834f2383b6542612.png
+2025-04-11 06:56:17,331 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/76u7a7c6-media/images/val/ipsilateral_confusion_matrix_62_3ec1506334139b1188d5.png
+2025-04-11 06:56:17,333 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/9eyepvy9-media/images/val/multiclass_confusion_matrix_64_3f9b7b1926f02b663f93.png
+2025-04-11 06:56:17,537 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/8rhwefmr-media/images/val/contralateral_confusion_matrix_65_1cb745c9d843331f4327.png
+2025-04-11 06:56:17,608 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/mv5jxze9-media/images/val/ipsilateral_confusion_matrix_66_83a0fb4c6fa4d7a05750.png
+2025-04-11 06:56:17,621 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:17,621 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:17,621 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/multiclass_confusion_matrix_68_c7479452de8838168061.png with policy now
+2025-04-11 06:56:17,621 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:17,621 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:17,622 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:17,752 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:17,752 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/contralateral_confusion_matrix_69_a06c84e8b13f5241ce05.png with policy now
+2025-04-11 06:56:17,753 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:17,753 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:17,753 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:17,754 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:17,810 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/2eeo3op7-media/images/val/multiclass_confusion_matrix_68_c7479452de8838168061.png
+2025-04-11 06:56:17,869 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:17,869 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/val/ipsilateral_confusion_matrix_70_aa11cf587e64aed94fd2.png with policy now
+2025-04-11 06:56:17,869 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:17,870 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:17,870 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:17,870 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:17,872 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:17,872 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:17,872 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:17,878 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:17,933 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/obqa3ltf-media/images/val/contralateral_confusion_matrix_69_a06c84e8b13f5241ce05.png
+2025-04-11 06:56:18,010 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:18,010 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/loss_history_72_703f81c881496ed5dcd9.png with policy now
+2025-04-11 06:56:18,010 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:18,011 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:18,011 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:18,011 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:18,057 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/joob9mfw-media/images/val/ipsilateral_confusion_matrix_70_aa11cf587e64aed94fd2.png
+2025-04-11 06:56:18,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:18,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:18,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_68_c7479452de8838168061.png
+2025-04-11 06:56:18,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_69_a06c84e8b13f5241ce05.png
+2025-04-11 06:56:18,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/loss_history_72_703f81c881496ed5dcd9.png
+2025-04-11 06:56:18,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_70_aa11cf587e64aed94fd2.png
+2025-04-11 06:56:18,086 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images
+2025-04-11 06:56:18,086 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val
+2025-04-11 06:56:18,155 DEBUG   SenderThread:4160129 [sender.py:send():380] send: files
+2025-04-11 06:56:18,155 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file media/images/accuracy_history_73_2ba4638b68629e1773f6.png with policy now
+2025-04-11 06:56:18,155 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: partial_history
+2025-04-11 06:56:18,156 DEBUG   SenderThread:4160129 [sender.py:send():380] send: history
+2025-04-11 06:56:18,156 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: summary_record
+2025-04-11 06:56:18,156 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:18,205 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/cwv61a5c-media/images/loss_history_72_703f81c881496ed5dcd9.png
+2025-04-11 06:56:18,259 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: status_report
+2025-04-11 06:56:18,322 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/jp4zgat0-media/images/val/contralateral_confusion_matrix_69_a06c84e8b13f5241ce05.png
+2025-04-11 06:56:18,326 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/cyko6f8t-media/images/val/multiclass_confusion_matrix_68_c7479452de8838168061.png
+2025-04-11 06:56:18,327 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/yw3oul9f-media/images/val/ipsilateral_confusion_matrix_70_aa11cf587e64aed94fd2.png
+2025-04-11 06:56:18,355 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/zub6zsd8-media/images/accuracy_history_73_2ba4638b68629e1773f6.png
+2025-04-11 06:56:18,444 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/uubl1fkm-media/images/loss_history_72_703f81c881496ed5dcd9.png
+2025-04-11 06:56:18,537 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: stop_status
+2025-04-11 06:56:18,537 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: internal_messages
+2025-04-11 06:56:18,537 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: stop_status
+2025-04-11 06:56:19,085 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:19,086 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_created():271] file/dir created: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/accuracy_history_73_2ba4638b68629e1773f6.png
+2025-04-11 06:56:19,086 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images
+2025-04-11 06:56:19,354 INFO    wandb-upload_2:4160129 [upload_job.py:push():131] Uploaded file /tmp/tmpqr9e26c9wandb/1dwkh95y-media/images/accuracy_history_73_2ba4638b68629e1773f6.png
+2025-04-11 06:56:20,086 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:20,892 DEBUG   SenderThread:4160129 [sender.py:send():380] send: telemetry
+2025-04-11 06:56:20,892 DEBUG   SenderThread:4160129 [sender.py:send():380] send: exit
+2025-04-11 06:56:20,893 INFO    SenderThread:4160129 [sender.py:send_exit():585] handling exit code: 0
+2025-04-11 06:56:20,893 INFO    SenderThread:4160129 [sender.py:send_exit():587] handling runtime: 27
+2025-04-11 06:56:20,893 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:20,893 INFO    SenderThread:4160129 [sender.py:send_exit():593] send defer
+2025-04-11 06:56:20,893 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:20,893 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 0
+2025-04-11 06:56:20,893 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:20,893 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 0
+2025-04-11 06:56:20,893 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 1
+2025-04-11 06:56:20,893 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:20,893 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 1
+2025-04-11 06:56:20,894 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:20,894 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 1
+2025-04-11 06:56:20,894 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 2
+2025-04-11 06:56:20,894 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:20,894 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 2
+2025-04-11 06:56:20,894 INFO    HandlerThread:4160129 [system_monitor.py:finish():203] Stopping system monitor
+2025-04-11 06:56:20,894 DEBUG   SystemMonitor:4160129 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-04-11 06:56:20,894 INFO    HandlerThread:4160129 [interfaces.py:finish():202] Joined cpu monitor
+2025-04-11 06:56:20,894 DEBUG   SystemMonitor:4160129 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-04-11 06:56:20,894 INFO    HandlerThread:4160129 [interfaces.py:finish():202] Joined disk monitor
+2025-04-11 06:56:20,894 DEBUG   SystemMonitor:4160129 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-04-11 06:56:20,931 INFO    HandlerThread:4160129 [interfaces.py:finish():202] Joined gpu monitor
+2025-04-11 06:56:20,931 INFO    HandlerThread:4160129 [interfaces.py:finish():202] Joined memory monitor
+2025-04-11 06:56:20,931 INFO    HandlerThread:4160129 [interfaces.py:finish():202] Joined network monitor
+2025-04-11 06:56:20,931 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:20,931 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 2
+2025-04-11 06:56:20,931 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 3
+2025-04-11 06:56:20,931 DEBUG   SenderThread:4160129 [sender.py:send():380] send: stats
+2025-04-11 06:56:20,932 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:20,932 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 3
+2025-04-11 06:56:20,932 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:20,932 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 3
+2025-04-11 06:56:20,932 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 4
+2025-04-11 06:56:20,932 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:20,932 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 4
+2025-04-11 06:56:20,932 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:20,932 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 4
+2025-04-11 06:56:20,932 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 5
+2025-04-11 06:56:20,932 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:20,932 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 5
+2025-04-11 06:56:20,933 DEBUG   SenderThread:4160129 [sender.py:send():380] send: summary
+2025-04-11 06:56:20,933 INFO    SenderThread:4160129 [sender.py:_save_file():1378] saving file wandb-summary.json with policy end
+2025-04-11 06:56:20,933 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:20,933 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 5
+2025-04-11 06:56:20,933 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 6
+2025-04-11 06:56:20,933 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:20,933 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 6
+2025-04-11 06:56:20,934 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:20,934 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 6
+2025-04-11 06:56:20,936 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: status_report
+2025-04-11 06:56:21,007 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 7
+2025-04-11 06:56:21,007 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:21,007 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 7
+2025-04-11 06:56:21,007 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:21,007 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 7
+2025-04-11 06:56:21,087 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:21,087 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/config.yaml
+2025-04-11 06:56:21,893 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: poll_exit
+2025-04-11 06:56:22,087 INFO    Thread-12 :4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:23,686 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 8
+2025-04-11 06:56:23,687 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: poll_exit
+2025-04-11 06:56:23,687 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:23,687 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 8
+2025-04-11 06:56:23,687 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:23,687 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 8
+2025-04-11 06:56:23,687 INFO    SenderThread:4160129 [job_builder.py:build():281] Attempting to build job artifact
+2025-04-11 06:56:23,687 INFO    SenderThread:4160129 [job_builder.py:_get_source_type():393] is repo sourced job
+2025-04-11 06:56:23,688 INFO    SenderThread:4160129 [job_builder.py:build():369] adding wandb-job metadata file
+2025-04-11 06:56:23,700 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 9
+2025-04-11 06:56:23,700 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:23,700 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 9
+2025-04-11 06:56:23,701 DEBUG   SenderThread:4160129 [sender.py:send():380] send: artifact
+2025-04-11 06:56:23,998 INFO    SenderThread:4160129 [sender.py:send_artifact():1456] sent artifact job-git_github.com_ghazalehmirzaee_neural_decoding.git_scripts_train.py - {'id': 'QXJ0aWZhY3Q6MTY0NzMwMDQxMA==', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjYwOTc3ODQ1NQ==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6MTY0NzM2MTQ4OA==', 'versionIndex': 3}}}
+2025-04-11 06:56:23,999 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:23,999 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 9
+2025-04-11 06:56:23,999 INFO    SenderThread:4160129 [dir_watcher.py:finish():358] shutting down directory watcher
+2025-04-11 06:56:24,088 INFO    SenderThread:4160129 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:24,088 INFO    SenderThread:4160129 [dir_watcher.py:finish():388] scan: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files
+2025-04-11 06:56:24,088 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json wandb-summary.json
+2025-04-11 06:56:24,089 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-metadata.json wandb-metadata.json
+2025-04-11 06:56:24,089 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/config.yaml config.yaml
+2025-04-11 06:56:24,089 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/requirements.txt requirements.txt
+2025-04-11 06:56:24,089 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/conda-environment.yaml conda-environment.yaml
+2025-04-11 06:56:24,092 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log output.log
+2025-04-11 06:56:24,094 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/loss_history_72_703f81c881496ed5dcd9.png media/images/loss_history_72_703f81c881496ed5dcd9.png
+2025-04-11 06:56:24,095 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/accuracy_history_73_2ba4638b68629e1773f6.png media/images/accuracy_history_73_2ba4638b68629e1773f6.png
+2025-04-11 06:56:24,095 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_61_4c64834f2383b6542612.png media/images/val/contralateral_confusion_matrix_61_4c64834f2383b6542612.png
+2025-04-11 06:56:24,095 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_46_92372545c07670bc79dc.png media/images/val/ipsilateral_confusion_matrix_46_92372545c07670bc79dc.png
+2025-04-11 06:56:24,095 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_41_617881589bc3d0c8df86.png media/images/val/contralateral_confusion_matrix_41_617881589bc3d0c8df86.png
+2025-04-11 06:56:24,095 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_53_d8ac09868a8ea781bb5d.png media/images/val/contralateral_confusion_matrix_53_d8ac09868a8ea781bb5d.png
+2025-04-11 06:56:24,095 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_4_0777fefa39e6e2409bb0.png media/images/val/multiclass_confusion_matrix_4_0777fefa39e6e2409bb0.png
+2025-04-11 06:56:24,095 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_25_59af1c209a1f8d58a74f.png media/images/val/contralateral_confusion_matrix_25_59af1c209a1f8d58a74f.png
+2025-04-11 06:56:24,095 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_2_42d2f2722ff58618c920.png media/images/val/ipsilateral_confusion_matrix_2_42d2f2722ff58618c920.png
+2025-04-11 06:56:24,095 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_38_4c1c9609b717aa19f4bb.png media/images/val/ipsilateral_confusion_matrix_38_4c1c9609b717aa19f4bb.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_54_beb84dc52be054d2b7cf.png media/images/val/ipsilateral_confusion_matrix_54_beb84dc52be054d2b7cf.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_58_7fa378f2e37ed5875a52.png media/images/val/ipsilateral_confusion_matrix_58_7fa378f2e37ed5875a52.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_70_aa11cf587e64aed94fd2.png media/images/val/ipsilateral_confusion_matrix_70_aa11cf587e64aed94fd2.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_52_202fad4a254250a49432.png media/images/val/multiclass_confusion_matrix_52_202fad4a254250a49432.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_40_c7a6c7995bea1b5025c9.png media/images/val/multiclass_confusion_matrix_40_c7a6c7995bea1b5025c9.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_57_a6b7f468ac1cb697feb8.png media/images/val/contralateral_confusion_matrix_57_a6b7f468ac1cb697feb8.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_8_e8219565ec61612939ed.png media/images/val/multiclass_confusion_matrix_8_e8219565ec61612939ed.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_48_951341c2ba9cee389a3c.png media/images/val/multiclass_confusion_matrix_48_951341c2ba9cee389a3c.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_5_e4a6070cb22fc36b3588.png media/images/val/contralateral_confusion_matrix_5_e4a6070cb22fc36b3588.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_34_3b12b92b1e0b13bb132b.png media/images/val/ipsilateral_confusion_matrix_34_3b12b92b1e0b13bb132b.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_17_05543ccc23561f510405.png media/images/val/contralateral_confusion_matrix_17_05543ccc23561f510405.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_6_abbca226484742b7a449.png media/images/val/ipsilateral_confusion_matrix_6_abbca226484742b7a449.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_21_42e182ee381144563daa.png media/images/val/contralateral_confusion_matrix_21_42e182ee381144563daa.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_16_d96230cf5e9f89f71bbf.png media/images/val/multiclass_confusion_matrix_16_d96230cf5e9f89f71bbf.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_60_0eb03bfadb59a3f10ddd.png media/images/val/multiclass_confusion_matrix_60_0eb03bfadb59a3f10ddd.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_68_c7479452de8838168061.png media/images/val/multiclass_confusion_matrix_68_c7479452de8838168061.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_42_b66ab737cd4d59b82c2f.png media/images/val/ipsilateral_confusion_matrix_42_b66ab737cd4d59b82c2f.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_69_a06c84e8b13f5241ce05.png media/images/val/contralateral_confusion_matrix_69_a06c84e8b13f5241ce05.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_0_5ba479dd231d9e298334.png media/images/val/multiclass_confusion_matrix_0_5ba479dd231d9e298334.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_20_32416ccb2c19ff1f4161.png media/images/val/multiclass_confusion_matrix_20_32416ccb2c19ff1f4161.png
+2025-04-11 06:56:24,096 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_37_387797f6a4f1e0aa1bfc.png media/images/val/contralateral_confusion_matrix_37_387797f6a4f1e0aa1bfc.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_18_3c6617ccbe64323e56d2.png media/images/val/ipsilateral_confusion_matrix_18_3c6617ccbe64323e56d2.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_62_3ec1506334139b1188d5.png media/images/val/ipsilateral_confusion_matrix_62_3ec1506334139b1188d5.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_22_a3a8c7642b2f62d58270.png media/images/val/ipsilateral_confusion_matrix_22_a3a8c7642b2f62d58270.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_28_00b3e54f547dd9a24ab8.png media/images/val/multiclass_confusion_matrix_28_00b3e54f547dd9a24ab8.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_56_a365924107bf6d2b2e58.png media/images/val/multiclass_confusion_matrix_56_a365924107bf6d2b2e58.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_45_74952658a7b54cc7f7ac.png media/images/val/contralateral_confusion_matrix_45_74952658a7b54cc7f7ac.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_64_3f9b7b1926f02b663f93.png media/images/val/multiclass_confusion_matrix_64_3f9b7b1926f02b663f93.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_49_cb518d64a5581de74342.png media/images/val/contralateral_confusion_matrix_49_cb518d64a5581de74342.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_65_1cb745c9d843331f4327.png media/images/val/contralateral_confusion_matrix_65_1cb745c9d843331f4327.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_13_50b989c14fb53ac2c08e.png media/images/val/contralateral_confusion_matrix_13_50b989c14fb53ac2c08e.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_32_6de6505e2938f7d7849a.png media/images/val/multiclass_confusion_matrix_32_6de6505e2938f7d7849a.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_30_24860405254c8181bbdf.png media/images/val/ipsilateral_confusion_matrix_30_24860405254c8181bbdf.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_29_0e1bc2bdcd8fcdec94c4.png media/images/val/contralateral_confusion_matrix_29_0e1bc2bdcd8fcdec94c4.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_10_2e74dbad33b2e3723e32.png media/images/val/ipsilateral_confusion_matrix_10_2e74dbad33b2e3723e32.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_1_2465a87129244fd0905a.png media/images/val/contralateral_confusion_matrix_1_2465a87129244fd0905a.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_50_f02342f5ea81fcbbd5f8.png media/images/val/ipsilateral_confusion_matrix_50_f02342f5ea81fcbbd5f8.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_14_5cac87b0ce679a56ded7.png media/images/val/ipsilateral_confusion_matrix_14_5cac87b0ce679a56ded7.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_36_5aba3586d0972876f4d7.png media/images/val/multiclass_confusion_matrix_36_5aba3586d0972876f4d7.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_33_a37870c0827891651720.png media/images/val/contralateral_confusion_matrix_33_a37870c0827891651720.png
+2025-04-11 06:56:24,097 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_66_83a0fb4c6fa4d7a05750.png media/images/val/ipsilateral_confusion_matrix_66_83a0fb4c6fa4d7a05750.png
+2025-04-11 06:56:24,098 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_24_1071e40d37c6e2cd271c.png media/images/val/multiclass_confusion_matrix_24_1071e40d37c6e2cd271c.png
+2025-04-11 06:56:24,098 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/ipsilateral_confusion_matrix_26_23aeed36b983f9fd1a83.png media/images/val/ipsilateral_confusion_matrix_26_23aeed36b983f9fd1a83.png
+2025-04-11 06:56:24,098 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_44_7e4987293c5031f1aff6.png media/images/val/multiclass_confusion_matrix_44_7e4987293c5031f1aff6.png
+2025-04-11 06:56:24,098 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/multiclass_confusion_matrix_12_151a836c185600fd447b.png media/images/val/multiclass_confusion_matrix_12_151a836c185600fd447b.png
+2025-04-11 06:56:24,098 INFO    SenderThread:4160129 [dir_watcher.py:finish():402] scan save: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/media/images/val/contralateral_confusion_matrix_9_11e3f617f05d12a52cae.png media/images/val/contralateral_confusion_matrix_9_11e3f617f05d12a52cae.png
+2025-04-11 06:56:24,098 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 10
+2025-04-11 06:56:24,098 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:24,098 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 10
+2025-04-11 06:56:24,098 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:24,098 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 10
+2025-04-11 06:56:24,098 INFO    SenderThread:4160129 [file_pusher.py:finish():175] shutting down file pusher
+2025-04-11 06:56:24,264 INFO    wandb-upload_5:4160129 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/wandb-summary.json
+2025-04-11 06:56:24,271 INFO    wandb-upload_1:4160129 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/requirements.txt
+2025-04-11 06:56:24,277 INFO    wandb-upload_3:4160129 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/config.yaml
+2025-04-11 06:56:24,280 INFO    wandb-upload_0:4160129 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/conda-environment.yaml
+2025-04-11 06:56:24,281 INFO    wandb-upload_4:4160129 [upload_job.py:push():131] Uploaded file /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/files/output.log
+2025-04-11 06:56:24,481 INFO    Thread-11 (_thread_body):4160129 [sender.py:transition_state():613] send defer: 11
+2025-04-11 06:56:24,481 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:24,481 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 11
+2025-04-11 06:56:24,482 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:24,482 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 11
+2025-04-11 06:56:24,482 INFO    SenderThread:4160129 [file_pusher.py:join():181] waiting for file pusher
+2025-04-11 06:56:24,482 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 12
+2025-04-11 06:56:24,482 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:24,482 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 12
+2025-04-11 06:56:24,482 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:24,482 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 12
+2025-04-11 06:56:24,482 INFO    SenderThread:4160129 [file_stream.py:finish():595] file stream finish called
+2025-04-11 06:56:24,548 INFO    SenderThread:4160129 [file_stream.py:finish():599] file stream finish is done
+2025-04-11 06:56:24,548 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 13
+2025-04-11 06:56:24,548 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:24,548 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 13
+2025-04-11 06:56:24,548 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:24,548 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 13
+2025-04-11 06:56:24,548 INFO    SenderThread:4160129 [sender.py:transition_state():613] send defer: 14
+2025-04-11 06:56:24,548 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: defer
+2025-04-11 06:56:24,548 INFO    HandlerThread:4160129 [handler.py:handle_request_defer():172] handle defer: 14
+2025-04-11 06:56:24,548 DEBUG   SenderThread:4160129 [sender.py:send():380] send: final
+2025-04-11 06:56:24,548 DEBUG   SenderThread:4160129 [sender.py:send():380] send: footer
+2025-04-11 06:56:24,548 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: defer
+2025-04-11 06:56:24,549 INFO    SenderThread:4160129 [sender.py:send_request_defer():609] handle sender defer: 14
+2025-04-11 06:56:24,549 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: internal_messages
+2025-04-11 06:56:24,550 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: poll_exit
+2025-04-11 06:56:24,550 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: poll_exit
+2025-04-11 06:56:24,550 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: server_info
+2025-04-11 06:56:24,550 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: get_summary
+2025-04-11 06:56:24,550 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: server_info
+2025-04-11 06:56:24,551 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: sampled_history
+2025-04-11 06:56:24,552 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: job_info
+2025-04-11 06:56:24,593 DEBUG   SenderThread:4160129 [sender.py:send_request():407] send_request: job_info
+2025-04-11 06:56:24,594 DEBUG   HandlerThread:4160129 [handler.py:handle_request():146] handle_request: shutdown
+2025-04-11 06:56:24,594 INFO    HandlerThread:4160129 [handler.py:finish():866] shutting down handler
+2025-04-11 06:56:25,553 INFO    WriterThread:4160129 [datastore.py:close():294] close: /home/ghazal/Documents/NS_Projects/NS_Revised_P1/neural_decoding/outputs/logs/lstm_2025-04-11_06-55-51/wandb/run-20250411_065552-shragvze/run-shragvze.wandb
+2025-04-11 06:56:25,593 INFO    SenderThread:4160129 [sender.py:finish():1534] shutting down sender
+2025-04-11 06:56:25,593 INFO    SenderThread:4160129 [file_pusher.py:finish():175] shutting down file pusher
+2025-04-11 06:56:25,593 INFO    SenderThread:4160129 [file_pusher.py:join():181] waiting for file pusher

@@ -2,21 +2,21 @@
 type: hybrid
 
 # Model architecture as specified in the paper
-input_size: 421
-hidden_size: 128  # From Table 2
+input_size: 431
+hidden_size: 256  # From Table 2
 num_layers: 2     # From Table 2
 num_classes: 3
-dropout: 0.5      # From Table 2
+dropout: 0.6      # From Table 2
 
 # Advanced architecture features
 use_skip_connection: true
 use_attention: true
-num_attention_heads: 8
+num_attention_heads: 16
 
 # Task weights exactly as specified in Table 2
 task_weights:
   multiclass: 1.0
-  contralateral: 0.5
-  ipsilateral: 0.5
+  contralateral: 1.0
+  ipsilateral: 1.0
   neural_activity: 1.0
 

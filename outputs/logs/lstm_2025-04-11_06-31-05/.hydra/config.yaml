@@ -1,0 +1,46 @@
+model:
+  type: lstm
+  input_size: 421
+  hidden_size: 64
+  num_layers: 2
+  num_classes: 3
+  dropout: 0.3
+  sequence_length: 16
+  task_weights:
+    multiclass: 1.0
+    contralateral: 1.0
+    ipsilateral: 1.0
+dataset:
+  name: neural_data
+  path: ${paths.data_dir}/aligned_data_009.csv
+  sequence_length: 10
+  apply_pca: true
+  n_components: 3
+  normalize: true
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  batch_size: 64
+training:
+  epochs: 100
+  batch_size: 32
+  learning_rate: 0.0001
+  weight_decay: 1.0e-06
+  gradient_clip_val: 1.0
+  early_stopping_patience: 7
+  sequence_length: 16
+  overlap: 8
+  use_class_weights: true
+seed: 42
+device: cuda
+paths:
+  data_dir: ${oc.env:PWD}/data
+  output_dir: ${oc.env:PWD}/outputs
+  checkpoints_dir: ${paths.output_dir}/checkpoints
+  logs_dir: ${paths.output_dir}/logs
+  visualizations_dir: ${paths.output_dir}/visualizations
+wandb:
+  project: neural-decoding
+  entity: mirzaeeghazal
+  group: experiments
+  mode: online
