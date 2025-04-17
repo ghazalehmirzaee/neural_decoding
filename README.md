@@ -4,7 +4,7 @@ This repository implements the models and methods from the paper "Decoding Skill
 
 ## Overview
 
-This project implements advanced deep learning architectures to decode complex forelimb movements (footsteps) from neuronal activity recorded from the primary motor cortex (M1) using two-photon calcium imaging. The key finding is that unilateral M1 neuronal networks contain sufficient information to decode movements of both ipsilateral and contralateral forelimbs.
+This paper implements advanced deep learning architectures to decode complex forelimb movements (footsteps) from neuronal activity recorded from the primary motor cortex (M1) using two-photon calcium imaging. The key finding is that unilateral M1 neuronal networks contain sufficient information to decode movements of both ipsilateral and contralateral forelimbs.
 
 ## Paper Summary
 
