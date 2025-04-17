@@ -20,6 +20,7 @@ The research explores whether complex motor movements in both forelimbs of mice 
 The hybrid model showed significant performance improvements by incorporating both spatial features (through CNNs) and temporal dependencies (through BiLSTM) of neuronal activity.
 
 ## Repository Structure
+```bash
 .
 ├── config/                # Configuration files (Hydra)
 │   ├── dataset/          # Dataset configurations
@@ -34,6 +35,7 @@ The hybrid model showed significant performance improvements by incorporating bo
 │   ├── training/         # Training utilities
 │   └── utils/            # Metrics and visualization
 └── requirements.txt      # Dependencies
+```
 
 ## Installation
 ```bash
