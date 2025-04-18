@@ -109,3 +109,4 @@ The code generates several visualizations to analyze model performance:
   <em>Figure 4. Neuronal Activity and complex forelimb movements Prediction from unilateral M1 demonstrating the hybrid model’s capability to accurately track both rapid changes and sustained patterns in neuronal activity.</em>
 </p>
 
+# neural_decoding
