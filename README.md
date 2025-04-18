@@ -96,18 +96,3 @@ or:
 ```bash
 python scripts/evaluate.py model=hybrid
 ```
-
-## Key Visualizations
-The code generates several visualizations to analyze model performance:
-
-- Confusion matrices for all classification tasks
-- ROC curves for classification performance
-- Neural activity prediction visualizations (for the hybrid model):
-<p align="center">
-  <img src="results/neural_activity_prediction.png" alt="Neural Activity Prediction" width="800" />
-  <br>
-  <em>Figure 4. Neuronal Activity and complex forelimb movements Prediction from unilateral M1 demonstrating the hybrid model’s capability to accurately track both rapid changes and sustained patterns in neuronal activity.</em>
-</p>
-
-# neural_decoding
-# neural_decoding
