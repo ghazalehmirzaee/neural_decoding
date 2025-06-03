@@ -1,4 +1,4 @@
-# Neural Decoding from M1: Hybrid CNN-BiLSTM for Bilateral Forelimb Movement Prediction
+# Neuronal Decoding from M1: Hybrid CNN-BiLSTM for Bilateral Forelimb Movement Prediction
 
 This repository implements the models and methods from the paper "Decoding Skilled Bilateral Forelimb Movements from Unilateral M1 Neuronal Networks: Integrating Hybrid Attention-Based Model with In Vivo Two-Photon Calcium Imaging".
 
