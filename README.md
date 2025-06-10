@@ -12,7 +12,7 @@ The research explores whether complex motor movements in both forelimbs of mice 
 
 1. Uses in vivo two-photon calcium imaging to record neuronal activity in M1
 2. Collects data from mice performing a specialized grid-walking task requiring skilled movement
-3. Implements two neural decoding approaches:
+3. Implements two neuronal decoding approaches:
    - LSTM with fully connected layers (baseline)
    - Hybrid CNN-BiLSTM with attention mechanisms (advanced model)
 4. Demonstrates accurate decoding of both ipsilateral and contralateral forelimb movements
