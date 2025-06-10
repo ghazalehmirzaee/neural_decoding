@@ -6,72 +6,94 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import confusion_matrix, roc_curve, auc
 
-
 def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_percentages=True,
                           title='Confusion Matrix', save_path=None):
     """
     Generate and save a confusion matrix visualization.
-
-    Args:
-        true_labels: Array of true class labels
-        predicted_labels: Array of predicted class labels
-        class_names: List of class names for labeling
-        include_percentages: Whether to include percentages in cells
-        title: Title for the plot
-        save_path: Path to save the figure
     """
-    # Calculate confusion matrix
+    # Calculate confusion matrix - this gives us the raw counts
     cm = confusion_matrix(true_labels, predicted_labels)
 
-    # Create figure
+    # Create figure with specific size for optimal appearance
     plt.figure(figsize=(10, 8))
 
-    # Define annotation format
+    # Define annotation format and data for heatmap
     if include_percentages:
-        # Calculate percentages by row (true class)
+        # Calculate percentages by row (true class) - normalizes each row to sum to 100%
+        # This shows what percentage of each true class was predicted as each class
         cm_perc = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis] * 100
 
-        # Create annotations with count and percentage
+        # Handle potential division by zero (creates NaN values) by replacing with 0
+        cm_perc = np.nan_to_num(cm_perc, nan=0.0)
+
+        # Create annotations with percentage as main value and count in parentheses
+        # This matches the exact format shown in your example images
         annot = np.empty_like(cm, dtype=object)
         for i in range(cm.shape[0]):
             for j in range(cm.shape[1]):
-                if np.isnan(cm_perc[i, j]):
-                    annot[i, j] = f"{cm[i, j]}\n(0.0%)"
-                else:
-                    annot[i, j] = f"{cm[i, j]}\n({cm_perc[i, j]:.1f}%)"
+                # Format exactly like your examples: "XX.X%" on first line, "(count)" on second
+                annot[i, j] = f"{cm_perc[i, j]:.1f}%\n({cm[i, j]})"
+
+        # Use percentage matrix for color scaling - this makes the color intensity
+        # represent the proportion of predictions rather than absolute counts
+        heatmap_data = cm_perc
+
+        # Set color scale limits for consistent appearance
+        vmin, vmax = 0, 100
+        colorbar_label = 'Percentage (%)'
+
     else:
-        annot = cm
+        # When percentages are disabled, just show raw counts
+        annot = True  # Let seaborn handle annotation formatting
+        heatmap_data = cm
+        vmin, vmax = None, None
+        colorbar_label = 'Count'
 
-    # Plot using seaborn
-    ax = sns.heatmap(cm, annot=annot if include_percentages else True, fmt='' if include_percentages else 'd',
-                     cmap='Blues', xticklabels=class_names, yticklabels=class_names)
+    # Create the heatmap with styling to match your examples
+    ax = sns.heatmap(
+        heatmap_data,  # Use percentage data for color intensity
+        annot=annot if include_percentages else True,  # Custom annotations or default
+        fmt='' if include_percentages else 'd',  # Empty format since we handle it manually
+        cmap='Blues',  # Blue colormap matching your examples
+        xticklabels=class_names,  # Class names on x-axis
+        yticklabels=class_names,  # Class names on y-axis
+        vmin=vmin,  # Minimum value for color scale
+        vmax=vmax,  # Maximum value for color scale (100% when using percentages)
+        cbar_kws={'label': colorbar_label, 'shrink': 0.8},  # Colorbar configuration
+        annot_kws={'size': 14, 'weight': 'bold'},  # Text styling for annotations
+        linewidths=0.5,  # Thin lines between cells
+        linecolor='white',  # White grid lines
+        square=True  # Force square cells for clean appearance
+    )
 
-    # Customize plot
-    ax.set_xlabel('Predicted Label')
-    ax.set_ylabel('True Label')
-    ax.set_title(title)
+    # Customize plot appearance to match your professional style
+    ax.set_xlabel('Predicted Label', fontsize=14, fontweight='bold', labelpad=10)
+    ax.set_ylabel('True Label', fontsize=14, fontweight='bold', labelpad=10)
+    ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
 
-    # Adjust layout
+    # Style the tick labels for better readability
+    ax.tick_params(axis='x', labelsize=12, rotation=0)  # Horizontal x-axis labels
+    ax.tick_params(axis='y', labelsize=12, rotation=0)  # Horizontal y-axis labels
+
+    # Ensure tick labels are properly positioned
+    plt.xticks(rotation=0, ha='center')
+    plt.yticks(rotation=0, va='center')
+
+    # Adjust layout to prevent any label cutoff and ensure clean appearance
     plt.tight_layout()
 
-    # Save figure if path provided
+    # Save figure if path provided, using high DPI for crisp output
     if save_path:
-        plt.savefig(save_path, dpi=300, bbox_inches='tight')
+        plt.savefig(save_path, dpi=300, bbox_inches='tight', facecolor='white')
         print(f"Saved confusion matrix to {save_path}")
 
+    # Close the figure to free memory
     plt.close()
 
 
 def plot_roc_curves(true_labels, predicted_probs, class_names, title='ROC Curves', save_path=None):
     """
     Generate and save ROC curves.
-
-    Args:
-        true_labels: Array of true class labels
-        predicted_probs: Array of predicted probabilities (shape: n_samples, n_classes)
-        class_names: List of class names for labeling
-        title: Title for the plot
-        save_path: Path to save the figure
     """
     # Create figure
     plt.figure(figsize=(10, 8))
@@ -123,12 +145,6 @@ def plot_roc_curves(true_labels, predicted_probs, class_names, title='ROC Curves
 def generate_all_visualizations(predictions, targets, model_type, output_dir):
     """
     Generate and save all required visualizations for model evaluation.
-
-    Args:
-        predictions: Dictionary of model predictions
-        targets: Dictionary of ground truth labels
-        model_type: Type of model ('lstm' or 'hybrid')
-        output_dir: Directory to save visualizations
     """
     # Create output directory if it doesn't exist
     visualization_dir = os.path.join(output_dir, model_type, 'visualizations')
@@ -137,8 +153,8 @@ def generate_all_visualizations(predictions, targets, model_type, output_dir):
     # Define class names for visualization
     class_names = {
         'multiclass': ['No Footstep', 'Contralateral', 'Ipsilateral'],
-        'contralateral': ['Negative', 'Positive'],
-        'ipsilateral': ['Negative', 'Positive']
+        'contralateral': ['No Footstep', 'Contralateral'],
+        'ipsilateral': ['No Footstep', 'Ipsilateral']
     }
 
     # Generate confusion matrices for all classification tasks
@@ -176,13 +192,6 @@ def generate_all_visualizations(predictions, targets, model_type, output_dir):
 def plot_combined_metrics(predictions, targets, class_names, model_type, save_path=None):
     """
     Generate a combined metrics visualization showing performance across all tasks.
-
-    Args:
-        predictions: Dictionary of model predictions
-        targets: Dictionary of ground truth labels
-        class_names: Dictionary of class names for each task
-        model_type: Type of model ('lstm' or 'hybrid')
-        save_path: Path to save the figure
     """
     # Calculate metrics for each task
     metrics = {}
@@ -255,98 +264,7 @@ def plot_combined_metrics(predictions, targets, class_names, model_type, save_pa
         print(f"Saved combined metrics to {save_path}")
 
     plt.close()
-#
-#
-# def plot_neural_activity_comparison(time_points, true_neural, pred_neural, true_behaviors, pred_behaviors,
-#                                     behavior_names=['No-footstep', 'Contralateral', 'Ipsilateral'],
-#                                     title='Neuronal Activity and Movement Prediction Comparison',
-#                                     save_path=None):
-#     """
-#     Generate neural activity visualization matching the cleaner step-diagram style.
-#     """
-#     import matplotlib.pyplot as plt
-#     import numpy as np
-#     from matplotlib.lines import Line2D
-#
-#     # Updated color scheme with distinct shades for behavior overlay (for background shading)
-#     behavior_colors = {
-#         0: "#FFDEDE",  # No Footstep (light pink)
-#         1: "#FFB3D9",  # Contralateral
-#         2: "#FF66B2",  # Ipsilateral
-#     }
-#
-#     fig = plt.figure(figsize=(10, 20))
-#     window_size = 100
-#     num_windows = min(4, len(time_points) // window_size)
-#
-#     for w in range(num_windows):
-#         start_idx = w * window_size
-#         end_idx = min(start_idx + window_size, len(time_points))
-#
-#         # Subplot for neural activity
-#         ax1 = fig.add_subplot(2 * num_windows, 1, 2 * w + 1)
-#         ax1.plot(true_neural[start_idx:end_idx], 'k-', linewidth=1.2)
-#         ax1.plot(pred_neural[start_idx:end_idx], 'g--', linewidth=1.2, alpha=0.7)
-#
-#         # Background shading for behaviors
-#         for i in range(end_idx - start_idx):
-#             idx = start_idx + i
-#             if idx < len(true_behaviors):
-#                 behavior = true_behaviors[idx]
-#                 color = behavior_colors.get(behavior)
-#                 if behavior > 0 and color:
-#                     ax1.axvspan(i - 0.5, i + 0.5, color=color, alpha=0.1)
-#
-#         if w == 0:
-#             ax1.set_ylabel('Neural signal')
-#
-#         ax1.set_ylim(-0.25, 1.5)
-#         ax1.set_xticks([])
-#         ax1.text(-5, 0.5, f'{start_idx}-{end_idx}', transform=ax1.transAxes,
-#                  verticalalignment='center', horizontalalignment='right')
-#
-#         # Subplot for behavior states (step plots)
-#         ax2 = fig.add_subplot(2 * num_windows, 1, 2 * w + 2)
-#
-#         time_segment = np.arange(start_idx, end_idx)
-#
-#         true_beh = true_behaviors[start_idx:end_idx]
-#         pred_beh = pred_behaviors[start_idx:end_idx]
-#
-#         ax2.step(time_segment, true_beh, where='post', color='blue', linewidth=1.5)
-#         ax2.step(time_segment, pred_beh, where='post', color='red', linestyle='--', linewidth=1.5)
-#
-#         ax2.set_yticks(range(len(behavior_names)))
-#         ax2.set_yticklabels(behavior_names)
-#         ax2.set_ylim(-0.5, len(behavior_names) - 0.5)
-#         ax2.text(-5, 0.5, f'{start_idx}-{end_idx}', transform=ax2.transAxes,
-#                  verticalalignment='center', horizontalalignment='right')
-#
-#         if w == num_windows - 1:
-#             ax2.set_xlabel('Frames (15 FPS)')
-#         else:
-#             ax2.set_xticks([])
-#
-#     # Legend
-#     legend_elements = [
-#         Line2D([0], [0], color='k', linestyle='-', lw=1.5, label='True Neural'),
-#         Line2D([0], [0], color='g', linestyle='--', lw=1.5, label='Pred Neural'),
-#         Line2D([0], [0], color='blue', linestyle='-', lw=1.5, label='True Behavior'),
-#         Line2D([0], [0], color='red', linestyle='--', lw=1.5, label='Pred Behavior')
-#     ]
-#     fig.legend(handles=legend_elements, loc='upper right', bbox_to_anchor=(0.98, 0.99))
-#
-#     plt.suptitle(title, fontsize=14)
-#     plt.tight_layout()
-#     plt.subplots_adjust(top=0.95)
-#
-#     if save_path:
-#         plt.savefig(save_path, dpi=300, bbox_inches='tight')
-#         print(f"Saved neural activity visualization to {save_path}")
-#
-#     plt.close(fig)
-#
-#
+
 
 def plot_neural_activity_comparison(time_points, true_neural, pred_neural, true_behaviors, pred_behaviors,
                                     behavior_names=['No-footstep', 'Contralateral', 'Ipsilateral'],
@@ -431,6 +349,3 @@ def plot_neural_activity_comparison(time_points, true_neural, pred_neural, true_
         print(f"Saved neural activity visualization to {save_path}")
 
     plt.close(fig)
-
-
-
