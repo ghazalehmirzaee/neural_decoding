@@ -11,12 +11,7 @@ from sklearn.metrics import accuracy_score, precision_recall_fscore_support, con
 import matplotlib.pyplot as plt
 import seaborn as sns
 from collections import defaultdict
-
-try:
-    import wandb
-except ImportError:
-    wandb = None
-
+import wandb
 from src.utils.metrics import calculate_metrics
 from src.training.early_stopping import EarlyStopping
 from src.training.losses import FocalLoss, MultitaskLoss
@@ -25,8 +20,13 @@ import src.utils.visualization as viz
 
 class Trainer:
     """
-    Enhanced trainer for neural decoding models with improved regularization,
-    metrics tracking, and visualization capabilities based on the paper's methodology.
+    trainer for comprehensive neuronal decoding ablation study.
+
+    Supported Models:
+    - CNN: Spatial-only processing without temporal dynamics
+    - LSTM: Basic temporal processing with recurrent connections
+    - LSTM+Attention: Enhanced temporal processing with attention mechanisms
+    - Hybrid: Combined spatial-temporal processing with advanced features
     """
 
     def __init__(
@@ -62,54 +62,21 @@ class Trainer:
             self.class_weights = None
 
         # Initialize loss function with task weights from model config
+        # This ensures fair comparison across different model architectures
         task_weights = getattr(config.model, 'task_weights', None)
         self.criterion = MultitaskLoss(
             task_weights=task_weights,
             class_weights=self.class_weights
         )
 
-        # Initialize optimizer based on model type
-        if model_type == 'lstm':
-            # Adam optimizer for LSTM as specified in Table 1
-            self.optimizer = torch.optim.Adam(
-                model.parameters(),
-                lr=config.training.learning_rate,
-                weight_decay=config.training.weight_decay
-            )
+        # Initialize optimizer and scheduler based on model type
+        # Different architectures benefit from different optimization strategies
+        self._initialize_optimizer_and_scheduler()
 
-            # Scheduler for LSTM - ReduceLROnPlateau as in Table 1
-            self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-                self.optimizer,
-                mode='min',
-                factor=0.5,  # Reduce by half when plateauing
-                patience=5,  # Wait 5 epochs before reducing
-                verbose=True
-            )
-        else:
-            # AdamW optimizer for hybrid model as in equation (21)
-            self.optimizer = torch.optim.AdamW(
-                model.parameters(),
-                lr=config.training.learning_rate,
-                weight_decay=config.training.weight_decay
-            )
-
-            # One-cycle LR scheduler for hybrid model as in equation (22)
-            steps_per_epoch = len(train_loader) if train_loader else 100
-            total_steps = steps_per_epoch * config.training.epochs
-
-            self.scheduler = torch.optim.lr_scheduler.OneCycleLR(
-                self.optimizer,
-                max_lr=config.training.learning_rate,
-                total_steps=total_steps,
-                pct_start=0.3,  # Warmup period is 30% of total training as mentioned
-                div_factor=25,  # Initial learning rate is max_lr/25
-                final_div_factor=10000,  # Final learning rate is max_lr/10000
-                anneal_strategy='cos'  # Cosine annealing as per the paper
-            )
-
-        # Set early stopping with patience 7 as specified in the paper
+        # Set early stopping with model-appropriate patience
+        patience = getattr(config.training, 'early_stopping_patience', 7)
         self.early_stopping = EarlyStopping(
-            patience=config.training.early_stopping_patience,
+            patience=patience,
             min_delta=1e-4,
             mode='min',
             verbose=True
@@ -122,18 +89,128 @@ class Trainer:
         checkpoint_dir = os.path.join(config.paths.checkpoints_dir, model_type)
         os.makedirs(checkpoint_dir, exist_ok=True)
 
-        # Initialize WandB if available
+        # Initialize WandB if available and configured
+        self._initialize_wandb()
+
+    def _initialize_optimizer_and_scheduler(self):
+        """
+        Initialize optimizer and learning rate scheduler based on model type.
+
+        Each model architecture has different optimization requirements:
+        - CNN: Simple Adam with step decay
+        - LSTM: Adam with plateau-based scheduling
+        - LSTM+Attention: Adam with cosine annealing and warmup
+        - Hybrid: AdamW with one-cycle scheduling
+        """
+        if self.model_type == 'cnn':
+            # Simple optimization for CNN-only model
+            # Using basic Adam with step decay for intentionally limited performance
+            self.optimizer = torch.optim.Adam(
+                self.model.parameters(),
+                lr=self.config.training.learning_rate,
+                weight_decay=self.config.training.weight_decay
+            )
+
+            # Step scheduler for CNN - simple and effective
+            self.scheduler = torch.optim.lr_scheduler.StepLR(
+                self.optimizer,
+                step_size=getattr(self.config.training, 'step_size', 40),
+                gamma=getattr(self.config.training, 'gamma', 0.8),
+                verbose=True
+            )
+            self.warmup_epochs = 0  # No warmup for CNN
+
+        elif self.model_type == 'lstm':
+            # Adam optimizer for LSTM as specified in Table 1
+            self.optimizer = torch.optim.Adam(
+                self.model.parameters(),
+                lr=self.config.training.learning_rate,
+                weight_decay=self.config.training.weight_decay
+            )
+
+            # Scheduler for LSTM - ReduceLROnPlateau as in Table 1
+            self.scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
+                self.optimizer,
+                mode='min',
+                factor=0.5,  # Reduce by half when plateauing
+                patience=5,  # Wait 5 epochs before reducing
+                verbose=True
+            )
+            self.warmup_epochs = 0  # No warmup for basic LSTM
+
+        elif self.model_type == 'lstm_attention':
+            # Adam optimizer for LSTM+attention model with improved parameters
+            self.optimizer = torch.optim.Adam(
+                self.model.parameters(),
+                lr=self.config.training.learning_rate,
+                weight_decay=self.config.training.weight_decay,
+                betas=(0.9, 0.999),  # Standard Adam betas
+                eps=1e-8
+            )
+
+            # Learning rate scheduling for LSTM+attention
+            if hasattr(self.config.training, 'use_cosine_scheduler') and self.config.training.use_cosine_scheduler:
+                # Cosine annealing for smooth learning rate decay
+                self.scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(
+                    self.optimizer,
+                    T_max=self.config.training.epochs,
+                    eta_min=getattr(self.config.training, 'eta_min', 1e-6),
+                    verbose=True
+                )
+
+                # Add warmup if specified
+                if hasattr(self.config.training, 'warmup_epochs') and self.config.training.warmup_epochs > 0:
+                    self.warmup_epochs = self.config.training.warmup_epochs
+                    self.warmup_factor = getattr(self.config.training, 'warmup_factor', 0.1)
+                    self.base_lr = self.config.training.learning_rate
+                else:
+                    self.warmup_epochs = 0
+            else:
+                # Fallback to step scheduler
+                self.scheduler = torch.optim.lr_scheduler.StepLR(
+                    self.optimizer,
+                    step_size=getattr(self.config.training, 'step_size', 40),
+                    gamma=getattr(self.config.training, 'gamma', 0.7),
+                    verbose=True
+                )
+                self.warmup_epochs = 0
+
+        else:  # hybrid
+            # AdamW optimizer for hybrid model as in equation (21)
+            self.optimizer = torch.optim.AdamW(
+                self.model.parameters(),
+                lr=self.config.training.learning_rate,
+                weight_decay=self.config.training.weight_decay
+            )
+
+            # One-cycle LR scheduler for hybrid model as in equation (22)
+            steps_per_epoch = len(self.train_loader) if self.train_loader else 100
+            total_steps = steps_per_epoch * self.config.training.epochs
+
+            self.scheduler = torch.optim.lr_scheduler.OneCycleLR(
+                self.optimizer,
+                max_lr=self.config.training.learning_rate,
+                total_steps=total_steps,
+                pct_start=0.3,  # Warmup period is 30% of total training as mentioned
+                div_factor=25,  # Initial learning rate is max_lr/25
+                final_div_factor=10000,  # Final learning rate is max_lr/10000
+                anneal_strategy='cos'  # Cosine annealing as per the paper
+            )
+            self.warmup_epochs = 0  # OneCycleLR handles its own warmup
+
+    def _initialize_wandb(self):
+        """Initialize Weights & Biases logging if available and configured."""
         self.run = None
-        if wandb is not None and hasattr(config, 'wandb') and config.wandb.mode != 'disabled':
+        if wandb is not None and hasattr(self.config, 'wandb') and self.config.wandb.mode != 'disabled':
             try:
-                print(f"Initializing WandB with entity={config.wandb.entity}, project={config.wandb.project}")
+                print(f"Initializing WandB with entity={self.config.wandb.entity}, project={self.config.wandb.project}")
                 self.run = wandb.init(
-                    project=config.wandb.project,
-                    entity=config.wandb.entity,
+                    project=self.config.wandb.project,
+                    entity=self.config.wandb.entity,
                     config=self._get_flattened_config(),
-                    name=f"{model_type}_{time.strftime('%Y%m%d_%H%M%S')}",
-                    group=config.wandb.group,
-                    mode=config.wandb.mode
+                    name=f"{self.model_type}_{time.strftime('%Y%m%d_%H%M%S')}",
+                    group=self.config.wandb.group,
+                    mode=self.config.wandb.mode
                 )
                 print("WandB initialized successfully!")
             except Exception as e:
@@ -164,12 +241,7 @@ class Trainer:
     def _calculate_class_weights(self, dataloader):
         """
         Calculate inverse frequency class weights to handle class imbalance.
-
-        Args:
-            dataloader: DataLoader containing the training data
-
-        Returns:
-            torch.Tensor: Class weights tensor or None if calculation fails
+        This ensures fair comparison across all model types.
         """
         try:
             # Count classes across a subset of batches for efficiency
@@ -212,10 +284,7 @@ class Trainer:
 
     def train(self):
         """
-        Train the model following the procedure described in the paper.
-
-        Returns:
-            tuple: (test_predictions, test_targets)
+        Train the model following architecture-specific procedures.
         """
         print(f"\nStarting training for {self.model_type} model...")
         print(f"Using device: {self.device}")
@@ -238,15 +307,20 @@ class Trainer:
         for epoch in range(self.config.training.epochs):
             epoch_start_time = time.time()
 
+            # Apply warmup if configured (for LSTM+attention)
+            if hasattr(self, 'warmup_epochs') and self.warmup_epochs > 0 and epoch < self.warmup_epochs:
+                lr_scale = self.warmup_factor + (1.0 - self.warmup_factor) * epoch / self.warmup_epochs
+                for param_group in self.optimizer.param_groups:
+                    param_group['lr'] = self.base_lr * lr_scale
+
             # Train one epoch
             train_loss, train_metrics = self._train_epoch(epoch)
 
             # Validate one epoch
             val_loss, val_metrics = self._validate_epoch(epoch)
 
-            # Update learning rate for LSTM model (hybrid model updates per batch)
-            if self.model_type == 'lstm':
-                self.scheduler.step(val_loss)
+            # Update learning rate scheduler based on model type
+            self._update_scheduler(val_loss, epoch)
 
             # Calculate epoch duration
             epoch_duration = time.time() - epoch_start_time
@@ -278,24 +352,7 @@ class Trainer:
                           f"Val F1: {val_metrics[task]['f1']:.4f}")
 
             # Log metrics to WandB
-            if self.run is not None:
-                log_dict = {
-                    'epoch': epoch + 1,
-                    'train/loss': train_loss,
-                    'val/loss': val_loss,
-                    'learning_rate': lr
-                }
-
-                # Add task-specific metrics
-                for task in ['multiclass', 'contralateral', 'ipsilateral']:
-                    if task in train_metrics:
-                        for metric, value in train_metrics[task].items():
-                            log_dict[f'train/{task}_{metric}'] = value
-                    if task in val_metrics:
-                        for metric, value in val_metrics[task].items():
-                            log_dict[f'val/{task}_{metric}'] = value
-
-                wandb.log(log_dict)
+            self._log_to_wandb(epoch, train_loss, val_loss, train_metrics, val_metrics, lr)
 
             # Check for best model
             if val_loss < best_val_loss:
@@ -324,12 +381,7 @@ class Trainer:
         print(f"\nTraining completed in {total_duration:.1f}s. Best validation loss: {best_val_loss:.4f}")
 
         # Save training history
-        with open(os.path.join(self.output_dir, 'training_history.json'), 'w') as f:
-            history = {
-                'train': {k: [float(v) for v in vals] for k, vals in train_history.items()},
-                'val': {k: [float(v) for v in vals] for k, vals in val_history.items()}
-            }
-            json.dump(history, f, indent=4)
+        self._save_training_history(train_history, val_history)
 
         # Log final history plot to WandB
         if self.run is not None:
@@ -342,24 +394,10 @@ class Trainer:
         test_loss, test_metrics, test_predictions, test_targets = self.evaluate()
 
         # Generate and save visualizations
-        viz_dir = os.path.join(self.output_dir, 'visualizations')
-        os.makedirs(viz_dir, exist_ok=True)
-
-        self._generate_visualizations(test_predictions, test_targets, viz_dir)
+        self._generate_and_save_visualizations(test_predictions, test_targets)
 
         # Save test results
-        results = {
-            'test_loss': float(test_loss),
-            'test_metrics': {
-                task: {k: float(v) for k, v in metrics.items()}
-                for task, metrics in test_metrics.items()
-            }
-        }
-
-        with open(os.path.join(self.output_dir, 'test_results.json'), 'w') as f:
-            json.dump(results, f, indent=4)
-
-        print(f"Test results saved to {os.path.join(self.output_dir, 'test_results.json')}")
+        self._save_test_results(test_loss, test_metrics)
 
         # Close WandB run
         if self.run is not None:
@@ -367,32 +405,26 @@ class Trainer:
 
         return test_predictions, test_targets
 
+    def _update_scheduler(self, val_loss, epoch):
+        """Update learning rate scheduler based on model type."""
+        if self.model_type == 'lstm':
+            self.scheduler.step(val_loss)
+        elif self.model_type == 'hybrid':
+            self.scheduler.step()  # OneCycleLR steps automatically
+        elif self.model_type in ['cnn', 'lstm_attention']:
+            # Skip warmup epochs for cosine annealing
+            if not (hasattr(self, 'warmup_epochs') and epoch < self.warmup_epochs):
+                self.scheduler.step()
+
     def _train_epoch(self, epoch):
-        """
-        Train for one epoch with improved metrics tracking and regularization.
-
-        Args:
-            epoch: Current epoch number
-
-        Returns:
-            tuple: (average_loss, metrics_dict)
-        """
+        """Train for one epoch with model-specific handling."""
         self.model.train()
         total_loss = 0
         task_losses = defaultdict(float)
 
         # Initialize containers for predictions and targets per task
-        all_outputs = {
-            'multiclass': [],
-            'contralateral': [],
-            'ipsilateral': []
-        }
-
-        all_targets = {
-            'multiclass': [],
-            'contralateral': [],
-            'ipsilateral': []
-        }
+        all_outputs = {'multiclass': [], 'contralateral': [], 'ipsilateral': []}
+        all_targets = {'multiclass': [], 'contralateral': [], 'ipsilateral': []}
 
         # Progress bar for better visualization
         pbar = tqdm(self.train_loader, desc=f"Epoch {epoch + 1} (Train)")
@@ -403,8 +435,10 @@ class Trainer:
             inputs = inputs.to(self.device)
             targets_dict = {k: v.to(self.device) for k, v in targets_dict.items()}
 
-            # Apply mixup data augmentation if enabled
-            if hasattr(self.config.training, 'use_mixup') and self.config.training.use_mixup:
+            # Apply mixup data augmentation if enabled (only for more advanced models)
+            if (hasattr(self.config.training, 'use_mixup') and
+                    self.config.training.use_mixup and
+                    self.model_type in ['hybrid']):  # Only hybrid uses mixup
                 inputs, targets_dict = self._mixup_batch(inputs, targets_dict)
 
             # Zero gradients
@@ -423,7 +457,7 @@ class Trainer:
             # Backward pass
             loss.backward()
 
-            # Clip gradients to prevent explosions as mentioned in paper
+            # Clip gradients to prevent explosions
             if hasattr(self.config.training, 'gradient_clip_val'):
                 torch.nn.utils.clip_grad_norm_(
                     self.model.parameters(),
@@ -432,10 +466,6 @@ class Trainer:
 
             # Optimization step
             self.optimizer.step()
-
-            # Update scheduler for hybrid model (applied per step)
-            if self.model_type == 'hybrid':
-                self.scheduler.step()
 
             # Store outputs and targets for metrics calculation
             for task in ['multiclass', 'contralateral', 'ipsilateral']:
@@ -469,31 +499,14 @@ class Trainer:
         return avg_loss, metrics
 
     def _validate_epoch(self, epoch):
-        """
-        Validate for one epoch with improved metrics tracking.
-
-        Args:
-            epoch: Current epoch number
-
-        Returns:
-            tuple: (average_loss, metrics_dict)
-        """
+        """Validate for one epoch with improved metrics tracking."""
         self.model.eval()
         total_loss = 0
         task_losses = defaultdict(float)
 
         # Initialize containers for predictions and targets per task
-        all_outputs = {
-            'multiclass': [],
-            'contralateral': [],
-            'ipsilateral': []
-        }
-
-        all_targets = {
-            'multiclass': [],
-            'contralateral': [],
-            'ipsilateral': []
-        }
+        all_outputs = {'multiclass': [], 'contralateral': [], 'ipsilateral': []}
+        all_targets = {'multiclass': [], 'contralateral': [], 'ipsilateral': []}
 
         # No gradient tracking for validation
         with torch.no_grad():
@@ -545,54 +558,25 @@ class Trainer:
                 # Calculate metrics
                 metrics[task] = calculate_metrics(targets, preds, task)
 
-                # Add confusion matrix logging to wandb
-                if self.run is not None:
-                    try:
-                        cm = confusion_matrix(targets, preds)
-                        fig, ax = plt.subplots(figsize=(8, 6))
-                        sns.heatmap(cm, annot=True, fmt='d', cmap='Blues', ax=ax)
-                        ax.set_xlabel('Predicted')
-                        ax.set_ylabel('True')
-                        ax.set_title(f'{task.capitalize()} Confusion Matrix')
-
-                        wandb.log({f'val/{task}_confusion_matrix': wandb.Image(fig)})
-                        plt.close(fig)
-                    except:
-                        pass  # Continue even if wandb logging fails
-
         return avg_loss, metrics
 
     def evaluate(self):
-        """
-        Evaluate the model on the test set and collect predictions for visualization.
-
-        Returns:
-            tuple: (loss, metrics, predictions, targets)
-        """
+        """Evaluate the model on the test set with model-specific handling."""
         print("\nEvaluating model on test set...")
         self.model.eval()
         total_loss = 0
-        task_losses = defaultdict(float)
 
         # Initialize containers for predictions and targets
         all_predictions = {
-            'multiclass': [],
-            'contralateral': [],
-            'ipsilateral': [],
-            'multiclass_probs': [],
-            'contralateral_probs': [],
-            'ipsilateral_probs': []
+            'multiclass': [], 'contralateral': [], 'ipsilateral': [],
+            'multiclass_probs': [], 'contralateral_probs': [], 'ipsilateral_probs': []
         }
 
-        all_targets = {
-            'multiclass': [],
-            'contralateral': [],
-            'ipsilateral': []
-        }
+        all_targets = {'multiclass': [], 'contralateral': [], 'ipsilateral': []}
 
-        # Check if neural activity prediction is available for hybrid model
+        # Check if neural activity prediction is available (only for hybrid model)
         sample_batch = next(iter(self.test_loader))
-        if 'neural_activity' in sample_batch[1]:
+        if 'neural_activity' in sample_batch[1] and self.model_type == 'hybrid':
             all_predictions['neural_activity'] = []
             all_targets['neural_activity'] = []
 
@@ -625,8 +609,10 @@ class Trainer:
                         all_predictions[f'{task}_probs'].append(probs.cpu().numpy())
                         all_targets[task].append(targets_dict[task].cpu().numpy())
 
-                # Store neural activity predictions if available
-                if 'neural_activity' in outputs_dict and 'neural_activity' in targets_dict:
+                # Store neural activity predictions if available (hybrid model only)
+                if ('neural_activity' in outputs_dict and
+                        'neural_activity' in targets_dict and
+                        self.model_type == 'hybrid'):
                     all_predictions['neural_activity'].append(
                         outputs_dict['neural_activity'].cpu().numpy())
                     all_targets['neural_activity'].append(
@@ -666,51 +652,46 @@ class Trainer:
 
         return avg_loss, test_metrics, all_predictions, all_targets
 
-    def _save_checkpoint(self, state, filename):
-        """
-        Save model checkpoint.
+    def _log_to_wandb(self, epoch, train_loss, val_loss, train_metrics, val_metrics, lr):
+        """Log metrics to WandB if available."""
+        if self.run is not None:
+            log_dict = {
+                'epoch': epoch + 1,
+                'train/loss': train_loss,
+                'val/loss': val_loss,
+                'learning_rate': lr
+            }
 
-        Args:
-            state: Dictionary containing model state and metadata
-            filename: Checkpoint filename
-        """
-        save_path = os.path.join(self.config.paths.checkpoints_dir, self.model_type, filename)
-        os.makedirs(os.path.dirname(save_path), exist_ok=True)
-        torch.save(state, save_path)
-        print(f"Checkpoint saved to {save_path}")
+            # Add task-specific metrics
+            for task in ['multiclass', 'contralateral', 'ipsilateral']:
+                if task in train_metrics:
+                    for metric, value in train_metrics[task].items():
+                        log_dict[f'train/{task}_{metric}'] = value
+                if task in val_metrics:
+                    for metric, value in val_metrics[task].items():
+                        log_dict[f'val/{task}_{metric}'] = value
 
-    def _load_checkpoint(self, filename):
-        """
-        Load model checkpoint.
+            wandb.log(log_dict)
 
-        Args:
-            filename: Checkpoint filename
-        """
-        load_path = os.path.join(self.config.paths.checkpoints_dir, self.model_type, filename)
-        if os.path.exists(load_path):
-            checkpoint = torch.load(load_path, map_location=self.device)
-            self.model.load_state_dict(checkpoint['model_state_dict'])
-            print(f"Loaded model from checkpoint (epoch {checkpoint['epoch'] + 1})")
-        else:
-            print(f"No checkpoint found at {load_path}")
+    def _save_training_history(self, train_history, val_history):
+        """Save training history to JSON file."""
+        with open(os.path.join(self.output_dir, 'training_history.json'), 'w') as f:
+            history = {
+                'train': {k: [float(v) for v in vals] for k, vals in train_history.items()},
+                'val': {k: [float(v) for v in vals] for k, vals in val_history.items()}
+            }
+            json.dump(history, f, indent=4)
 
-    def _generate_visualizations(self, predictions, targets, output_dir):
-        """
-        Generate and save all visualizations.
-
-        Args:
-            predictions: Dictionary of model predictions
-            targets: Dictionary of ground truth values
-            output_dir: Directory to save visualizations
-        """
-        print("\nGenerating visualizations...")
-        os.makedirs(output_dir, exist_ok=True)
+    def _generate_and_save_visualizations(self, predictions, targets):
+        """Generate and save all visualizations."""
+        viz_dir = os.path.join(self.output_dir, 'visualizations')
+        os.makedirs(viz_dir, exist_ok=True)
 
         # Define class names for visualization
         class_names = {
             'multiclass': ['No Footstep', 'Contralateral', 'Ipsilateral'],
-            'contralateral': ['Negative', 'Positive'],
-            'ipsilateral': ['Negative', 'Positive']
+            'contralateral': ['No Footstep', 'Contralateral'],
+            'ipsilateral': ['No Footstep', 'Ipsilateral']
         }
 
         # Generate confusion matrices
@@ -722,7 +703,7 @@ class Trainer:
                     class_names=class_names[task],
                     include_percentages=True,
                     title=f"{self.model_type.upper()} Model - {task.capitalize()} Confusion Matrix",
-                    save_path=os.path.join(output_dir, f'{task}_confusion_matrix.png')
+                    save_path=os.path.join(viz_dir, f'{task}_confusion_matrix.png')
                 )
 
         # Generate ROC curves
@@ -733,29 +714,53 @@ class Trainer:
                     predicted_probs=predictions[f'{task}_probs'],
                     class_names=class_names[task],
                     title=f"{self.model_type.upper()} Model - {task.capitalize()} ROC Curves",
-                    save_path=os.path.join(output_dir, f'{task}_roc_curves.png')
+                    save_path=os.path.join(viz_dir, f'{task}_roc_curves.png')
                 )
 
-        # Generate neural activity visualization for hybrid model
+        # Generate neural activity visualization for hybrid model only
         if self.model_type == 'hybrid' and 'neural_activity' in predictions:
-            # Create Figure 4 style visualization from the paper
             viz.plot_neural_activity_comparison(
                 time_points=np.arange(len(targets['multiclass'])),
                 true_neural=targets['neural_activity'],
                 pred_neural=predictions['neural_activity'],
                 true_behaviors=targets['multiclass'],
                 pred_behaviors=predictions['multiclass'],
-                save_path=os.path.join(output_dir, 'neural_activity_figure4.png')
+                save_path=os.path.join(viz_dir, 'neural_activity_figure4.png')
             )
 
-    def _log_history_plots(self, train_history, val_history):
-        """
-        Generate and log training history plots to WandB.
+    def _save_test_results(self, test_loss, test_metrics):
+        """Save test results to JSON file."""
+        results = {
+            'test_loss': float(test_loss),
+            'test_metrics': {
+                task: {k: float(v) for k, v in metrics.items()}
+                for task, metrics in test_metrics.items()
+            }
+        }
 
-        Args:
-            train_history: Dictionary of training metrics
-            val_history: Dictionary of validation metrics
-        """
+        with open(os.path.join(self.output_dir, 'test_results.json'), 'w') as f:
+            json.dump(results, f, indent=4)
+
+        print(f"Test results saved to {os.path.join(self.output_dir, 'test_results.json')}")
+
+    def _save_checkpoint(self, state, filename):
+        """Save model checkpoint."""
+        save_path = os.path.join(self.config.paths.checkpoints_dir, self.model_type, filename)
+        os.makedirs(os.path.dirname(save_path), exist_ok=True)
+        torch.save(state, save_path)
+
+    def _load_checkpoint(self, filename):
+        """Load model checkpoint."""
+        load_path = os.path.join(self.config.paths.checkpoints_dir, self.model_type, filename)
+        if os.path.exists(load_path):
+            checkpoint = torch.load(load_path, map_location=self.device)
+            self.model.load_state_dict(checkpoint['model_state_dict'])
+            print(f"Loaded model from checkpoint (epoch {checkpoint['epoch'] + 1})")
+        else:
+            print(f"No checkpoint found at {load_path}")
+
+    def _log_history_plots(self, train_history, val_history):
+        """Generate and log training history plots to WandB."""
         try:
             # Create subplot for loss
             fig_loss, ax_loss = plt.subplots(figsize=(10, 6))
@@ -772,41 +777,14 @@ class Trainer:
                 wandb.log({"loss_history": wandb.Image(fig_loss)})
             plt.close(fig_loss)
 
-            # Create subplot for accuracy
-            fig_acc, ax_acc = plt.subplots(figsize=(10, 6))
-
-            # Plot multiclass accuracy if available
-            if 'multiclass_accuracy' in train_history and 'multiclass_accuracy' in val_history:
-                ax_acc.plot(train_history['multiclass_accuracy'], label='Train Accuracy')
-                ax_acc.plot(val_history['multiclass_accuracy'], label='Validation Accuracy')
-                ax_acc.set_xlabel('Epoch')
-                ax_acc.set_ylabel('Accuracy')
-                ax_acc.set_title('Training and Validation Accuracy (Multiclass)')
-                ax_acc.legend()
-                ax_acc.grid(True, alpha=0.3)
-
-                # Log accuracy plot
-                if self.run:
-                    wandb.log({"accuracy_history": wandb.Image(fig_acc)})
-            plt.close(fig_acc)
-
         except Exception as e:
             print(f"Error generating history plots: {e}")
 
     def _mixup_batch(self, inputs, targets_dict):
-        """
-        Apply mixup data augmentation to batch following the paper's method.
-
-        Args:
-            inputs: Input tensor of shape (batch_size, seq_len, input_size)
-            targets_dict: Dictionary of target tensors
-
-        Returns:
-            tuple: (mixed_inputs, mixed_targets_dict)
-        """
+        """Apply mixup data augmentation (only used for hybrid model)."""
         batch_size = inputs.size(0)
 
-        # Sample lambda from beta distribution with alpha=0.2 as in the paper
+        # Sample lambda from beta distribution
         alpha = getattr(self.config.training, 'mixup_alpha', 0.2)
         lam = np.random.beta(alpha, alpha, batch_size)
         lam = torch.tensor(lam, device=self.device).float().view(-1, 1, 1)
@@ -826,7 +804,6 @@ class Trainer:
                 mixed_targets_dict[task] = lam_flat * targets + (1 - lam_flat) * targets[index]
             else:
                 # For classification tasks, keep original targets but track lambda
-                # This will be handled by the loss function
                 mixed_targets_dict[task] = targets
                 mixed_targets_dict[f"{task}_mixup_index"] = index
                 mixed_targets_dict[f"{task}_mixup_lambda"] = lam.squeeze()
