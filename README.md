@@ -8,14 +8,17 @@ This paper implements advanced deep learning architectures to decode complex for
 
 ## Paper Summary
 
-The research explores whether complex motor movements in both forelimbs of mice can be decoded from the activity of excitatory neuronal ensembles in unilateral M1. The study:
+Our research explores whether complex motor movements in both forelimbs of mice can be decoded from the activity of excitatory neuronal ensembles in unilateral M1. The study:
 
 1. Uses in vivo two-photon calcium imaging to record neuronal activity in M1
 2. Collects data from mice performing a specialized grid-walking task requiring skilled movement
-3. Implements two neuronal decoding approaches:
-   - LSTM with fully connected layers (baseline)
-   - Hybrid CNN-BiLSTM with attention mechanisms (advanced model)
-4. Demonstrates accurate decoding of both ipsilateral and contralateral forelimb movements
+3. Implements four neuronal decoding approaches:
+   - **CNN-only**: Captures spatial patterns in neural populations without explicit temporal modeling
+   - **LSTM**: Models temporal dynamics in neural sequences
+   - **LSTM+Attention**: Enhances temporal processing with attention mechanisms
+   - **Hybrid CNN-BiLSTM**: Combines spatial and temporal processing with attention (full advanced model)
+5. Demonstrates accurate decoding of both ipsilateral and contralateral forelimb movements
+6. Our framework enables researchers to understand the contribution of each architectural component to decoding performance.
 
 The hybrid model showed significant performance improvements by incorporating both spatial features (through CNNs) and temporal dependencies (through BiLSTM) of neuronal activity.
 
@@ -64,14 +67,19 @@ Place your data files in the data/ directory.
 
 ## Usage
 ## Training
+Each architecture can be trained independently with customized parameters:
 
-To train the LSTM model:
 ```bash
+# Train CNN model (spatial features only)
+python scripts/train.py model=cnn
+
+# Train LSTM model (temporal features only)
 python scripts/train.py model=lstm
-```
 
-To train the hybrid CNN-BiLSTM model:
-```bash
+# Train LSTM with Attention
+python scripts/train.py model=lstm_attention
+
+# Train Hybrid CNN-BiLSTM model (full architecture)
 python scripts/train.py model=hybrid
 ```
 
