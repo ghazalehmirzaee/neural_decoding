@@ -1,0 +1,21 @@
+# config/training/cnn.yaml
+
+# Training parameters for CNN model
+epochs: 200
+batch_size: 32
+learning_rate: 0.0001
+weight_decay: 0.0001
+gradient_clip_val: 0.2
+early_stopping_patience: 8
+
+# Sequence parameters
+sequence_length: 32
+overlap: 16
+
+# Regularization
+use_class_weights: true  # Essential for imbalanced data
+use_mixup: false
+
+# Additional CNN-specific parameters for better training
+focal_loss_alpha: 2.0
+focal_loss_gamma: 2.0

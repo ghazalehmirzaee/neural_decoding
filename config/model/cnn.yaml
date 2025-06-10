@@ -1,0 +1,16 @@
+## config/model/cnn.yaml
+type: cnn
+
+# Model architecture parameters
+input_size: 581  # Number of neurons
+num_classes: 3
+dropout: 0.3
+
+# Sequence length - same as hybrid for fair comparison
+sequence_length: 32
+
+# Task weights
+task_weights:
+  multiclass: 1.0
+  contralateral: 2.0
+  ipsilateral: 2.0

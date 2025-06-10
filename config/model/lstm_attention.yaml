@@ -1,0 +1,23 @@
+# config/model/lstm_attention.yaml
+
+type: lstm_attention
+
+# Model parameters
+input_size: 421  # Number of neurons
+hidden_size: 96
+num_layers: 2
+num_classes: 3
+dropout: 0.4
+
+# Attention-specific parameters
+num_attention_heads: 4
+attention_dim: 48
+
+# Sequence length optimized for attention mechanism
+sequence_length: 16
+
+# Task weights
+task_weights:
+  multiclass: 1.0
+  contralateral: 1.0
+  ipsilateral: 1.0
