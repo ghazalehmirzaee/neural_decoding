@@ -17,8 +17,8 @@ Our research explores whether complex motor movements in both forelimbs of mice 
    - **LSTM**: Models temporal dynamics in neural sequences
    - **LSTM+Attention**: Enhances temporal processing with attention mechanisms
    - **Hybrid CNN-BiLSTM**: Combines spatial and temporal processing with attention (full advanced model)
-5. Demonstrates accurate decoding of both ipsilateral and contralateral forelimb movements
-6. Our framework enables researchers to understand the contribution of each architectural component to decoding performance.
+4. Demonstrates accurate decoding of both ipsilateral and contralateral forelimb movements
+5. Our framework enables researchers to understand the contribution of each architectural component to decoding performance.
 
 The hybrid model showed significant performance improvements by incorporating both spatial features (through CNNs) and temporal dependencies (through BiLSTM) of neuronal activity.
 
