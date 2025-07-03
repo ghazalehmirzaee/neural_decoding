@@ -265,12 +265,6 @@ class HybridCNNBiLSTM(nn.Module):
     def forward(self, x):
         """
         Forward pass through the hybrid model.
-
-        Args:
-            x: Input tensor [batch_size, seq_len, input_size]
-
-        Returns:
-            Dictionary of task outputs
         """
         # Reshape for CNN: [batch, seq_len, input_size] -> [batch, input_size, seq_len]
         batch_size, seq_len, input_size = x.shape
