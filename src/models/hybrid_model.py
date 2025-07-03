@@ -98,12 +98,6 @@ class DynamicNormalization(nn.Module):
     def forward(self, x):
         """
         Apply combined normalization strategy.
-
-        Args:
-            x: Input tensor of shape [batch, channels, seq_len] or [batch, seq_len, channels]
-
-        Returns:
-            Normalized tensor with same shape as input
         """
         # Apply softmax to ensure weights sum to 1
         weights = F.softmax(self.weights, dim=0)
