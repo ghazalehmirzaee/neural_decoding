@@ -172,11 +172,7 @@ def main(config: DictConfig):
             use_attention=getattr(config.model, 'use_attention', True),
             num_attention_heads=getattr(config.model, 'num_attention_heads', 8)
         )
-        print("✓ Hybrid CNN-BiLSTM model created with full feature set")
-        print("  - CNN layers for spatial feature extraction")
-        print("  - BiLSTM for bidirectional temporal processing")
-        print("  - Multi-head attention for focusing on relevant patterns")
-        print("  - Skip connections for preserving fine-grained information")
+    
 
     # Display model architecture and complexity
     print(f"\nModel architecture:")
