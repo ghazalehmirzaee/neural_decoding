@@ -47,12 +47,6 @@ class MultiHeadAttention(nn.Module):
     def forward(self, x):
         """
         Apply multi-head attention as described in equations (16)-(18).
-
-        Args:
-            x: Input tensor [batch_size, seq_len, embed_dim]
-
-        Returns:
-            Attention output [batch_size, seq_len, embed_dim]
         """
         batch_size, seq_len, embed_dim = x.shape
 
