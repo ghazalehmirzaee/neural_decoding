@@ -52,7 +52,6 @@ def main(config: DictConfig):
     print(f"Using device: {device}")
 
     # Create all necessary directories
-    # This ensures the file system is ready for outputs
     os.makedirs(config.paths.data_dir, exist_ok=True)
     os.makedirs(config.paths.output_dir, exist_ok=True)
     os.makedirs(config.paths.checkpoints_dir, exist_ok=True)
