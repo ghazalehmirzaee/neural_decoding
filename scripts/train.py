@@ -153,9 +153,6 @@ def main(config: DictConfig):
             num_attention_heads=getattr(config.model, 'num_attention_heads', 4),
             attention_dim=getattr(config.model, 'attention_dim', 48)
         )
-        print("✓ LSTM+Attention model created with temporal attention mechanism")
-        print("  - Enhances LSTM with multi-head attention")
-        print("  - Focuses on behaviorally-relevant temporal patterns")
 
     else:  # hybrid
         # Full hybrid model combining CNN and BiLSTM with attention
