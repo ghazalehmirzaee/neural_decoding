@@ -73,12 +73,6 @@ class LSTMModel(nn.Module):
     def forward(self, x):
         """
         Forward pass through the LSTM model.
-
-        Args:
-            x: Input tensor [batch_size, seq_len, input_size]
-
-        Returns:
-            Dictionary of task outputs for multitask learning
         """
         batch_size = x.size(0)
 
