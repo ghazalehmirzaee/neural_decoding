@@ -13,14 +13,6 @@ from sklearn.metrics import (
 def calculate_metrics(true_labels, predicted_labels, task='multiclass'):
     """
     Calculate comprehensive metrics for model evaluation.
-
-    Args:
-        true_labels: Ground truth labels
-        predicted_labels: Predicted labels
-        task: Task name for appropriate averaging
-
-    Returns:
-        Dictionary of metrics
     """
     # Determine averaging method based on task
     if task == 'multiclass':
