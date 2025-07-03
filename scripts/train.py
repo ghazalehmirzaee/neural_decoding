@@ -140,9 +140,6 @@ def main(config: DictConfig):
             num_classes=config.model.num_classes,
             dropout=getattr(config.model, 'dropout', 0.3)
         )
-        print("✓ Pure CNN model created (no attention, no LSTM)")
-        print("  - Focuses on spatial patterns in neural populations")
-        print("  - Uses global pooling to aggregate temporal information")
 
     elif config.model.type == 'lstm_attention':
         # LSTM with attention mechanism for enhanced temporal processing
