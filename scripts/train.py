@@ -130,7 +130,6 @@ def main(config: DictConfig):
             num_classes=config.model.num_classes,
             dropout=config.model.dropout
         )
-        print("✓ LSTM model created for temporal sequence processing")
 
     elif config.model.type == 'cnn':
         # CNN model for spatial pattern detection
