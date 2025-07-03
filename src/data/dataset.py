@@ -147,16 +147,6 @@ def create_data_loaders(dataset, batch_size, train_ratio=0.7, val_ratio=0.15, se
     """
     Create data loaders with appropriate batch sizes for each model type.
     Ensures proper stratification to maintain class distribution.
-
-    Args:
-        dataset: Neural dataset instance
-        batch_size: Batch size (will be adjusted based on model type)
-        train_ratio: Proportion of data for training
-        val_ratio: Proportion of data for validation
-        seed: Random seed for reproducibility
-
-    Returns:
-        tuple: (train_loader, val_loader, test_loader)
     """
     # Set random seed
     torch.manual_seed(seed)
