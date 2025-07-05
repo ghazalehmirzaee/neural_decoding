@@ -72,8 +72,8 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
     ax.set_title(title, fontsize=16, fontweight='bold', pad=20)
 
     # Style the tick labels for better readability
-    ax.tick_params(axis='x', labelsize=12, rotation=0)  # Horizontal x-axis labels
-    ax.tick_params(axis='y', labelsize=12, rotation=0)  # Horizontal y-axis labels
+    ax.tick_params(axis='x', labelsize=12, rotation=0)  
+    ax.tick_params(axis='y', labelsize=12, rotation=0)  
 
     # Ensure tick labels are properly positioned
     plt.xticks(rotation=0, ha='center')
