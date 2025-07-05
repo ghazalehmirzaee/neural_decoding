@@ -55,8 +55,8 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         annot=annot if include_percentages else True, 
         fmt='' if include_percentages else 'd',  # Empty format since we handle it manually
         cmap='Blues',  # Blue colormap matching your examples
-        xticklabels=class_names,  # Class names on x-axis
-        yticklabels=class_names,  # Class names on y-axis
+        xticklabels=class_names,  
+        yticklabels=class_names,  
         vmin=vmin,  
         vmax=vmax,  
         cbar_kws={'label': colorbar_label, 'shrink': 0.8},  # Colorbar configuration
