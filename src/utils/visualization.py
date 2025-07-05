@@ -61,9 +61,9 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         vmax=vmax,  # Maximum value for color scale (100% when using percentages)
         cbar_kws={'label': colorbar_label, 'shrink': 0.8},  # Colorbar configuration
         annot_kws={'size': 14, 'weight': 'bold'},  # Text styling for annotations
-        linewidths=0.5,  # Thin lines between cells
-        linecolor='white',  # White grid lines
-        square=True  # Force square cells for clean appearance
+        linewidths=0.5,  
+        linecolor='white', 
+        square=True  
     )
 
     # Customize plot appearance to match your professional style
