@@ -44,7 +44,7 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
 
     else:
         # When percentages are disabled, just show raw counts
-        annot = True  # Let seaborn handle annotation formatting
+        annot = True 
         heatmap_data = cm
         vmin, vmax = None, None
         colorbar_label = 'Count'
