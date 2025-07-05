@@ -337,9 +337,8 @@ def plot_neural_activity_comparison(time_points, true_neural, pred_neural, true_
     fig.legend(handles=legend_elements, loc='upper right', bbox_to_anchor=(0.98, 0.99))
 
     plt.suptitle(title, fontsize=14)
-    fig.text(0.5, 0.04, 'Frame Number', ha='center', fontsize=12)  # global x-label
-    plt.tight_layout(rect=[0, 0.05, 1, 0.95])  # space for global x-label
-
+    fig.text(0.5, 0.04, 'Frame Number', ha='center', fontsize=12) 
+    plt.tight_layout(rect=[0, 0.05, 1, 0.95])  
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         print(f"Saved neural activity visualization to {save_path}")
