@@ -45,7 +45,6 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         vmin, vmax = None, None
         colorbar_label = 'Count'
 
-    # Create the heatmap with styling to match your examples
     ax = sns.heatmap(
         heatmap_data,  
         annot=annot if include_percentages else True, 
