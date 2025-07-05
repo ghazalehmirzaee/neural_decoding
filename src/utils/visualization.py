@@ -51,8 +51,8 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
 
     # Create the heatmap with styling to match your examples
     ax = sns.heatmap(
-        heatmap_data,  # Use percentage data for color intensity
-        annot=annot if include_percentages else True,  # Custom annotations or default
+        heatmap_data,  
+        annot=annot if include_percentages else True, 
         fmt='' if include_percentages else 'd',  # Empty format since we handle it manually
         cmap='Blues',  # Blue colormap matching your examples
         xticklabels=class_names,  # Class names on x-axis
