@@ -87,7 +87,6 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         plt.savefig(save_path, dpi=300, bbox_inches='tight', facecolor='white')
         print(f"Saved confusion matrix to {save_path}")
 
-    # Close the figure to free memory
     plt.close()
 
 
