@@ -57,8 +57,8 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         cmap='Blues',  # Blue colormap matching your examples
         xticklabels=class_names,  # Class names on x-axis
         yticklabels=class_names,  # Class names on y-axis
-        vmin=vmin,  # Minimum value for color scale
-        vmax=vmax,  # Maximum value for color scale (100% when using percentages)
+        vmin=vmin,  
+        vmax=vmax,  
         cbar_kws={'label': colorbar_label, 'shrink': 0.8},  # Colorbar configuration
         annot_kws={'size': 14, 'weight': 'bold'},  # Text styling for annotations
         linewidths=0.5,  
