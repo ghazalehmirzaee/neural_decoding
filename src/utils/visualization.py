@@ -59,8 +59,8 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         yticklabels=class_names,  
         vmin=vmin,  
         vmax=vmax,  
-        cbar_kws={'label': colorbar_label, 'shrink': 0.8},  # Colorbar configuration
-        annot_kws={'size': 14, 'weight': 'bold'},  # Text styling for annotations
+        cbar_kws={'label': colorbar_label, 'shrink': 0.8},  
+        annot_kws={'size': 14, 'weight': 'bold'},  
         linewidths=0.5,  
         linecolor='white', 
         square=True  
