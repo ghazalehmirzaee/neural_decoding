@@ -29,7 +29,6 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         annot = np.empty_like(cm, dtype=object)
         for i in range(cm.shape[0]):
             for j in range(cm.shape[1]):
-                # Format exactly like your examples: "XX.X%" on first line, "(count)" on second
                 annot[i, j] = f"{cm_perc[i, j]:.1f}%\n({cm[i, j]})"
 
         # Use percentage matrix for color scaling - this makes the color intensity
