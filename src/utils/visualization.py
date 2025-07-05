@@ -54,7 +54,7 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         heatmap_data,  
         annot=annot if include_percentages else True, 
         fmt='' if include_percentages else 'd',  # Empty format since we handle it manually
-        cmap='Blues',  # Blue colormap matching your examples
+        cmap='Blues',  
         xticklabels=class_names,  
         yticklabels=class_names,  
         vmin=vmin,  
