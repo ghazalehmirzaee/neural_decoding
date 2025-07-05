@@ -129,10 +129,8 @@ def plot_roc_curves(true_labels, predicted_probs, class_names, title='ROC Curves
     plt.legend(loc='lower right')
     plt.grid(True, alpha=0.3)
 
-    # Adjust layout
     plt.tight_layout()
 
-    # Save figure if path provided
     if save_path:
         plt.savefig(save_path, dpi=300, bbox_inches='tight')
         print(f"Saved ROC curves to {save_path}")
