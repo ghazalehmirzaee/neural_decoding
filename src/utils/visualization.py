@@ -26,8 +26,6 @@ def plot_confusion_matrix(true_labels, predicted_labels, class_names, include_pe
         # Handle potential division by zero (creates NaN values) by replacing with 0
         cm_perc = np.nan_to_num(cm_perc, nan=0.0)
 
-        # Create annotations with percentage as main value and count in parentheses
-        # This matches the exact format shown in your example images
         annot = np.empty_like(cm, dtype=object)
         for i in range(cm.shape[0]):
             for j in range(cm.shape[1]):
