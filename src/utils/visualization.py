@@ -94,7 +94,6 @@ def plot_roc_curves(true_labels, predicted_probs, class_names, title='ROC Curves
     """
     Generate and save ROC curves.
     """
-    # Create figure
     plt.figure(figsize=(10, 8))
 
     # Number of classes
